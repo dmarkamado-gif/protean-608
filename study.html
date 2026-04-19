@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Guide — Protean · R-32 / R-454B prep</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">
+          <svg viewBox="0 0 44 48" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoHex" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e08148"/>
+                <stop offset="0.45" stop-color="#a5431b"/>
+                <stop offset="1" stop-color="#6b2708"/>
+              </linearGradient>
+              <linearGradient id="logoInner" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fffaee"/>
+                <stop offset="1" stop-color="#f0e2c1"/>
+              </linearGradient>
+            </defs>
+            <polygon points="22,3 40,13 40,35 22,45 4,35 4,13" fill="url(#logoHex)" stroke="#1d1810" stroke-width="1.5" stroke-linejoin="round"/>
+            <polygon points="22,3 40,13 22,23 4,13" fill="#fff" opacity="0.12"/>
+            <polygon points="22,9 35,16 35,32 22,39 9,32 9,16" fill="url(#logoInner)" stroke="#3a2f22" stroke-width="0.9"/>
+            <circle cx="16.5" cy="20" r="3.1" fill="#7ab89a" stroke="#1d1810" stroke-width="0.7"/>
+            <circle cx="27.5" cy="20" r="3.1" fill="#8bbfc3" stroke="#1d1810" stroke-width="0.7"/>
+            <circle cx="22" cy="29" r="3.1" fill="#e4536b" stroke="#1d1810" stroke-width="0.7"/>
+            <text x="22" y="14.2" font-family="ui-monospace,monospace" font-size="2.4" font-weight="700" fill="#fdf1de" text-anchor="middle" letter-spacing="0.35">PROTEAN</text>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Protean</span>
+          <span class="brand-tag">R-32 · R-454B · R-1234yf</span>
+        </span>
+      </a>
+      <nav class="primary">
+        <a href="index.html">Home</a>
+        <a href="study.html" class="active">Study</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="practice.html">Practice</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+      <div id="stats-bar"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Study guide</h1>
+      <p class="lead">The material the 608 actually tests you on, in plain language. Skim it once start to finish, then hit the practice quiz. Come back to any section you keep tripping on.</p>
+      <p class="small muted">Core covers everyone. Type sections are specific to the kind of equipment you'll handle. Pick based on your goal — or read all four if you're going for Universal.</p>
+    </section>
+
+    <div class="toc">
+      <strong>Sections</strong>
+      <ul>
+        <li><a href="#core">Core</a></li>
+        <li><a href="#type1">Type I — Small Appliances</a></li>
+        <li><a href="#type2">Type II — High-Pressure</a></li>
+        <li><a href="#type3">Type III — Low-Pressure</a></li>
+        <li><a href="#test-day">Test-day tips</a></li>
+      </ul>
+    </div>
+
+    <section class="block study-section sect-core" id="core">
+      <h2>
+        <span class="section-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40">
+            <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M 20 8 A 12 12 0 0 1 32 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <polygon points="32,20 28,16 28,24" fill="currentColor"/>
+            <path d="M 20 32 A 12 12 0 0 1 8 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <polygon points="8,20 12,24 12,16" fill="currentColor"/>
+          </svg>
+        </span>Core
+      </h2>
+      <p><span class="sect-badge">foundation · everyone takes it</span></p>
+
+      <h3>Ozone depletion &amp; the atmosphere</h3>
+      <p>The <strong>stratospheric ozone layer</strong> absorbs harmful UV-B radiation. Chlorine atoms released from CFCs and HCFCs destroy ozone molecules — a single chlorine atom can destroy thousands of ozone molecules before being deactivated.</p>
+      <p>Two measures of refrigerant environmental impact:</p>
+      <ul>
+        <li><strong>ODP</strong> (Ozone Depletion Potential) — R-11 is the baseline at 1.0.</li>
+        <li><strong>GWP</strong> (Global Warming Potential) — CO₂ is the baseline at 1.0.</li>
+      </ul>
+      <div class="callout"><strong>Likely question:</strong> HFCs have <em>zero</em> ODP (no chlorine) but high GWP. HFOs have near-zero of both.</div>
+
+      <h3>Laws &amp; treaties</h3>
+      <table class="data">
+        <thead><tr><th>Instrument</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td>Montreal Protocol (1987)</td><td>International treaty phasing out ozone-depleting substances (CFCs, HCFCs).</td></tr>
+          <tr><td>Clean Air Act — Section 608</td><td>U.S. law regulating refrigerant use in <em>stationary</em> equipment.</td></tr>
+          <tr><td>Clean Air Act — Section 609</td><td>Regulates <em>motor vehicle</em> air conditioning. Separate certification.</td></tr>
+          <tr><td>AIM Act (2020)</td><td>Authorizes EPA to phase down HFCs 85% by 2036.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Refrigerant classifications</h3>
+      <table class="data">
+        <thead><tr><th>Class</th><th>Contains</th><th>ODP</th><th>Examples</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>CFC</td><td>Cl, F, C</td><td>High</td><td>R-11, R-12, R-502</td><td>Production banned 1996</td></tr>
+          <tr><td>HCFC</td><td>H, Cl, F, C</td><td>Lower</td><td>R-22, R-123</td><td>R-22 production banned 2020</td></tr>
+          <tr><td>HFC</td><td>H, F, C</td><td>Zero</td><td>R-134a, R-410A, R-404A</td><td>Being phased down (AIM Act)</td></tr>
+          <tr><td>HFO</td><td>H, F, C (unsaturated)</td><td>Zero</td><td>R-1234yf, R-1234ze</td><td>Preferred replacements</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Safety groups (ASHRAE Standard 34)</h3>
+      <p>Two letters: toxicity (A = low, B = higher) and flammability (1 = none, 2L = mild, 2 = moderate, 3 = high).</p>
+      <ul>
+        <li><strong>A1</strong> — low toxicity, no flame propagation (R-22, R-134a, R-410A).</li>
+        <li><strong>A2L</strong> — mildly flammable, lower toxicity (R-32, R-1234yf).</li>
+        <li><strong>B1</strong> — higher toxicity, no flame propagation (R-123).</li>
+      </ul>
+
+      <h3>The venting prohibition</h3>
+      <p>Since <strong>July 1, 1992</strong> (CFC/HCFC) and <strong>November 15, 1995</strong> (HFC/other substitutes), knowingly releasing refrigerant during service, maintenance, repair, or disposal is prohibited.</p>
+      <p><strong>Exceptions (de minimis):</strong></p>
+      <ul>
+        <li>Small releases associated with good-faith recovery.</li>
+        <li>Releases from purging hoses or connections.</li>
+        <li>Mixtures of refrigerant and nitrogen used for leak testing.</li>
+      </ul>
+
+      <h3>Three Rs: Recover, Recycle, Reclaim</h3>
+      <table class="data">
+        <thead><tr><th>Process</th><th>Where</th><th>Definition</th></tr></thead>
+        <tbody>
+          <tr><td>Recover</td><td>On-site</td><td>Remove refrigerant from a system and store it in an external container — no cleaning or testing.</td></tr>
+          <tr><td>Recycle</td><td>On-site</td><td>Clean refrigerant with oil separation and filter-drier passes. Intended for the same owner's equipment.</td></tr>
+          <tr><td>Reclaim</td><td>Off-site</td><td>Reprocess refrigerant to meet <strong>AHRI Standard 700</strong> (new-product spec). Only reclaimed refrigerant may be resold.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Evacuation (recovery) requirements</h3>
+      <p>For equipment manufactured on or after <strong>November 15, 1993</strong>, you must evacuate to specific vacuum levels unless the unit is leaking and cannot reach them.</p>
+      <ul>
+        <li>Small appliances (Type I): 90% recovery efficiency (80% if compressor is non-operational) — or achieve 4 in. Hg vacuum.</li>
+        <li>Type II high-pressure (&lt;200 lbs): 0 psig.</li>
+        <li>Type II high-pressure (≥200 lbs): 10 in. Hg vacuum.</li>
+        <li>Type III low-pressure: 25 mm Hg absolute pressure (29 in. Hg vacuum).</li>
+      </ul>
+      <div class="callout"><strong>Likely question:</strong> If a system is leaking and can't hold the required vacuum, you only have to recover to 0 psig before opening it.</div>
+
+      <h3>Leak repair requirements</h3>
+      <p>For appliances with 50 lbs or more of refrigerant, a leak exceeding the applicable annual leak rate must be repaired (or the appliance retrofitted/retired):</p>
+      <ul>
+        <li><strong>Commercial refrigeration</strong> — 20%/year (previously 35%).</li>
+        <li><strong>Industrial process refrigeration</strong> — 30%/year.</li>
+        <li><strong>Comfort cooling &amp; all others</strong> — 10%/year.</li>
+      </ul>
+      <p>Initial verification test after repair, then a follow-up verification test. Records must be kept.</p>
+
+      <h3>Sales restriction</h3>
+      <p>Only EPA-certified technicians may purchase regulated refrigerant. For <strong>HFCs</strong>, the sales restriction also applies (AIM Act rulemaking) in containers other than small cans under 2 lb with self-sealing valves for MVAC.</p>
+
+      <h3>Refrigerant cylinders</h3>
+      <ul>
+        <li><strong>Never fill above 80%</strong> of the cylinder's water capacity — liquid refrigerant expands with temperature.</li>
+        <li>Recovery cylinders have <strong>gray bodies with yellow tops</strong> (DOT 4BA or 4BW) and must be hydrostatically tested every <strong>5 years</strong>.</li>
+        <li>Disposable cylinders may <strong>not</strong> be refilled — it's a DOT violation.</li>
+        <li>Ship under DOT as "Refrigerant gas, n.o.s., 2.2."</li>
+      </ul>
+
+      <h3>Safety</h3>
+      <ul>
+        <li>Refrigerants are heavier than air — displace oxygen in low areas. Watch for asphyxiation.</li>
+        <li>At open flame, refrigerant decomposes into <strong>phosgene, hydrofluoric acid, hydrochloric acid</strong> — highly toxic.</li>
+        <li>Never use oxygen or compressed air to pressure-test a system with refrigerant — use dry nitrogen.</li>
+        <li>Wear safety glasses and butyl-lined gloves. Liquid refrigerant on skin causes frostbite.</li>
+      </ul>
+
+      <h3>Recovery equipment</h3>
+      <p>Equipment manufactured on or after <strong>November 15, 1993</strong> must be EPA-certified to meet ARI 740 standards. Techs must use certified equipment matched to the refrigerant type.</p>
+    </section>
+
+    <section class="block study-section sect-t1" id="type1">
+      <h2>
+        <span class="section-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40">
+            <rect x="5" y="10" width="30" height="22" fill="none" stroke="currentColor" stroke-width="2" rx="1.5"/>
+            <line x1="5" y1="16" x2="35" y2="16" stroke="currentColor" stroke-width="1.5"/>
+            <g stroke="currentColor" stroke-width="1.2">
+              <line x1="10" y1="20" x2="30" y2="20"/>
+              <line x1="10" y1="24" x2="30" y2="24"/>
+              <line x1="10" y1="28" x2="30" y2="28"/>
+            </g>
+            <circle cx="31" cy="13" r="1" fill="currentColor"/>
+          </svg>
+        </span>Type I — Small Appliances
+      </h2>
+      <p><span class="sect-badge">small &amp; sealed · ≤5 lb charge</span></p>
+
+      <h3>What qualifies</h3>
+      <p>Fully manufactured, hermetically sealed, factory-charged systems containing <strong>5 lbs or less</strong> of refrigerant:</p>
+      <ul>
+        <li>Household refrigerators and freezers</li>
+        <li>Window A/C units and packaged terminal A/C</li>
+        <li>Vending machines, water coolers, dehumidifiers</li>
+        <li>Small heat pumps (under the weight threshold)</li>
+      </ul>
+
+      <h3>Recovery requirements</h3>
+      <ul>
+        <li>If using <strong>self-contained</strong> (active) recovery: achieve 90% of refrigerant (80% if compressor inoperative) or 4 in. Hg vacuum.</li>
+        <li>If using <strong>system-dependent</strong> (passive) recovery: 4 in. Hg after two separate access points.</li>
+        <li>System-dependent recovery is <em>only</em> allowed for small appliances.</li>
+      </ul>
+
+      <h3>Access methods</h3>
+      <ul>
+        <li><strong>Saddle valves</strong> (piercing-type) are commonly installed on the process tube for recovery access.</li>
+        <li>After service, a process stub must be <strong>pinched off and brazed</strong> shut — not left with the saddle valve.</li>
+      </ul>
+
+      <h3>Disposal</h3>
+      <p>The final person in the disposal chain is responsible for ensuring refrigerant is recovered before the appliance is scrapped. A signed statement that recovery was performed may be accepted from the previous party.</p>
+    </section>
+
+    <section class="block study-section sect-t2" id="type2">
+      <h2>
+        <span class="section-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40">
+            <circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="20" cy="20" r="1.8" fill="currentColor"/>
+            <line x1="20" y1="20" x2="28" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <g stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+              <line x1="20" y1="7" x2="20" y2="10"/>
+              <line x1="33" y1="20" x2="30" y2="20"/>
+              <line x1="7" y1="20" x2="10" y2="20"/>
+              <line x1="11" y1="11" x2="13" y2="13"/>
+              <line x1="29" y1="11" x2="27" y2="13"/>
+            </g>
+          </svg>
+        </span>Type II — High-Pressure
+      </h2>
+      <p><span class="sect-badge">high pressure · the everyday cert</span></p>
+
+      <h3>What qualifies</h3>
+      <p>Equipment that uses a refrigerant with a boiling point between <strong>-50 °C and 10 °C</strong> at atmospheric pressure — high-pressure refrigerants like R-22, R-410A, R-404A, R-134a, R-407C. Examples:</p>
+      <ul>
+        <li>Residential central A/C and heat pumps</li>
+        <li>Supermarket refrigeration racks</li>
+        <li>Commercial ice machines</li>
+        <li>Reach-in coolers and freezers over 5 lbs</li>
+      </ul>
+      <p>Very-high-pressure (R-410A, R-13, R-503) is grouped with Type II on the exam.</p>
+
+      <h3>Recovery vacuum targets</h3>
+      <table class="data">
+        <thead><tr><th>Appliance</th><th>Recovery target</th></tr></thead>
+        <tbody>
+          <tr><td>High-pressure, &lt;200 lbs</td><td>0 psig</td></tr>
+          <tr><td>High-pressure, ≥200 lbs</td><td>10 in. Hg vacuum</td></tr>
+          <tr><td>Very-high-pressure</td><td>0 psig</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Leak detection</h3>
+      <ul>
+        <li><strong>Electronic leak detectors</strong> — fast, but false-trip near cleaners/solvents.</li>
+        <li><strong>Ultrasonic detectors</strong> — catch leaks by sound; helpful in noisy plant rooms only if tuned.</li>
+        <li><strong>Soap bubbles</strong> — cheap, reliable, won't find small leaks.</li>
+        <li><strong>Halide torch</strong> — old, detects Cl-based refrigerants only (not HFCs).</li>
+        <li><strong>Fluorescent dye + UV light</strong> — persistent, good for intermittent leaks.</li>
+        <li><strong>Standing pressure test</strong> with dry nitrogen (never O₂) &amp; a small trace of refrigerant.</li>
+      </ul>
+
+      <h3>Dehydration (evacuation)</h3>
+      <p>After repair and before recharging, evacuate to remove moisture and non-condensables. <strong>500 microns</strong> is the typical field target. A <strong>deep vacuum of 500 microns held for 10 minutes</strong> with the pump isolated indicates the system is dry and tight.</p>
+
+      <h3>Retrofits</h3>
+      <ul>
+        <li>R-22 → R-407C or R-422 series for existing equipment (mineral oil → POE usually required).</li>
+        <li>Never mix refrigerants of different types. Never top off a blended refrigerant with vapor — charge as liquid to preserve the blend ratio (critical for R-410A, R-407C).</li>
+        <li><strong>Zeotropic blends</strong> (400 series) have temperature glide — always charge as liquid.</li>
+        <li><strong>Azeotropic blends</strong> (500 series) behave like a single refrigerant — no glide.</li>
+      </ul>
+    </section>
+
+    <section class="block study-section sect-t3" id="type3">
+      <h2>
+        <span class="section-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40">
+            <g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
+              <line x1="20" y1="6" x2="20" y2="34"/>
+              <line x1="6" y1="20" x2="34" y2="20"/>
+              <line x1="10" y1="10" x2="30" y2="30"/>
+              <line x1="30" y1="10" x2="10" y2="30"/>
+            </g>
+            <g stroke="currentColor" stroke-width="1.4" fill="none">
+              <polyline points="17,9 20,6 23,9"/>
+              <polyline points="17,31 20,34 23,31"/>
+              <polyline points="9,17 6,20 9,23"/>
+              <polyline points="31,17 34,20 31,23"/>
+            </g>
+          </svg>
+        </span>Type III — Low-Pressure
+      </h2>
+      <p><span class="sect-badge">low pressure · vacuum-side chillers</span></p>
+
+      <h3>What qualifies</h3>
+      <p>Equipment using refrigerant with a <strong>boiling point above 10 °C</strong> at atmospheric pressure. Examples:</p>
+      <ul>
+        <li>R-11, R-113, R-123</li>
+        <li>Large centrifugal chillers</li>
+      </ul>
+      <p>Low-pressure systems operate in a <strong>vacuum</strong> on the low side — any leak pulls <em>air and moisture in</em>, not refrigerant out.</p>
+
+      <h3>Recovery target</h3>
+      <p><strong>25 mm Hg absolute</strong> (≈ 29 in. Hg vacuum).</p>
+
+      <h3>Purge units</h3>
+      <p>Because low-pressure systems operate under vacuum, air and moisture collect in the condenser. A <strong>purge unit</strong> removes non-condensables. Modern (high-efficiency) purge units lose less than <strong>0.1 lb of refrigerant per lb of air purged</strong>.</p>
+
+      <h3>Water box &amp; pressure</h3>
+      <ul>
+        <li>To speed recovery, warm the refrigerant to <strong>no more than 150 °F</strong> — heating blankets only, never an open flame.</li>
+        <li>A <strong>rupture disk</strong> set at 15 psig protects low-pressure vessels.</li>
+        <li>During recovery, watch the disk — pressure rising toward 15 psig means non-condensables are building up.</li>
+      </ul>
+
+      <h3>Leak testing low-pressure systems</h3>
+      <p>Pressure-test at no more than <strong>10 psig</strong>, using nitrogen (with a trace of refrigerant if needed). Over-pressurizing can rupture the vessel.</p>
+    </section>
+
+    <section class="block study-section" id="test-day">
+      <h2>
+        <span class="section-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40">
+            <rect x="9" y="6" width="22" height="30" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/>
+            <rect x="14" y="3" width="12" height="6" rx="1" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+              <polyline points="13,16 15,18 18,14"/>
+              <line x1="20" y1="16" x2="28" y2="16"/>
+              <polyline points="13,24 15,26 18,22"/>
+              <line x1="20" y1="24" x2="28" y2="24"/>
+              <polyline points="13,32 15,34 18,30"/>
+              <line x1="20" y1="32" x2="28" y2="32"/>
+            </g>
+          </svg>
+        </span>Test-day tips
+      </h2>
+      <p><span class="sect-badge">strategy · independent of section</span></p>
+      <ul>
+        <li><strong>Read every choice</strong>. On 608 questions, two choices are often technically correct but one is more complete — pick the most specific.</li>
+        <li>Watch for "always," "never," and "only" — absolute qualifiers are usually wrong unless the rule is truly absolute (like the venting prohibition).</li>
+        <li>Know your pressures: 0 psig, 10 in. Hg, 25 mm Hg, 15 psig, 500 microns, 80% fill.</li>
+        <li>Know the dates: 1987 Montreal Protocol, 1992 CFC/HCFC venting ban, 1993 recovery equipment cert, 1995 HFC venting ban, 2020 R-22 production ban.</li>
+        <li>If you're guessing, eliminate anything that would release refrigerant to atmosphere — that answer is almost never right.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <div class="sources">
+        <h3>Where this material comes from</h3>
+        <ul>
+          <li><code>40 CFR Part 82, Subpart F</code> — regulatory text for venting, recovery, leak-repair thresholds, sales restriction, and technician certification.</li>
+          <li><strong>ASHRAE Standard 34</strong> — refrigerant designation and A/B toxicity + 1/2L/2/3 flammability classifications.</li>
+          <li><strong>AHRI Standard 700</strong> — the reclaimed-refrigerant purity spec that defines "reclaim" vs "recycle."</li>
+          <li><strong>ARI 740</strong> — performance spec for EPA-certified recovery and recycling equipment.</li>
+          <li><strong>49 CFR 173</strong> — DOT rules covering the 80% fill limit, 5-year retest, and cylinder marking.</li>
+          <li>Montreal Protocol (1987) and the Clean Air Act (Sections 608 &amp; 609) for the legal framework.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="container">
+      Always confirm against the current
+      <a href="https://www.epa.gov/section608" target="_blank" rel="noopener">EPA Section 608 regulations</a>.
+    </div>
+  </footer>
+
+  <script src="game.js"></script>
+  <script src="fx.js"></script>
+  <script src="stats.js"></script>
+</body>
+</html>

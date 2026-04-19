@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protean — free Section 608 prep for the R-32 / R-454B era</title>
+  <meta name="description" content="Protean is a free, no-account study site for the Section 608 refrigerant certification, updated for the low-GWP era: R-32, R-454B, and R-1234yf.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">
+          <svg viewBox="0 0 44 48" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoHex" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e08148"/>
+                <stop offset="0.45" stop-color="#a5431b"/>
+                <stop offset="1" stop-color="#6b2708"/>
+              </linearGradient>
+              <linearGradient id="logoInner" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fffaee"/>
+                <stop offset="1" stop-color="#f0e2c1"/>
+              </linearGradient>
+            </defs>
+            <polygon points="22,3 40,13 40,35 22,45 4,35 4,13" fill="url(#logoHex)" stroke="#1d1810" stroke-width="1.5" stroke-linejoin="round"/>
+            <polygon points="22,3 40,13 22,23 4,13" fill="#fff" opacity="0.12"/>
+            <polygon points="22,9 35,16 35,32 22,39 9,32 9,16" fill="url(#logoInner)" stroke="#3a2f22" stroke-width="0.9"/>
+            <circle cx="16.5" cy="20" r="3.1" fill="#7ab89a" stroke="#1d1810" stroke-width="0.7"/>
+            <circle cx="27.5" cy="20" r="3.1" fill="#8bbfc3" stroke="#1d1810" stroke-width="0.7"/>
+            <circle cx="22" cy="29" r="3.1" fill="#e4536b" stroke="#1d1810" stroke-width="0.7"/>
+            <text x="22" y="14.2" font-family="ui-monospace,monospace" font-size="2.4" font-weight="700" fill="#fdf1de" text-anchor="middle" letter-spacing="0.35">PROTEAN</text>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Protean</span>
+          <span class="brand-tag">R-32 · R-454B · R-1234yf</span>
+        </span>
+      </a>
+      <nav class="primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="study.html">Study</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="practice.html">Practice</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+      <div id="stats-bar"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-split">
+        <div>
+          <h1>So you're taking
+            <span class="underline-doodle">the 608.
+              <svg viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M 2 7 Q 40 2, 80 6 T 158 6 Q 180 8, 198 5" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </h1>
+          <p class="lead">
+            <strong>Protean</strong> is a free study site for the Section 608 refrigerant-handling exam, updated for the <strong>low-GWP era</strong> — R-32, R-454B, and R-1234yf. No account. No email. No pop-up asking if you want a $99 study packet. Just the study guide, a stack of flashcards, and a practice quiz you can filter by section.
+          </p>
+        </div>
+        <div class="tool-row">
+          <div class="tool-col">
+            <svg viewBox="0 0 120 160" aria-hidden="true">
+              <rect x="34" y="12" width="52" height="8" rx="1.5" fill="#4a3a25" stroke="#1d1810" stroke-width="1.5"/>
+              <rect x="48" y="4" width="24" height="10" rx="1.5" fill="#6b5d3c" stroke="#1d1810" stroke-width="1.5"/>
+              <path d="M 54 4 L 54 0 L 66 0 L 66 4" fill="none" stroke="#1d1810" stroke-width="1.5"/>
+              <path d="M 30 22 Q 30 18, 34 18 L 86 18 Q 90 18, 90 22 L 90 30 Q 90 34, 86 34 L 34 34 Q 30 34, 30 30 Z" fill="#d9a21b" stroke="#1d1810" stroke-width="1.5"/>
+              <rect x="28" y="34" width="64" height="116" rx="2" fill="#8b8279" stroke="#1d1810" stroke-width="1.5"/>
+              <rect x="28" y="34" width="64" height="116" rx="2" fill="url(#cylShade)" opacity="0.45"/>
+              <defs>
+                <linearGradient id="cylShade" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#000" stop-opacity="0.3"/>
+                  <stop offset="0.3" stop-color="#fff" stop-opacity="0.3"/>
+                  <stop offset="1" stop-color="#000" stop-opacity="0.35"/>
+                </linearGradient>
+              </defs>
+              <rect x="36" y="70" width="48" height="34" fill="#fffaee" stroke="#1d1810" stroke-width="1"/>
+              <text x="60" y="84" font-family="Georgia, serif" font-size="8" fill="#1d1810" text-anchor="middle" font-weight="bold">RECOVERY</text>
+              <text x="60" y="95" font-family="Georgia, serif" font-size="6" fill="#6e6148" text-anchor="middle">DOT 4BW</text>
+              <text x="60" y="102" font-family="Georgia, serif" font-size="6" fill="#a5431b" text-anchor="middle">80% MAX</text>
+              <ellipse cx="60" cy="150" rx="32" ry="4" fill="#3a2f22"/>
+              <line x1="28" y1="44" x2="92" y2="44" stroke="#1d1810" stroke-width="0.5" opacity="0.4"/>
+              <line x1="28" y1="140" x2="92" y2="140" stroke="#1d1810" stroke-width="0.5" opacity="0.4"/>
+            </svg>
+            <div class="tool-cap">cylinder</div>
+          </div>
+
+          <div class="tool-col">
+            <svg class="gauge-hero" viewBox="0 0 200 200" aria-hidden="true" style="max-width: 100%;">
+              <defs>
+                <linearGradient id="gaugeFace" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#fffaee"/>
+                  <stop offset="1" stop-color="#f0e4c9"/>
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="92" fill="#3a2f22" stroke="#1d1810" stroke-width="2"/>
+              <circle cx="100" cy="100" r="82" fill="url(#gaugeFace)" stroke="#1d1810" stroke-width="1.5"/>
+              <path d="M 35 130 A 72 72 0 0 1 75 50" stroke="#5e7a3a" stroke-width="7" fill="none" stroke-linecap="butt"/>
+              <path d="M 75 50 A 72 72 0 0 1 135 55" stroke="#d9a21b" stroke-width="7" fill="none"/>
+              <path d="M 135 55 A 72 72 0 0 1 165 130" stroke="#a5431b" stroke-width="7" fill="none" stroke-linecap="butt"/>
+              <g stroke="#1d1810" stroke-width="1.5" stroke-linecap="round">
+                <line x1="100" y1="30" x2="100" y2="40"/>
+                <line x1="40" y1="60" x2="48" y2="66"/>
+                <line x1="160" y1="60" x2="152" y2="66"/>
+                <line x1="30" y1="100" x2="40" y2="100"/>
+                <line x1="170" y1="100" x2="160" y2="100"/>
+                <line x1="45" y1="140" x2="53" y2="134"/>
+                <line x1="155" y1="140" x2="147" y2="134"/>
+              </g>
+              <g font-family="Georgia, serif" font-size="10" fill="#1d1810" text-anchor="middle">
+                <text x="45" y="155">0</text>
+                <text x="100" y="22">250</text>
+                <text x="155" y="155">500</text>
+              </g>
+              <text x="100" y="145" font-family="Georgia, serif" font-size="9" fill="#6b5d3c" text-anchor="middle" letter-spacing="2">PSIG</text>
+              <line x1="100" y1="100" x2="138" y2="58" stroke="#a5431b" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="100" cy="100" r="7" fill="#1d1810"/>
+              <circle cx="100" cy="100" r="3" fill="#a5431b"/>
+            </svg>
+            <div class="tool-cap">gauge</div>
+          </div>
+
+          <div class="tool-col">
+            <svg viewBox="0 0 80 160" aria-hidden="true">
+              <rect x="32" y="12" width="16" height="100" rx="1" fill="#fffaee" stroke="#1d1810" stroke-width="1.5"/>
+              <circle cx="40" cy="130" r="18" fill="#fffaee" stroke="#1d1810" stroke-width="1.5"/>
+              <rect x="34" y="52" width="12" height="78" fill="#c23b22"/>
+              <circle cx="40" cy="130" r="14" fill="#c23b22"/>
+              <g stroke="#1d1810" stroke-width="1" stroke-linecap="round">
+                <line x1="48" y1="22" x2="56" y2="22"/>
+                <line x1="48" y1="32" x2="52" y2="32"/>
+                <line x1="48" y1="42" x2="52" y2="42"/>
+                <line x1="48" y1="52" x2="56" y2="52"/>
+                <line x1="48" y1="62" x2="52" y2="62"/>
+                <line x1="48" y1="72" x2="52" y2="72"/>
+                <line x1="48" y1="82" x2="56" y2="82"/>
+                <line x1="48" y1="92" x2="52" y2="92"/>
+                <line x1="48" y1="102" x2="52" y2="102"/>
+              </g>
+              <g font-family="Georgia, serif" font-size="6" fill="#1d1810">
+                <text x="58" y="24">100</text>
+                <text x="58" y="54">50</text>
+                <text x="58" y="84">0</text>
+              </g>
+              <circle cx="40" cy="130" r="4" fill="#1d1810" opacity="0.3"/>
+            </svg>
+            <div class="tool-cap">therm.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <p>
+        The 608 is pass-at-70% for each section. Most people who fail don't fail because the material is hard — they fail because the test is full of specific numbers and dates that you either remember or you don't. <strong>80% cylinder fill. 25 mm Hg for low-pressure recovery. 150 °F warming limit.</strong> Drill them here until they stop slipping.
+      </p>
+
+      <div class="note">
+        <span class="note-label">heads up</span>
+        There are streaks, XP, and mini-games baked in. That's because sitting with refrigerant regulations for three hours straight is deadly boring, and a little dopamine helps. Sound is muted by default — toggle in the top right if you want the chime.
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>What's here</h2>
+      <ul class="plain">
+        <li>
+          <span class="item-title"><a href="study.html">Study guide</a></span> —
+          every section of the exam in the order you'd actually read them (Core first; it underpins everything else).
+        </li>
+        <li>
+          <span class="item-title"><a href="flashcards.html">Flashcards</a></span> —
+          36 cards for the numbers and dates you need to just <em>know</em>: pressures, leak-rate thresholds, cylinder colors, the venting-ban years.
+        </li>
+        <li>
+          <span class="item-title"><a href="practice.html">Practice quiz</a></span> —
+          44 questions with an explanation on every one. Filter by section, review what you missed, come back as often as you want.
+        </li>
+        <li>
+          <span class="item-title"><a href="practice.html?mode=daily">Daily drill</a></span> —
+          five rotating questions per day. Small commitment, compounds over a week.
+        </li>
+        <li>
+          <span class="item-title"><a href="practice.html?mode=lightning">60-second round</a></span> —
+          speed drill. Right answer buys you +1 second, wrong answer costs 2. Your personal best gets tracked. Don't blame me if you get competitive with yourself.
+        </li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <div class="about-card">
+        <h3>About Protean</h3>
+        <dl>
+          <dt>Who made it</dt>
+          <dd>One person who sat the 608 and wanted the study material they wished they'd had: short, honest, and free. No company, no course to upsell, no email list waiting behind the Start button.</dd>
+          <dt>Where the content comes from</dt>
+          <dd>The regulatory text lives in <code>40 CFR Part 82, Subpart F</code>. Refrigerant classifications come from ASHRAE Standard 34; reclamation purity from AHRI 700; cylinder rules from 49 CFR 173 and DOT. Anywhere a number or date appears, it traces back to one of those.</dd>
+          <dt>What I claim</dt>
+          <dd>That the questions mirror the style and topic coverage of the real exam, and that every answer has a citation you can verify. Not that you'll pass — that part is on you.</dd>
+          <dt>What I don't do</dt>
+          <dd>No tracking scripts. No analytics. No ads. Your progress, streaks, and XP all live in your browser's local storage — clear site data and it's gone. Nothing leaves your machine.</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>A short primer, if you're new to this</h2>
+      <p>
+        EPA Section 608 certifies technicians to handle refrigerants in stationary equipment (anything that's not a car — cars are 609). You pick a type based on what you're going to work on:
+      </p>
+      <ul class="plain">
+        <li><strong>Core</strong> is required for everyone. It covers the law, the environmental side, cylinders, recovery vs recycling vs reclamation, and safety. Pass this and you've cleared the foundation.</li>
+        <li><strong>Type I</strong> is small appliances — anything hermetically sealed with 5 lb or less of refrigerant. Window A/C, fridges, water coolers, vending machines.</li>
+        <li><strong>Type II</strong> is high-pressure. Residential and light commercial A/C, heat pumps, supermarket racks. This is the bread-and-butter cert for most field techs.</li>
+        <li><strong>Type III</strong> is low-pressure chillers (R-11, R-123). Big centrifugal machines in commercial buildings. Narrower use, but distinct enough that it has its own exam section.</li>
+      </ul>
+      <p>
+        Pass all four and you're <strong>Universal</strong>. No separate universal exam — it just means you cleared every section.
+      </p>
+    </section>
+
+    <section class="block">
+      <div class="hvac-rule">
+        <svg viewBox="0 0 40 26" aria-hidden="true">
+          <path d="M 4 13 L 36 13" stroke="#8a5420" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="12" cy="13" r="3.5" fill="#7ab89a" stroke="#1d1810" stroke-width="1"/>
+          <circle cx="20" cy="13" r="3.5" fill="#8bbfc3" stroke="#1d1810" stroke-width="1"/>
+          <circle cx="28" cy="13" r="3.5" fill="#e4536b" stroke="#1d1810" stroke-width="1"/>
+        </svg>
+        <span class="tag">the modern lineup</span>
+      </div>
+      <h2>Three refrigerants taking over right now</h2>
+      <p>The AIM Act's 85% HFC phasedown is mid-ramp, and manufacturers have already settled on the replacements. Expect to see these on the exam and on every new install you touch.</p>
+      <div class="modern-lineup">
+        <div class="modern-card">
+          <svg viewBox="0 0 80 110" aria-hidden="true">
+            <rect x="28" y="4" width="24" height="6" rx="1" fill="#3a2f22"/>
+            <path d="M 22 10 Q 22 6, 26 6 L 54 6 Q 58 6, 58 10 L 58 18 Q 58 22, 54 22 L 26 22 Q 22 22, 22 18 Z" fill="#7ab89a" stroke="#1d1810" stroke-width="1"/>
+            <rect x="20" y="22" width="40" height="82" rx="1" fill="#7ab89a" stroke="#1d1810" stroke-width="1"/>
+            <rect x="24" y="44" width="32" height="30" fill="#fffaee" stroke="#1d1810" stroke-width="0.5"/>
+            <text x="40" y="60" font-family="Georgia, serif" font-size="10" font-weight="bold" fill="#1d1810" text-anchor="middle">R-32</text>
+            <text x="40" y="70" font-family="Georgia, serif" font-size="5" fill="#6e6148" text-anchor="middle">HFC · A2L</text>
+          </svg>
+          <div class="mc-name"><span class="ref-dot r32"></span>R-32</div>
+          <div class="mc-class">Single-component HFC</div>
+          <div class="mc-body">Daikin's bet and increasingly the global residential mini-split standard. Higher capacity per pound than R-410A and easier to reclaim because it's a pure compound.</div>
+          <div class="mc-stats">
+            <dl><dt>GWP</dt><dd class="stat-val">675</dd></dl>
+            <dl><dt>Safety</dt><dd class="stat-val">A2L</dd></dl>
+          </div>
+        </div>
+
+        <div class="modern-card">
+          <svg viewBox="0 0 80 110" aria-hidden="true">
+            <rect x="28" y="4" width="24" height="6" rx="1" fill="#3a2f22"/>
+            <path d="M 22 10 Q 22 6, 26 6 L 54 6 Q 58 6, 58 10 L 58 18 Q 58 22, 54 22 L 26 22 Q 22 22, 22 18 Z" fill="#8bbfc3" stroke="#1d1810" stroke-width="1"/>
+            <rect x="20" y="22" width="40" height="82" rx="1" fill="#8bbfc3" stroke="#1d1810" stroke-width="1"/>
+            <rect x="24" y="44" width="32" height="30" fill="#fffaee" stroke="#1d1810" stroke-width="0.5"/>
+            <text x="40" y="58" font-family="Georgia, serif" font-size="8" font-weight="bold" fill="#1d1810" text-anchor="middle">R-454B</text>
+            <text x="40" y="70" font-family="Georgia, serif" font-size="5" fill="#6e6148" text-anchor="middle">HFC/HFO · A2L</text>
+          </svg>
+          <div class="mc-name"><span class="ref-dot r454b"></span>R-454B</div>
+          <div class="mc-class">HFC/HFO blend</div>
+          <div class="mc-body">Carrier, Trane, and Lennox chose this as their R-410A successor for U.S. residential and light-commercial split systems. Branded "Puron Advance" and "XL41."</div>
+          <div class="mc-stats">
+            <dl><dt>GWP</dt><dd class="stat-val">466</dd></dl>
+            <dl><dt>Safety</dt><dd class="stat-val">A2L</dd></dl>
+          </div>
+        </div>
+
+        <div class="modern-card">
+          <svg viewBox="0 0 80 110" aria-hidden="true">
+            <rect x="28" y="4" width="24" height="6" rx="1" fill="#3a2f22"/>
+            <path d="M 22 10 Q 22 6, 26 6 L 54 6 Q 58 6, 58 10 L 58 18 Q 58 22, 54 22 L 26 22 Q 22 22, 22 18 Z" fill="#e4536b" stroke="#1d1810" stroke-width="1"/>
+            <rect x="20" y="22" width="40" height="82" rx="1" fill="#e4536b" stroke="#1d1810" stroke-width="1"/>
+            <rect x="24" y="44" width="32" height="30" fill="#fffaee" stroke="#1d1810" stroke-width="0.5"/>
+            <text x="40" y="58" font-family="Georgia, serif" font-size="7" font-weight="bold" fill="#1d1810" text-anchor="middle">R-1234yf</text>
+            <text x="40" y="70" font-family="Georgia, serif" font-size="5" fill="#6e6148" text-anchor="middle">HFO · A2L</text>
+          </svg>
+          <div class="mc-name"><span class="ref-dot r1234yf"></span>R-1234yf</div>
+          <div class="mc-class">Hydrofluoroolefin (HFO)</div>
+          <div class="mc-body">The mandated replacement for R-134a in U.S. passenger-vehicle A/C since 2021. Also showing up in supermarket refrigeration and specialty chillers. GWP less than CO₂.</div>
+          <div class="mc-stats">
+            <dl><dt>GWP</dt><dd class="stat-val">&lt;1</dd></dl>
+            <dl><dt>Safety</dt><dd class="stat-val">A2L</dd></dl>
+          </div>
+        </div>
+      </div>
+      <p class="small muted">All three are <strong>A2L</strong> — lower flammability, low toxicity. A2Ls need tighter leak detection, charge limits, and service habits than legacy A1 refrigerants. The Core section of the exam now tests on them.</p>
+    </section>
+
+    <section class="block">
+      <div class="hvac-rule">
+        <svg viewBox="0 0 40 26" aria-hidden="true">
+          <circle cx="20" cy="13" r="8" fill="#d9a96b" stroke="#8a5420" stroke-width="1.5"/>
+          <circle cx="20" cy="13" r="3" fill="#8a5420"/>
+          <line x1="20" y1="0" x2="20" y2="5" stroke="#8a5420" stroke-width="2"/>
+          <line x1="20" y1="21" x2="20" y2="26" stroke="#8a5420" stroke-width="2"/>
+        </svg>
+        <span class="tag">legacy refrigerants</span>
+      </div>
+      <h2>The four legacy refrigerants still on the test</h2>
+      <p>These are being phased down, but the exam still leans on them — they're what's in the equipment you'll actually service for the next decade. Cylinders are color-coded; you won't be quizzed on colors, but recognizing them helps in diagrams and in the field.</p>
+      <div class="refrigerant-lineup">
+        <div class="cylinder-card">
+          <svg viewBox="0 0 80 110" aria-hidden="true">
+            <rect x="28" y="4" width="24" height="6" rx="1" fill="#3a2f22"/>
+            <path d="M 22 10 Q 22 6, 26 6 L 54 6 Q 58 6, 58 10 L 58 18 Q 58 22, 54 22 L 26 22 Q 22 22, 22 18 Z" fill="#5e7a3a" stroke="#1d1810" stroke-width="1"/>
+            <rect x="20" y="22" width="40" height="82" rx="1" fill="#5e7a3a" stroke="#1d1810" stroke-width="1"/>
+            <rect x="24" y="44" width="32" height="30" fill="#fffaee" stroke="#1d1810" stroke-width="0.5"/>
+            <text x="40" y="60" font-family="Georgia, serif" font-size="10" font-weight="bold" fill="#1d1810" text-anchor="middle">R-22</text>
+            <text x="40" y="70" font-family="Georgia, serif" font-size="5" fill="#6e6148" text-anchor="middle">HCFC</text>
+          </svg>
+          <div class="name"><span class="ref-dot r22"></span>R-22</div>
+          <div class="sub">HCFC · A/C legacy<br>Prod. banned 2020</div>
+        </div>
+
+        <div class="cylinder-card">
+          <svg viewBox="0 0 80 110" aria-hidden="true">
+            <rect x="28" y="4" width="24" height="6" rx="1" fill="#3a2f22"/>
+            <path d="M 22 10 Q 22 6, 26 6 L 54 6 Q 58 6, 58 10 L 58 18 Q 58 22, 54 22 L 26 22 Q 22 22, 22 18 Z" fill="#c86578" stroke="#1d1810" stroke-width="1"/>
+            <rect x="20" y="22" width="40" height="82" rx="1" fill="#c86578" stroke="#1d1810" stroke-width="1"/>
+            <rect x="24" y="44" width="32" height="30" fill="#fffaee" stroke="#1d1810" stroke-width="0.5"/>
+            <text x="40" y="58" font-family="Georgia, serif" font-size="8" font-weight="bold" fill="#1d1810" text-anchor="middle">R-410A</text>
+            <text x="40" y="70" font-family="Georgia, serif" font-size="5" fill="#6e6148" text-anchor="middle">HFC blend</text>
+          </svg>
+          <div class="name"><span class="ref-dot r410a"></span>R-410A</div>
+          <div class="sub">HFC blend · A/C<br>Charge as liquid</div>
+        </div>
+
+        <div class="cylinder-card">
+          <svg viewBox="0 0 80 110" aria-hidden="true">
+            <rect x="28" y="4" width="24" height="6" rx="1" fill="#3a2f22"/>
+            <path d="M 22 10 Q 22 6, 26 6 L 54 6 Q 58 6, 58 10 L 58 18 Q 58 22, 54 22 L 26 22 Q 22 22, 22 18 Z" fill="#3a7fae" stroke="#1d1810" stroke-width="1"/>
+            <rect x="20" y="22" width="40" height="82" rx="1" fill="#3a7fae" stroke="#1d1810" stroke-width="1"/>
+            <rect x="24" y="44" width="32" height="30" fill="#fffaee" stroke="#1d1810" stroke-width="0.5"/>
+            <text x="40" y="58" font-family="Georgia, serif" font-size="8" font-weight="bold" fill="#1d1810" text-anchor="middle">R-134a</text>
+            <text x="40" y="70" font-family="Georgia, serif" font-size="5" fill="#6e6148" text-anchor="middle">HFC</text>
+          </svg>
+          <div class="name"><span class="ref-dot r134a"></span>R-134a</div>
+          <div class="sub">HFC · MVAC, chillers<br>Zero ODP</div>
+        </div>
+
+        <div class="cylinder-card">
+          <svg viewBox="0 0 80 110" aria-hidden="true">
+            <rect x="28" y="4" width="24" height="6" rx="1" fill="#3a2f22"/>
+            <path d="M 22 10 Q 22 6, 26 6 L 54 6 Q 58 6, 58 10 L 58 18 Q 58 22, 54 22 L 26 22 Q 22 22, 22 18 Z" fill="#8b8279" stroke="#1d1810" stroke-width="1"/>
+            <rect x="20" y="22" width="40" height="82" rx="1" fill="#8b8279" stroke="#1d1810" stroke-width="1"/>
+            <rect x="24" y="44" width="32" height="30" fill="#fffaee" stroke="#1d1810" stroke-width="0.5"/>
+            <text x="40" y="58" font-family="Georgia, serif" font-size="9" font-weight="bold" fill="#1d1810" text-anchor="middle">R-123</text>
+            <text x="40" y="70" font-family="Georgia, serif" font-size="5" fill="#6e6148" text-anchor="middle">HCFC · B1</text>
+          </svg>
+          <div class="name"><span class="ref-dot r123"></span>R-123</div>
+          <div class="sub">HCFC · low-press. chiller<br>Toxicity class B1</div>
+        </div>
+      </div>
+      <p class="small muted">Gray-bodied <strong>recovery</strong> cylinders (yellow tops, DOT 4BA/4BW) look different — they're for pulling refrigerant <em>out</em>, not storing virgin product.</p>
+    </section>
+
+    <section class="block">
+      <div class="hvac-rule">
+        <svg viewBox="0 0 40 26" aria-hidden="true">
+          <rect x="6" y="9" width="28" height="8" fill="#d9a96b" stroke="#8a5420" stroke-width="1.2"/>
+          <rect x="4" y="6" width="4" height="14" fill="#8a5420"/>
+          <rect x="32" y="6" width="4" height="14" fill="#8a5420"/>
+        </svg>
+        <span class="tag">fact sheet</span>
+      </div>
+      <h2>The six facts you should know cold before touching the practice test</h2>
+      <dl class="kv">
+        <dt>Passing score</dt>
+        <dd>70% on each section. Core has 25 questions; each Type section has 25.</dd>
+        <dt>Venting ban</dt>
+        <dd>Knowingly venting refrigerant during service, repair, or disposal is illegal. Since 1992 for CFCs/HCFCs and 1995 for HFCs.</dd>
+        <dt>Three Rs</dt>
+        <dd>Recover = pull it out. Recycle = clean it on site. Reclaim = reprocess to AHRI 700 spec off site (the only refrigerant you can resell).</dd>
+        <dt>Cylinder fill limit</dt>
+        <dd>80% of water capacity, max. Liquid refrigerant expands with heat and cylinders rupture when you push past that.</dd>
+        <dt>Pressure test gas</dt>
+        <dd>Dry nitrogen only — never oxygen, never compressed air. Both can cause ignition or explosion in a refrigerant circuit.</dd>
+        <dt>Certification is for life</dt>
+        <dd>EPA 608 doesn't expire. Pass it once, you're done.</dd>
+      </dl>
+    </section>
+
+    <section class="block">
+      <h2>Questions people actually ask</h2>
+      <details class="faq">
+        <summary>Do I have to take a separate exam for every type?</summary>
+        <p>Yes. Core is one exam section; Type I, II, and III are each their own. You can sit them in one session or space them out. Pass all four and you're Universal — there's no separate Universal test.</p>
+      </details>
+      <details class="faq">
+        <summary>How long does the test take?</summary>
+        <p>Varies by proctor, but typical is 25 questions per section and around 30–45 minutes per section. The full Core + I + II + III usually fits in a single 2–3 hour sitting.</p>
+      </details>
+      <details class="faq">
+        <summary>Does the certification expire?</summary>
+        <p>No. EPA 608 is a lifetime certification. Pass it once and you're done — you don't need to recertify, even as the regulations update around you.</p>
+      </details>
+      <details class="faq">
+        <summary>Can I take it online?</summary>
+        <p>Type I can be taken online through a handful of EPA-approved providers (Mainstream Engineering and ESCO both offer this). Types II and III require an in-person proctor. The Resources page has the common options.</p>
+      </details>
+      <details class="faq">
+        <summary>Is this site officially affiliated with the EPA?</summary>
+        <p>No — and it can't be. The EPA doesn't endorse prep material; they only approve the organizations that administer the test. This is third-party study material, same category as any book or YouTube series.</p>
+      </details>
+      <details class="faq">
+        <summary>What happens to my progress data?</summary>
+        <p>It stays in your browser's <code>localStorage</code> under the key <code>epa608_progress_v1</code>. Nothing is sent anywhere. There's no server collecting it. Clear your site data and it disappears.</p>
+      </details>
+    </section>
+
+    <section class="block">
+      <div class="sources">
+        <h3>Primary sources this site draws from</h3>
+        <ul>
+          <li><code>40 CFR Part 82, Subpart F</code> — the actual text of Section 608 (recovery, leak repair, technician certification, venting prohibition).</li>
+          <li><a href="https://www.epa.gov/section608" target="_blank" rel="noopener">epa.gov/section608</a> — EPA's landing page for the program and current rule updates.</li>
+          <li><strong>ASHRAE Standard 34</strong> — refrigerant designation and safety classification (A1, B2L, etc.).</li>
+          <li><strong>AHRI Standard 700</strong> — purity specification that reclaimed refrigerant must meet before resale.</li>
+          <li><strong>ARI 740</strong> — performance standards for recovery and recycling equipment.</li>
+          <li><strong>49 CFR 173</strong> — DOT rules for refrigerant cylinders (fill limits, retest intervals, labeling).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <p>Pick a starting point:</p>
+      <div class="cta">
+        <a class="btn primary" href="practice.html">Start a practice quiz</a>
+        <a class="btn" href="practice.html?mode=daily">Do today's daily drill</a>
+        <a class="btn" href="flashcards.html">Flip through flashcards</a>
+      </div>
+
+      <div class="makers-mark">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 20 Q 7 14, 10 16 T 16 12 T 22 8"/>
+          <circle cx="4" cy="20" r="1.2" fill="currentColor"/>
+          <path d="M15 4 L 20 9" opacity="0.6"/>
+        </svg>
+        <div>
+          <div>Built by one person who sat the exam. Questions pulled from <code>40 CFR Part 82</code> and ASHRAE 34. No tracking, no account, no catch.</div>
+          <div class="version-stamp">v1.0 · updated April 2026</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="container">
+      Content here is study material, not the exam itself. Always confirm rules against the current
+      <a href="https://www.epa.gov/section608" target="_blank" rel="noopener">EPA Section 608 regulations</a>.
+    </div>
+  </footer>
+
+  <script src="game.js"></script>
+  <script src="fx.js"></script>
+  <script src="stats.js"></script>
+  <script src="flashcards-data.js"></script>
+</body>
+</html>

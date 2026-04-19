@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Practice — Protean · R-32 / R-454B prep</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">
+          <svg viewBox="0 0 44 48" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoHex" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e08148"/>
+                <stop offset="0.45" stop-color="#a5431b"/>
+                <stop offset="1" stop-color="#6b2708"/>
+              </linearGradient>
+              <linearGradient id="logoInner" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fffaee"/>
+                <stop offset="1" stop-color="#f0e2c1"/>
+              </linearGradient>
+            </defs>
+            <polygon points="22,3 40,13 40,35 22,45 4,35 4,13" fill="url(#logoHex)" stroke="#1d1810" stroke-width="1.5" stroke-linejoin="round"/>
+            <polygon points="22,3 40,13 22,23 4,13" fill="#fff" opacity="0.12"/>
+            <polygon points="22,9 35,16 35,32 22,39 9,32 9,16" fill="url(#logoInner)" stroke="#3a2f22" stroke-width="0.9"/>
+            <circle cx="16.5" cy="20" r="3.1" fill="#7ab89a" stroke="#1d1810" stroke-width="0.7"/>
+            <circle cx="27.5" cy="20" r="3.1" fill="#8bbfc3" stroke="#1d1810" stroke-width="0.7"/>
+            <circle cx="22" cy="29" r="3.1" fill="#e4536b" stroke="#1d1810" stroke-width="0.7"/>
+            <text x="22" y="14.2" font-family="ui-monospace,monospace" font-size="2.4" font-weight="700" fill="#fdf1de" text-anchor="middle" letter-spacing="0.35">PROTEAN</text>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Protean</span>
+          <span class="brand-tag">R-32 · R-454B · R-1234yf</span>
+        </span>
+      </a>
+      <nav class="primary">
+        <a href="index.html">Home</a>
+        <a href="study.html">Study</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="practice.html" class="active">Practice</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+      <div id="stats-bar"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Practice</h1>
+      <p class="lead">Two ways to drill the material. Quick mini-games burn in the pressures, dates, and refrigerant classes. The full question quiz runs you through multiple-choice problems with an explanation on every one — read them even when you got the answer right, because the "why" is what actually sticks.</p>
+      <div class="cta">
+        <button class="btn" id="btn-start-daily">Today's daily drill (5 Qs)</button>
+        <button class="btn" id="btn-start-lightning">60-second speed round</button>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Mini-games</h2>
+      <div class="drill-hub">
+        <div class="drill-card sect-t2">
+          <svg class="drill-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="20" cy="20" r="1.8" fill="currentColor"/>
+            <line x1="20" y1="20" x2="28" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <g stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+              <line x1="20" y1="7" x2="20" y2="10"/>
+              <line x1="33" y1="20" x2="30" y2="20"/>
+              <line x1="7" y1="20" x2="10" y2="20"/>
+            </g>
+          </svg>
+          <h3>Pressure Match</h3>
+          <p>Given an equipment type, tap the right recovery target. Ten rounds, gauge animates to the answer.</p>
+          <div class="drill-meta">10 rounds · +50 XP if perfect</div>
+          <button class="btn primary" data-drill="pressureMatch">Start drill</button>
+        </div>
+
+        <div class="drill-card sect-core">
+          <svg class="drill-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <line x1="6" y1="30" x2="34" y2="30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <g fill="currentColor">
+              <circle cx="10" cy="30" r="2.5"/>
+              <circle cx="18" cy="30" r="2.5"/>
+              <circle cx="26" cy="30" r="2.5"/>
+              <circle cx="34" cy="30" r="2.5"/>
+            </g>
+            <g stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round">
+              <line x1="10" y1="30" x2="10" y2="20"/>
+              <line x1="18" y1="30" x2="18" y2="12"/>
+              <line x1="26" y1="30" x2="26" y2="16"/>
+              <line x1="34" y1="30" x2="34" y2="8"/>
+            </g>
+          </svg>
+          <h3>Timeline Order</h3>
+          <p>Five landmark dates — Montreal Protocol, venting bans, R-22 phaseout. Tap them earliest to latest without a miss.</p>
+          <div class="drill-meta">5 events · +40 XP if flawless</div>
+          <button class="btn primary" data-drill="timelineDrill">Start drill</button>
+        </div>
+
+        <div class="drill-card sect-t1">
+          <svg class="drill-icon" viewBox="0 0 40 40" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="6" width="12" height="10" rx="1.5"/>
+              <rect x="24" y="6" width="12" height="10" rx="1.5"/>
+              <rect x="4" y="24" width="12" height="10" rx="1.5"/>
+              <rect x="24" y="24" width="12" height="10" rx="1.5"/>
+            </g>
+          </svg>
+          <h3>Refrigerant Sort</h3>
+          <p>Ten refrigerants, four buckets: CFC, HCFC, HFC, HFO. Tap a refrigerant, then its class. Sort them all without a slip.</p>
+          <div class="drill-meta">10 refrigerants · +45 XP if perfect</div>
+          <button class="btn primary" data-drill="refrigerantSort">Start drill</button>
+        </div>
+      </div>
+
+      <div id="drill-stage" class="drill-stage"></div>
+    </section>
+
+    <section class="block">
+      <h2>Question quiz</h2>
+      <p class="small muted" style="margin-bottom:14px">A streak bar tracks consecutive correct answers. 5 in a row starts bonus XP; 10 doubles it. Wrong answer resets it.</p>
+
+      <div id="streak-meter"></div>
+
+      <div class="quiz-wrap">
+        <div class="quiz-controls">
+          <label>Section
+            <select id="f-section"></select>
+          </label>
+          <label>Questions
+            <input id="f-length" type="number" min="5" max="50" value="15">
+          </label>
+          <div class="progress"><span id="progress-bar"></span></div>
+          <span id="progress-text" style="color:var(--muted);font-size:.9rem;min-width:110px;text-align:right">0 / 0 answered</span>
+          <button class="btn" id="btn-reset">Restart</button>
+          <button class="btn" id="btn-missed" disabled>Only review missed</button>
+        </div>
+
+        <div id="quiz-area">
+          <div class="question-card">
+            <div class="question-meta">
+              <span id="q-section"></span>
+              <span id="q-index"></span>
+            </div>
+            <p class="question-stem" id="q-stem"></p>
+            <ul class="choices" id="q-choices"></ul>
+            <div class="explanation" id="q-explanation"></div>
+            <div class="actions">
+              <button class="btn" id="btn-prev">Back</button>
+              <button class="btn primary" id="btn-check">Check answer</button>
+              <button class="btn" id="btn-next">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="score-area" class="hide"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="container">
+      Practice material for study purposes only. Final exam is administered by approved
+      <a href="https://www.epa.gov/section608/how-become-section-608-certified-technician" target="_blank" rel="noopener">EPA 608 proctors</a>.
+    </div>
+  </footer>
+
+  <script src="game.js"></script>
+  <script src="fx.js"></script>
+  <script src="stats.js"></script>
+  <script src="questions.js"></script>
+  <script src="drills.js"></script>
+  <script src="quiz.js"></script>
+  <script>
+    document.querySelectorAll("[data-drill]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const key = btn.getAttribute("data-drill");
+        if (window.Drills && window.Drills[key]) {
+          window.Drills[key].mount();
+          document.getElementById("drill-stage").scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
