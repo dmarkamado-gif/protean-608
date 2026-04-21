@@ -1,23 +1,38 @@
 :root {
-  --bg: #f3e8ce;
-  --paper: #fbf4e2;
-  --paper-2: #f1e5c9;
-  --ink: #1d1810;
-  --ink-soft: #3a3124;
-  --muted: #6e6148;
-  --rule: #c9b993;
-  --rule-2: #d8c9a8;
-  --accent: #a5431b;      /* terracotta — heat side */
+  /* Blueprint + plant-room base */
+  --bg: #dde7ee;
+  --paper: #eaf0f4;
+  --paper-2: #d4dde4;
+  --ink: #15202a;
+  --ink-soft: #2e3c48;
+  --muted: #667585;
+  --rule: #b3c0cb;
+  --rule-2: #c6d0d9;
+
+  /* HVAC schematic palette */
+  --accent: #a5431b;          /* hot-supply terracotta */
   --accent-soft: #c06033;
-  --accent-deep: #8a3614;
-  --cool: #275f73;        /* slate teal — cold side */
+  --accent-deep: #7f2f0f;
+  --cool: #1d4e66;            /* chilled-water deep blue-teal */
   --cool-soft: #3d7a90;
-  --warn: #a3761b;
+  --cool-deep: #0f3446;
+  --copper: #b87333;          /* copper pipe */
+  --copper-soft: #d59353;
+  --copper-deep: #7f4a1a;
+  --brass: #c9a047;           /* brass fitting */
+  --blueprint: #13507a;       /* blueprint ink */
+  --steam: #e3752b;           /* steam orange */
+  --refrig-a1: #d65879;       /* safety class A1 rose */
+  --refrig-a2l: #a887c8;      /* safety class A2L purple */
+  --refrig-a3: #e03f3f;       /* safety class A3 red */
+  --warn: #c58a14;            /* caution yellow-amber */
+  --warn-soft: #e6b547;
   --err: #a02a22;
-  --ok:  #3f6f2c;
-  --shadow: 0 1px 0 rgba(90, 60, 20, 0.04), 0 2px 6px rgba(100, 80, 40, 0.08);
-  --shadow-lift: 0 1px 0 rgba(90, 60, 20, 0.04), 0 6px 18px rgba(100, 70, 30, 0.14), 0 2px 4px rgba(100, 70, 30, 0.06);
-  --shadow-deep: 0 10px 28px rgba(90, 60, 20, 0.18), 0 2px 6px rgba(90, 60, 20, 0.08);
+  --ok:  #3a6e33;             /* evaporator green */
+  --ok-soft: #5a9450;
+  --shadow: 0 1px 0 rgba(40, 60, 85, 0.04), 0 2px 6px rgba(40, 60, 85, 0.08);
+  --shadow-lift: 0 1px 0 rgba(40, 60, 85, 0.04), 0 6px 18px rgba(40, 60, 85, 0.14), 0 2px 4px rgba(40, 60, 85, 0.06);
+  --shadow-deep: 0 10px 28px rgba(30, 50, 80, 0.18), 0 2px 6px rgba(30, 50, 80, 0.08);
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -30,9 +45,10 @@ html, body { margin: 0; padding: 0; }
 body {
   font-family: var(--sans);
   background:
-    radial-gradient(1400px 700px at 12% -10%, #fbeecf 0%, transparent 55%),
-    radial-gradient(900px 500px at 95% 10%, #f6e3bf 0%, transparent 50%),
-    radial-gradient(1200px 800px at 50% 120%, #efddb7 0%, transparent 65%),
+    radial-gradient(1400px 700px at 12% -10%, #e8f0f6 0%, transparent 55%),
+    radial-gradient(900px 500px at 95% 10%, #d3dfe8 0%, transparent 50%),
+    radial-gradient(1200px 800px at 50% 120%, #cbd7e1 0%, transparent 65%),
+    radial-gradient(600px 400px at 85% 85%, rgba(165, 67, 27, 0.06) 0%, transparent 70%),
     var(--bg);
   color: var(--ink);
   line-height: 1.62;
@@ -59,11 +75,11 @@ header.site {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(246, 236, 215, 0.94);
+  background: rgba(235, 241, 246, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--rule);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 2px 12px rgba(100, 70, 30, 0.06);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 2px 12px rgba(40, 60, 85, 0.06);
 }
 header.site .inner {
   display: flex;
@@ -219,10 +235,10 @@ nav.primary a.active { color: var(--ink); border-bottom-color: var(--accent); }
   background:
     repeating-linear-gradient(
       0deg,
-      #fffaee 0 28px,
-      #fff4dc 28px 29px
+      #eaf0f4 0 28px,
+      #d9e2ea 28px 29px
     ),
-    #fffaee;
+    #eaf0f4;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   padding: 22px 26px;
@@ -359,7 +375,7 @@ ul.plain > li:hover { padding-left: 6px; border-bottom-color: var(--accent); }
   text-decoration: none;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    0 1px 2px rgba(100, 70, 30, 0.06);
+    0 1px 2px rgba(40, 60, 85, 0.06);
   transition: box-shadow .15s ease, border-color .15s ease, transform .08s ease, background .15s ease;
 }
 .btn:hover {
@@ -367,12 +383,12 @@ ul.plain > li:hover { padding-left: 6px; border-bottom-color: var(--accent); }
   text-decoration: none;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.7),
-    0 3px 8px rgba(100, 70, 30, 0.12);
+    0 3px 8px rgba(40, 60, 85, 0.14);
   transform: translateY(-1px);
 }
 .btn:active {
   transform: translateY(1px);
-  box-shadow: inset 0 2px 3px rgba(100, 70, 30, 0.15);
+  box-shadow: inset 0 2px 3px rgba(40, 60, 85, 0.15);
 }
 .btn:focus-visible {
   outline: 2px solid var(--accent-soft);
@@ -454,7 +470,7 @@ ul.plain .item-title {
 
 /* ===== Note card (handwritten-ish aside) ===== */
 .note {
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
   padding: 14px 16px;
@@ -521,7 +537,7 @@ ul.plain .item-title {
   border-radius: 2px;
 }
 .study-section .callout {
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1px solid var(--rule);
   border-left: 3px solid var(--warn);
   padding: 10px 14px;
@@ -570,7 +586,7 @@ table.data th {
   gap: 6px;
 }
 select, input[type="number"] {
-  background: #fffaee;
+  background: #eaf0f4;
   color: var(--ink);
   border: 1px solid var(--rule);
   border-radius: 4px;
@@ -635,7 +651,7 @@ select, input[type="number"] {
 }
 .choices li {
   border: 1px solid var(--rule);
-  background: #fffaee;
+  background: #eaf0f4;
   border-radius: var(--radius);
   padding: 13px 16px;
   cursor: pointer;
@@ -648,7 +664,7 @@ select, input[type="number"] {
 .choices li:hover {
   border-color: var(--ink-soft);
   transform: translateX(2px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 6px rgba(100, 70, 30, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 6px rgba(40, 60, 85, 0.06);
 }
 .choices li.selected { border-color: var(--accent); background: #fdf0dd; transform: translateX(4px); }
 .choices li.correct { border-color: var(--ok); background: #ecf2d8; color: #2d5321; }
@@ -665,7 +681,7 @@ select, input[type="number"] {
 .explanation {
   margin-top: 14px;
   padding: 12px 14px;
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1px solid var(--rule);
   border-left: 3px solid var(--cool);
   border-radius: var(--radius);
@@ -705,7 +721,7 @@ select, input[type="number"] {
   margin-top: 16px;
 }
 .score-pill {
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   padding: 8px 10px;
@@ -796,7 +812,7 @@ footer.site .container { max-width: 900px; }
   max-width: 320px;
   padding: 10px 14px;
   border-radius: var(--radius);
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
   box-shadow: var(--shadow);
@@ -822,7 +838,7 @@ footer.site .container { max-width: 900px; }
 
 /* ===== Lightning / speed-round timer ===== */
 .lightning-timer {
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
@@ -899,7 +915,7 @@ footer.site .container { max-width: 900px; }
 }
 .flashcard-back {
   transform: rotateY(180deg);
-  background: linear-gradient(180deg, #fffaee 0%, #f8ebcd 100%);
+  background: linear-gradient(180deg, #eaf0f4 0%, #d2dce3 100%);
 }
 .flashcard.known .flashcard-front { border-color: var(--ok); }
 .flashcard-tag {
@@ -1056,7 +1072,7 @@ footer.site .container { max-width: 900px; }
   text-align: center;
   padding: 18px 10px 14px;
   border: 1px solid var(--rule);
-  background: linear-gradient(180deg, #fffaee 0%, #f6ecd0 100%);
+  background: linear-gradient(180deg, #eaf0f4 0%, #d2dce3 100%);
   border-radius: var(--radius-lg);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: var(--shadow);
@@ -1149,7 +1165,7 @@ footer.site .container { max-width: 900px; }
   position: relative;
   border: 1px solid var(--copper);
   padding: 20px 24px;
-  background: #fffaee;
+  background: #eaf0f4;
 }
 .copper-frame::before, .copper-frame::after {
   content: "";
@@ -1194,7 +1210,7 @@ footer.site .container { max-width: 900px; }
   position: relative;
   padding: 22px 18px 18px;
   border: 1px solid var(--rule);
-  background: linear-gradient(165deg, #fffaee 0%, #f3e5c1 100%);
+  background: linear-gradient(165deg, #eaf0f4 0%, #c7d3dc 100%);
   border-radius: var(--radius-lg);
   text-align: center;
   box-shadow: var(--shadow-lift);
@@ -1312,7 +1328,7 @@ footer.site .container { max-width: 900px; }
   position: relative;
   padding: 22px 20px 68px;
   border: 1px solid var(--rule);
-  background: linear-gradient(160deg, #fffaee 0%, #f7eacb 100%);
+  background: linear-gradient(160deg, #eaf0f4 0%, #d2dce3 100%);
   border-radius: var(--radius-lg);
   min-height: 200px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -1409,7 +1425,7 @@ footer.site .container { max-width: 900px; }
 .drill-bar .chip {
   display: inline-block;
   padding: 2px 10px;
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1px solid var(--rule);
   border-radius: 999px;
   margin-right: 6px;
@@ -1422,7 +1438,7 @@ footer.site .container { max-width: 900px; }
   padding: 28px 16px;
   border: 2px dashed var(--rule);
   border-radius: var(--radius);
-  background: #fffaee;
+  background: #eaf0f4;
   margin: 8px 0 20px;
 }
 .pm-scenario .eq-label {
@@ -1446,7 +1462,7 @@ footer.site .container { max-width: 900px; }
 @media (max-width: 500px) { .pm-choices { grid-template-columns: 1fr; } }
 .pm-choice {
   padding: 16px;
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1.5px solid var(--rule);
   border-radius: var(--radius);
   font-family: var(--mono);
@@ -1459,7 +1475,7 @@ footer.site .container { max-width: 900px; }
 }
 .pm-choice:hover {
   border-color: var(--accent);
-  background: #fff4dc;
+  background: #d9e2ea;
 }
 .pm-choice:active { transform: scale(0.98); }
 .pm-choice.correct {
@@ -1481,7 +1497,7 @@ footer.site .container { max-width: 900px; }
 .pm-explanation {
   margin-top: 16px;
   padding: 14px 16px;
-  background: #fffaee;
+  background: #eaf0f4;
   border-left: 3px solid var(--accent);
   border-radius: 0 var(--radius) var(--radius) 0;
   font-size: 0.95rem;
@@ -1521,7 +1537,7 @@ footer.site .container { max-width: 900px; }
   border-radius: var(--radius);
 }
 .tl-pool {
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1px dashed var(--rule);
 }
 .tl-placed {
@@ -1543,7 +1559,7 @@ footer.site .container { max-width: 900px; }
 }
 .tl-tile {
   padding: 12px 16px;
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1.5px solid var(--ink-soft);
   border-radius: var(--radius);
   cursor: pointer;
@@ -1565,7 +1581,7 @@ footer.site .container { max-width: 900px; }
   font-size: 0.88rem;
   color: var(--ink);
 }
-.tl-tile:hover { background: #fff4dc; box-shadow: var(--shadow); }
+.tl-tile:hover { background: #d9e2ea; box-shadow: var(--shadow); }
 .tl-tile.placed { background: #e8f0d9; border-color: var(--ok); cursor: default; opacity: 0.9; }
 .tl-tile.wrong  { background: #f7dcd9; border-color: var(--err); animation: shake 0.45s; }
 
@@ -1586,7 +1602,7 @@ footer.site .container { max-width: 900px; }
   margin: 12px 0 20px;
   min-height: 60px;
   padding: 14px;
-  background: #fffaee;
+  background: #eaf0f4;
   border: 1px dashed var(--rule);
   border-radius: var(--radius);
 }
@@ -1603,7 +1619,7 @@ footer.site .container { max-width: 900px; }
 .rs-tile:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
 .rs-tile.selected {
   background: var(--accent);
-  color: #fffaee;
+  color: #eaf0f4;
   border-color: var(--ink);
 }
 .rs-tile.wrong { animation: shake 0.4s; border-color: var(--err); background: #f7dcd9; }
@@ -1618,14 +1634,14 @@ footer.site .container { max-width: 900px; }
   min-height: 140px;
   border: 2px solid var(--rule);
   border-radius: var(--radius);
-  background: #fffaee;
+  background: #eaf0f4;
   cursor: pointer;
   transition: border-color 0.15s, background 0.15s;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.rs-bucket:hover { border-color: var(--accent); background: #fff4dc; }
+.rs-bucket:hover { border-color: var(--accent); background: #d9e2ea; }
 .rs-bucket.active { border-color: var(--accent); background: #fff0d0; }
 .rs-bucket h4 {
   font-family: var(--serif);
@@ -1776,7 +1792,7 @@ nav.primary a.active { border-bottom-color: transparent; }
 
 /* About card: warm gradient frame */
 .about-card {
-  background: linear-gradient(160deg, #fffaee 0%, #f6e8c7 100%) !important;
+  background: linear-gradient(160deg, #eaf0f4 0%, #d2dce3 100%) !important;
   border: 1px solid var(--rule) !important;
   border-radius: var(--radius-lg) !important;
   box-shadow: var(--shadow-lift) !important;
@@ -1837,3 +1853,2165 @@ a:focus-visible {
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+/* ============ XP / LEVEL CHIP (header) ============ */
+#stats-bar { display: flex; align-items: center; gap: 8px; }
+.level-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s ease;
+}
+.level-chip:hover { transform: scale(1.08); text-decoration: none; }
+.level-chip .level-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 1px 2px rgba(165, 67, 27, 0.25));
+}
+.level-chip .level-num {
+  position: relative;
+  z-index: 1;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent-deep);
+  line-height: 1;
+}
+
+/* ============ TOAST NOTIFICATIONS ============ */
+.toast-host {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+  pointer-events: none;
+}
+.toast {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px 12px 12px;
+  min-width: 260px;
+  max-width: 340px;
+  background: linear-gradient(160deg, #eaf0f4 0%, #f2e2bd 100%);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-deep);
+  opacity: 0;
+  transform: translateX(18px);
+  transition: opacity .3s ease, transform .3s cubic-bezier(.2,.8,.2,1);
+  pointer-events: auto;
+}
+.toast.in { opacity: 1; transform: translateX(0); }
+.toast.out { opacity: 0; transform: translateX(18px); }
+.toast-ic {
+  width: 32px; height: 32px;
+  flex-shrink: 0;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(165, 67, 27, 0.12);
+  color: var(--accent-deep);
+}
+.toast-ic svg { width: 18px; height: 18px; }
+.toast-body { flex: 1; min-width: 0; }
+.toast-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.2;
+}
+.toast-sub {
+  margin-top: 2px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+.toast-levelup {
+  border-left-color: #d9a21b;
+  background: linear-gradient(160deg, #eaf0f4 0%, #f3ddb3 100%);
+}
+.toast-levelup .toast-ic {
+  background: rgba(217, 162, 27, 0.2);
+  color: #8a6610;
+}
+.toast-badge {
+  border-left-color: var(--ok);
+  background: linear-gradient(160deg, #eaf0f4 0%, #e8e8c1 100%);
+}
+.toast-badge .toast-ic {
+  background: rgba(63, 111, 44, 0.18);
+  color: var(--ok);
+}
+
+/* ============ PROGRESS PANEL (home page) ============ */
+.progress-panel {
+  background: linear-gradient(160deg, #eaf0f4 0%, #d2dce3 100%);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-lift);
+  position: relative;
+}
+.progress-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 -1px 0 rgba(0, 0, 0, 0.04);
+}
+.pp-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+@media (max-width: 560px) {
+  .pp-head { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+}
+.pp-level-big {
+  position: relative;
+  width: 110px;
+  height: 110px;
+}
+.pp-ring {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 10px rgba(165, 67, 27, 0.25));
+  transition: all .5s cubic-bezier(.2,.8,.2,1);
+}
+#pp-ring-fg { transition: stroke-dasharray .6s cubic-bezier(.2,.8,.2,1); }
+.pp-level-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+.pp-level-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+.pp-level-num {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--accent-deep);
+  line-height: 1;
+}
+.pp-stats { min-width: 0; }
+.pp-xp {
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.4px;
+}
+.pp-xp span { color: var(--ink); font-weight: 700; }
+.pp-bar {
+  height: 8px;
+  background: rgba(165, 67, 27, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(40, 60, 85, 0.1);
+  margin-bottom: 14px;
+}
+.pp-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #e08148, var(--accent), var(--accent-deep));
+  border-radius: 999px;
+  width: 0;
+  transition: width .6s cubic-bezier(.2,.8,.2,1);
+  box-shadow: 0 1px 2px rgba(165, 67, 27, 0.3);
+}
+.pp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 14px;
+  margin: 0;
+}
+@media (max-width: 520px) {
+  .pp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.pp-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pp-grid dt {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pp-grid dd {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.pp-rewards { margin-top: 10px; }
+.pp-rewards-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+.pp-rewards-head h3 { margin: 0; font-family: var(--serif); font-weight: 700; font-size: 1.1rem; }
+.pp-counter {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+.pp-counter span { color: var(--ink); font-weight: 700; }
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: 10px;
+}
+.badge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: #eaf0f4;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: help;
+}
+.badge-card.earned {
+  border-color: var(--accent);
+  background: linear-gradient(165deg, #eaf0f4 0%, #f3d9a8 100%);
+  box-shadow: var(--shadow);
+}
+.badge-card.earned::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.badge-card.earned:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.badge-card.locked { opacity: 0.42; filter: grayscale(0.6); }
+.badge-card.locked:hover { opacity: 0.7; }
+.badge-ic {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(165, 67, 27, 0.14);
+  color: var(--accent-deep);
+}
+.badge-card.earned .badge-ic {
+  background: linear-gradient(160deg, #e08148, var(--accent-deep));
+  color: #fff2da;
+  box-shadow: 0 2px 5px rgba(165, 67, 27, 0.35);
+}
+.badge-ic svg { width: 20px; height: 20px; }
+.badge-name {
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.pp-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--rule-2);
+  flex-wrap: wrap;
+}
+.pp-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ===== Visual polish pass ===== */
+
+/* Scroll reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+}
+.scroll-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* Hero richness — decorative droplets + gradient mesh */
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -30% -10% auto auto;
+  width: 420px; height: 420px;
+  background:
+    radial-gradient(closest-side, rgba(165, 67, 27, 0.14), transparent 70%),
+    radial-gradient(closest-side, rgba(39, 95, 115, 0.10), transparent 70%);
+  filter: blur(6px);
+  z-index: -1;
+  pointer-events: none;
+  animation: heroGlow 12s ease-in-out infinite alternate;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -160px; left: -120px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(122, 184, 154, 0.18), transparent 70%);
+  filter: blur(8px);
+  z-index: -1;
+  pointer-events: none;
+  animation: heroGlow 16s ease-in-out infinite alternate-reverse;
+}
+@keyframes heroGlow {
+  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: .9; }
+  100% { transform: translate3d(-24px, 16px, 0) scale(1.06); opacity: 1; }
+}
+
+/* Floating refrigerant droplets behind hero text */
+.hero-droplets {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-droplets span {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.55;
+  filter: blur(0.5px);
+  animation: dropFloat 9s ease-in-out infinite;
+}
+.hero-droplets span:nth-child(1) { left: 8%;  top: 18%; width: 14px; height: 14px; background: #7ab89a; animation-delay: -2s; }
+.hero-droplets span:nth-child(2) { left: 22%; top: 72%; width: 10px; height: 10px; background: #8bbfc3; animation-delay: -4s; }
+.hero-droplets span:nth-child(3) { right: 12%; top: 30%; width: 18px; height: 18px; background: #e4536b; animation-delay: -1s; }
+.hero-droplets span:nth-child(4) { right: 30%; bottom: 18%; width: 8px; height: 8px; background: var(--accent-soft); animation-delay: -6s; }
+.hero-droplets span:nth-child(5) { left: 48%; top: 8%; width: 6px; height: 6px; background: var(--cool-soft); animation-delay: -3s; }
+@keyframes dropFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(6px, -14px, 0); }
+}
+
+/* Alternating section tints for subtle rhythm */
+section.block {
+  position: relative;
+  transition: background-color .4s ease;
+}
+section.block:nth-of-type(even) {
+  background: linear-gradient(180deg, rgba(237, 243, 248, 0) 0%, rgba(237, 243, 248, 0.6) 25%, rgba(237, 243, 248, 0.6) 75%, rgba(237, 243, 248, 0) 100%);
+  border-radius: var(--radius-lg);
+}
+
+/* Card tilt on the big cards; cylinder gets pseudo-shine, modern keeps its LOW-GWP badge */
+.cylinder-card, .modern-card {
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .25s ease, background-position .9s ease;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+.cylinder-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, 0.22) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform .8s ease;
+  pointer-events: none;
+}
+.cylinder-card:hover::after {
+  transform: translateX(120%);
+}
+
+/* ===== Unified cool-family surfaces — everything breathes with the bg ===== */
+
+/* All surfaces share a base cool-paper; tints are subtle hue shifts only */
+.modern-card:nth-child(1) { background: linear-gradient(165deg, #eaf2ee 0%, #cfe0d7 100%) !important; }
+.modern-card:nth-child(2) { background: linear-gradient(165deg, #e8f0f2 0%, #ccdde1 100%) !important; }
+.modern-card:nth-child(3) { background: linear-gradient(165deg, #eee8ec 0%, #d9cbd2 100%) !important; }
+
+/* About card — barely-there cool mist */
+.about-card {
+  background: linear-gradient(160deg, #e9eff3 0%, #d4dee6 100%) !important;
+}
+.about-card::before {
+  background: linear-gradient(180deg, rgba(39, 95, 115, 0.14), transparent 60%) !important;
+}
+
+/* Progress panel — slightly deeper slate wash */
+.progress-panel {
+  background: linear-gradient(160deg, #e7eef4 0%, #d3ddeb 100%) !important;
+}
+
+/* Cylinder cards — cool ash-paper (no more warm clash) */
+.cylinder-card {
+  background: linear-gradient(165deg, #ebeff2 0%, #d5dee4 100%) !important;
+}
+
+/* Hero-ish cards stay in the cool family */
+.hero-card, .study-section > .callout {
+  background: linear-gradient(160deg, #eaf0f4 0%, #d5dee5 100%) !important;
+}
+
+/* Note / callouts — intentional warm accent; still softened to not jar */
+.note {
+  background: linear-gradient(160deg, rgba(251, 243, 223, 0.85) 0%, rgba(243, 227, 184, 0.85) 100%) !important;
+  border-left: 3px solid var(--accent-soft);
+}
+
+/* FAQ — translucent so the body bg shows through */
+details.faq {
+  background: linear-gradient(180deg, rgba(234, 240, 244, 0.5), rgba(234, 240, 244, 0));
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: var(--radius);
+}
+details.faq[open] {
+  background: linear-gradient(180deg, rgba(215, 226, 235, 0.7), rgba(215, 226, 235, 0.15));
+}
+
+/* Block odd tint — also cool, just a different lightness for rhythm */
+section.block:nth-of-type(odd) {
+  background: linear-gradient(180deg, rgba(232, 239, 244, 0) 0%, rgba(232, 239, 244, 0.55) 25%, rgba(232, 239, 244, 0.55) 75%, rgba(232, 239, 244, 0) 100%);
+  border-radius: var(--radius-lg);
+}
+
+/* Hero — barely-there dual-tone, both cool */
+.hero {
+  background: radial-gradient(700px 300px at 20% 30%, rgba(234, 240, 244, 0.5), transparent 70%),
+              radial-gradient(600px 300px at 85% 70%, rgba(215, 226, 235, 0.5), transparent 70%);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 4vw, 36px) clamp(16px, 3vw, 32px);
+  margin-top: 8px;
+}
+
+/* Soften shadows across surfaces so cards sit IN the page, not on it */
+.modern-card, .cylinder-card, .about-card, .progress-panel, .hero-card, .note, .block-paper, .stats-widget, .hero-card {
+  box-shadow: 0 1px 0 rgba(40, 60, 85, 0.04), 0 2px 8px rgba(40, 60, 85, 0.06) !important;
+}
+.modern-card:hover, .cylinder-card:hover, .about-card:hover {
+  box-shadow: 0 1px 0 rgba(40, 60, 85, 0.05), 0 10px 22px rgba(40, 60, 85, 0.10) !important;
+}
+
+/* Keep border faint — lets the bg bleed through visually */
+.modern-card, .cylinder-card, .about-card, .progress-panel, .hero-card {
+  border-color: rgba(188, 198, 206, 0.7);
+}
+
+/* Badge staggered reveal + shimmer on earned */
+.badge-card {
+  animation: badgeFadeIn .5s ease both;
+  animation-delay: calc(var(--i, 0) * 35ms);
+}
+@keyframes badgeFadeIn {
+  from { opacity: 0; transform: translateY(10px) scale(.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.badge-card.earned::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius) + 2px);
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(255, 210, 140, 0.9) 40deg, transparent 80deg, transparent 360deg);
+  opacity: 0;
+  transition: opacity .3s ease;
+  z-index: -1;
+  animation: shimmerSpin 5s linear infinite;
+  pointer-events: none;
+}
+.badge-card.earned:hover::before { opacity: 1; }
+@keyframes shimmerSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Level chip gets a gentle pulse */
+.level-chip {
+  position: relative;
+}
+.level-chip::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(217, 117, 30, 0.28), transparent 70%);
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+.level-chip:hover::before { opacity: 1; }
+
+/* Progress panel stats — count-up flash */
+.pp-grid dd.count-flash {
+  animation: countFlash 1s ease both;
+}
+@keyframes countFlash {
+  0%   { color: var(--ink); text-shadow: none; }
+  40%  { color: var(--accent); text-shadow: 0 0 10px rgba(165, 67, 27, 0.35); }
+  100% { color: var(--ink); text-shadow: none; }
+}
+
+/* Nav active — brighter underline state */
+nav.primary a.is-active {
+  color: var(--accent-deep);
+}
+nav.primary a.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Gentle upward nudge on hero heading */
+.hero h1 {
+  background: linear-gradient(135deg, var(--ink) 0%, var(--accent-deep) 75%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Section rule — richer hex */
+.hvac-rule {
+  transition: filter .3s ease;
+}
+.hvac-rule:hover { filter: drop-shadow(0 2px 4px rgba(165, 67, 27, 0.35)); }
+
+/* Subtle scroll indicator under sticky header on scroll */
+header.site.scrolled {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 6px 20px rgba(40, 60, 85, 0.16);
+}
+header.site.scrolled::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent) 50%, transparent);
+  opacity: 0.7;
+}
+
+/* Buttons feel clickier */
+button.primary, a.primary-btn {
+  transform: translateZ(0);
+  transition: transform .15s ease, box-shadow .25s ease, background-color .2s ease;
+}
+button.primary:active, a.primary-btn:active { transform: translateY(1px) scale(0.99); }
+
+/* Badges earned — soft glow pulse */
+.badge-card.earned .badge-ic {
+  animation: badgeGlow 3.5s ease-in-out infinite;
+}
+@keyframes badgeGlow {
+  0%, 100% { box-shadow: 0 2px 5px rgba(165, 67, 27, 0.35); }
+  50%      { box-shadow: 0 2px 5px rgba(165, 67, 27, 0.35), 0 0 14px rgba(224, 129, 72, 0.45); }
+}
+
+/* ===== Universal responsive layer ===== */
+
+/* Make media & SVGs behave */
+img, svg, video, canvas { max-width: 100%; height: auto; }
+
+/* Never let tables punch out of viewport */
+table { width: 100%; max-width: 100%; display: block; overflow-x: auto; }
+
+/* Force a sane base layout regardless of header markup variations */
+header.site .inner {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+nav.primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px 14px;
+}
+
+/* Hero padding scales down on narrow screens (override the fixed 32/28 we added) */
+.hero { padding: clamp(20px, 4vw, 36px) clamp(16px, 3vw, 32px); }
+
+/* Large desktop / ultrawide — widen container progressively so content fills the screen.
+   Breakpoints are chosen so the margin gutter stays ~100-150px for side decorations. */
+@media (min-width: 1200px) {
+  .container, header.site .inner {
+    max-width: 1180px;
+  }
+}
+@media (min-width: 1550px) {
+  .container, header.site .inner { max-width: 1340px; }
+}
+@media (min-width: 1700px) {
+  body { font-size: 18px; }
+  .container, header.site .inner { max-width: 1500px; }
+}
+@media (min-width: 1900px) {
+  .container, header.site .inner { max-width: 1660px; }
+}
+@media (min-width: 2100px) {
+  .container, header.site .inner { max-width: 1800px; }
+}
+
+/* Tablet — keep comfortable horizontal rhythm */
+@media (max-width: 900px) {
+  .container { padding: 0 20px; }
+  header.site .inner { padding: 12px 20px; }
+}
+
+/* Phones — compact everything, stack where necessary */
+@media (max-width: 640px) {
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-size: 16px; }
+  .container { padding: 0 14px; }
+  header.site .inner { padding: 10px 14px; gap: 8px; }
+  .brand { gap: 8px; }
+  .brand-badge { width: 34px; height: 38px; }
+  .brand-name { font-size: 1.05rem; }
+  .brand-tag { display: none; }
+
+  /* Nav becomes a compact scrollable row */
+  nav.primary {
+    order: 3;
+    flex: 1 0 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+    padding-bottom: 2px;
+    margin: 0 -4px;
+  }
+  nav.primary::-webkit-scrollbar { display: none; }
+  nav.primary a {
+    margin-left: 0;
+    padding: 6px 10px;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+  nav.primary a::after { bottom: 2px; }
+
+  #stats-bar { gap: 6px; }
+
+  h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.05rem; }
+
+  .hero { margin-top: 6px; }
+  .hero-split { gap: 14px; }
+  .tool-row { display: none; }  /* huge gauge not needed on phone */
+
+  /* Grids collapse cleanly */
+  .refrigerant-lineup,
+  .modern-lineup,
+  .rs-buckets,
+  .drill-hub,
+  .pm-choices { grid-template-columns: 1fr !important; }
+
+  /* Cards with inner svg — reduce oversized heights */
+  .modern-card svg { height: 72px; }
+  .cylinder-card svg { height: 64px; }
+
+  /* Badges — smaller grid cells */
+  .badge-grid { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+  .badge-card { padding: 10px 6px; }
+  .badge-ic { width: 30px; height: 30px; }
+  .badge-ic svg { width: 16px; height: 16px; }
+  .badge-name { font-size: 0.72rem; }
+
+  /* Progress panel stacks */
+  .pp-head { grid-template-columns: 1fr !important; justify-items: center; text-align: center; }
+  .pp-level-big { margin: 0 auto; }
+  .pp-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .pp-rewards-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+
+  /* Toast host — pin to bottom full-width */
+  .toast-host { left: 10px; right: 10px; bottom: 10px; }
+  .toast { width: 100%; }
+
+  /* Note / callout — tighter padding */
+  .note, .study-section .callout { padding: 12px 14px; }
+
+  /* FAQ — tighter */
+  details.faq { padding-left: 8px; padding-right: 8px; }
+  details.faq summary { padding: 12px 0; }
+}
+
+/* Very small phones (iPhone SE, old Android) */
+@media (max-width: 380px) {
+  .container { padding: 0 10px; }
+  header.site .inner { padding: 8px 10px; }
+  h1 { font-size: 1.4rem; }
+  .brand-name { font-size: 0.98rem; }
+  .hero { padding: 18px 14px; }
+  nav.primary a { font-size: 0.82rem; padding: 6px 8px; }
+  .pp-grid { grid-template-columns: 1fr; }
+  .badge-grid { grid-template-columns: repeat(auto-fill, minmax(82px, 1fr)); }
+}
+
+/* Landscape short viewports (phones rotated) */
+@media (max-height: 480px) and (orientation: landscape) {
+  header.site { position: static; }
+  .hero { padding-top: 14px; padding-bottom: 14px; }
+}
+
+/* Coarse pointer (touch) — bigger hit targets */
+@media (pointer: coarse) {
+  nav.primary a { padding: 8px 12px; }
+  .btn, button, .badge-card, .level-chip, .icon-btn { min-height: 40px; }
+  .icon-btn { min-width: 40px; }
+}
+
+/* Print — clean, readable */
+@media print {
+  header.site, nav.primary, #stats-bar, .cta, button, .toast-host, .hero-droplets { display: none !important; }
+  body { background: #fff !important; color: #000 !important; font-size: 12pt; }
+  .container { max-width: none; padding: 0 20pt; }
+  a { color: #000 !important; text-decoration: underline; }
+  section, .block { page-break-inside: avoid; }
+}
+
+/* ====================================================================
+   HVAC VISUAL LANGUAGE
+   Blueprint grid + refrigerant cylinder colors + pipe accents
+   ==================================================================== */
+
+/* Faint blueprint grid under everything — subtle engineering feel */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(19, 80, 122, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(19, 80, 122, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: -1px -1px;
+  pointer-events: none;
+  z-index: 0;
+}
+body > * { position: relative; z-index: 1; }
+
+/* Copper-pipe accent bar on every main content card */
+.cylinder-card, .modern-card, .about-card, .progress-panel {
+  position: relative;
+}
+.cylinder-card::before,
+.progress-panel::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10%; bottom: 10%;
+  width: 3px;
+  background: linear-gradient(180deg, var(--copper-soft), var(--copper), var(--copper-deep));
+  border-radius: 2px 0 0 2px;
+  box-shadow: 0 0 6px rgba(184, 115, 51, 0.35);
+  pointer-events: none;
+}
+
+/* Refrigerant cards — switch to AHRI-style cylinder colors so they read authentic */
+.modern-card:nth-child(1) {  /* R-32 — pale green cylinder */
+  background: linear-gradient(165deg, #e9f1e8 0%, #c8dcc7 100%) !important;
+  border-top-color: #5a9450 !important;
+}
+.modern-card:nth-child(2) {  /* R-454B — muted teal cylinder */
+  background: linear-gradient(165deg, #e4eef2 0%, #c2d4de 100%) !important;
+  border-top-color: #3d7a90 !important;
+}
+.modern-card:nth-child(3) {  /* R-1234yf — white w/ safety rose band */
+  background: linear-gradient(165deg, #f0ecee 0%, #dcc8d0 100%) !important;
+  border-top-color: var(--refrig-a1) !important;
+}
+.modern-card {
+  border-top-width: 4px !important;
+}
+
+/* Safety class chip (added via JS-friendly attribute hook) */
+.modern-card .mc-class {
+  color: var(--blueprint) !important;
+  background: rgba(19, 80, 122, 0.08);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 1.2px;
+  display: inline-block;
+}
+
+/* Buttons — thermostat gradient for primary */
+.btn.primary, button.primary, a.primary-btn {
+  background: linear-gradient(180deg, var(--accent-soft) 0%, var(--accent) 60%, var(--accent-deep) 100%) !important;
+  color: #fff4e6 !important;
+  border: 1px solid var(--accent-deep);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 2px 6px rgba(165, 67, 27, 0.35);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+.btn.primary:hover, button.primary:hover, a.primary-btn:hover {
+  background: linear-gradient(180deg, #d47240 0%, var(--accent-soft) 60%, var(--accent) 100%) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset, 0 4px 12px rgba(165, 67, 27, 0.45);
+}
+
+/* Secondary pill / chip-like buttons get a chiller-blue tint */
+.btn:not(.primary):hover {
+  border-color: var(--cool);
+  color: var(--cool-deep);
+}
+
+/* About card — blueprint teal */
+.about-card {
+  background: linear-gradient(160deg, #e2ecf1 0%, #c6d5de 100%) !important;
+  border-left: 3px solid var(--blueprint) !important;
+}
+.about-card::before {
+  background: linear-gradient(180deg, rgba(19, 80, 122, 0.22), transparent 70%) !important;
+}
+
+/* Progress panel — chilled-water dashboard */
+.progress-panel {
+  background: linear-gradient(160deg, #e0eaf1 0%, #c3d2dd 100%) !important;
+  border: 1px solid var(--rule);
+}
+.progress-panel::after {
+  content: "";
+  position: absolute;
+  right: 10px; top: 10px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #4acf78;
+  box-shadow: 0 0 8px #4acf78, 0 0 0 2px rgba(74, 207, 120, 0.2);
+  animation: plantPulse 2.4s ease-in-out infinite;
+}
+@keyframes plantPulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.5; }
+}
+
+/* Cylinder cards — amber warm tint (reading traditional tank paint) */
+.cylinder-card {
+  background: linear-gradient(165deg, #ede5d8 0%, #d5c7ae 100%) !important;
+  border-top: 3px solid var(--copper) !important;
+}
+
+/* Note — caution-yellow alert stripe */
+.note {
+  background: linear-gradient(160deg, rgba(255, 247, 220, 0.85) 0%, rgba(249, 233, 180, 0.85) 100%) !important;
+  border-left: 4px solid var(--warn-soft);
+  position: relative;
+}
+.note::after {
+  content: "";
+  position: absolute;
+  left: -1px; top: 0; bottom: 0;
+  width: 4px;
+  background: repeating-linear-gradient(45deg, var(--warn-soft) 0 6px, #2a2418 6px 12px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Level chip — brass/copper bezel */
+.level-chip {
+  background: radial-gradient(circle at 30% 30%, #f3e1b8, #c9a047 60%, #8c6a1f 120%) !important;
+  border: 1px solid #8c6a1f !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.4);
+}
+.level-chip .level-num {
+  color: #2a1c05 !important;
+  text-shadow: 0 1px 0 rgba(255, 240, 200, 0.6);
+}
+
+/* Header — blueprint linework */
+header.site::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--blueprint) 20%,
+    var(--copper) 50%,
+    var(--blueprint) 80%,
+    transparent 100%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Brand badge — add brass-screw shadow effect */
+.brand-badge {
+  filter: drop-shadow(0 2px 4px rgba(184, 115, 51, 0.35)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.18)) !important;
+}
+
+/* Nav underline — copper instead of generic */
+nav.primary a::after {
+  background: linear-gradient(90deg, var(--copper-soft), var(--copper), var(--copper-deep)) !important;
+  height: 2px !important;
+}
+
+/* Hero — subtle blueprint schematic tint + hot/cold gradient */
+.hero {
+  background:
+    radial-gradient(700px 300px at 15% 25%, rgba(29, 78, 102, 0.10), transparent 70%),
+    radial-gradient(600px 300px at 88% 75%, rgba(165, 67, 27, 0.08), transparent 70%),
+    linear-gradient(135deg, rgba(234, 240, 244, 0.6), rgba(215, 226, 235, 0.6)) !important;
+}
+
+/* Sparkles of floating droplets — repaint with ref colors */
+.hero-droplets span:nth-child(1) { background: #5a9450 !important; }  /* A1 green */
+.hero-droplets span:nth-child(2) { background: #3d7a90 !important; }  /* chilled water */
+.hero-droplets span:nth-child(3) { background: var(--refrig-a1) !important; }  /* rose */
+.hero-droplets span:nth-child(4) { background: var(--copper) !important; }    /* copper */
+.hero-droplets span:nth-child(5) { background: var(--brass) !important; }     /* brass */
+
+/* Hero h1 — hot/cold gradient text (terracotta to chiller blue) */
+.hero h1 {
+  background: linear-gradient(110deg, var(--accent) 0%, var(--ink) 45%, var(--blueprint) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+/* Badge earned — brass/copper medallion instead of generic gold */
+.badge-card.earned {
+  background: linear-gradient(165deg, #f6ead1 0%, #d6ac5a 100%) !important;
+  border-color: var(--copper-deep) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 2px 8px rgba(127, 74, 26, 0.25) !important;
+}
+.badge-card.earned .badge-ic {
+  background: linear-gradient(160deg, var(--copper-soft), var(--copper-deep)) !important;
+  color: #fff4d6 !important;
+  box-shadow: 0 2px 5px rgba(127, 74, 26, 0.45) !important;
+}
+
+/* Subtle gauge-tick marks on the progress ring corners */
+.pp-level-big {
+  position: relative;
+}
+.pp-level-big::before {
+  content: "HOT";
+  position: absolute;
+  top: 50%; left: -28px;
+  transform: rotate(-90deg) translateX(50%);
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+  opacity: 0.7;
+}
+.pp-level-big::after {
+  content: "COLD";
+  position: absolute;
+  top: 50%; right: -32px;
+  transform: rotate(90deg) translateX(-50%);
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  color: var(--blueprint);
+  opacity: 0.7;
+}
+
+/* Links — pipe-copper hover state */
+a:hover { color: var(--copper-deep) !important; }
+
+/* Tables / KV — slate heading with copper rules */
+.kv dt { color: var(--blueprint) !important; border-bottom-color: var(--copper-soft) !important; }
+
+/* ====================================================================
+   SCHEMATIC MARGIN DECORATIONS — fill the empty sides with HVAC art
+   ==================================================================== */
+
+/* Left margin — copper piping with hex bolts, valve, gauge.
+   left = max(safe-edge-gap, calc(50% - half_container - schematic_width - breathing)) keeps it next to container. */
+html::before {
+  content: "";
+  position: fixed;
+  top: 64px; bottom: 24px;
+  left: max(8px, calc(50% - 590px - 72px));   /* container 1180 / 2 = 590, schematic 58 + gap 14 */
+  width: 58px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='900' viewBox='0 0 70 900' preserveAspectRatio='none' fill='none'><defs><linearGradient id='cu' x1='0' x2='1'><stop offset='0' stop-color='%23d59353'/><stop offset='0.5' stop-color='%23b87333'/><stop offset='1' stop-color='%237f4a1a'/></linearGradient></defs><rect x='28' y='0' width='14' height='900' fill='url(%23cu)' rx='3'/><rect x='26' y='0' width='18' height='900' fill='none' stroke='rgba(0,0,0,0.15)' stroke-width='0.5'/><g fill='%238c6a1f' stroke='%23442b08' stroke-width='0.8'><circle cx='35' cy='80' r='7'/><circle cx='35' cy='220' r='7'/><circle cx='35' cy='360' r='7'/><circle cx='35' cy='500' r='7'/><circle cx='35' cy='640' r='7'/><circle cx='35' cy='780' r='7'/></g><g fill='none' stroke='%23442b08' stroke-width='0.6'><path d='M31 77 L39 83 M39 77 L31 83'/><path d='M31 217 L39 223 M39 217 L31 223'/><path d='M31 357 L39 363 M39 357 L31 363'/><path d='M31 497 L39 503 M39 497 L31 503'/><path d='M31 637 L39 643 M39 637 L31 643'/><path d='M31 777 L39 783 M39 777 L31 783'/></g><g transform='translate(12 140)'><rect x='0' y='0' width='46' height='28' rx='3' fill='%23bcc6ce' stroke='%2315202a' stroke-width='1'/><circle cx='23' cy='14' r='9' fill='%23eaf0f4' stroke='%2315202a' stroke-width='1'/><path d='M23 14 L28 9' stroke='%23a02a22' stroke-width='1.5' stroke-linecap='round'/><text x='23' y='26' text-anchor='middle' fill='%2315202a' font-family='monospace' font-size='4' font-weight='bold'>PSI</text></g><g transform='translate(12 420)'><rect x='0' y='0' width='46' height='32' rx='3' fill='%2315202a'/><rect x='2' y='2' width='42' height='16' fill='%2313507a'/><text x='23' y='14' text-anchor='middle' fill='%23eaf0f4' font-family='monospace' font-size='7' font-weight='bold'>45.2</text><text x='23' y='26' text-anchor='middle' fill='%23c9a047' font-family='monospace' font-size='4'>°F SUCT</text></g><g transform='translate(12 700)'><rect x='0' y='0' width='46' height='28' rx='3' fill='%23bcc6ce' stroke='%2315202a' stroke-width='1'/><circle cx='23' cy='14' r='9' fill='%23eaf0f4' stroke='%2315202a' stroke-width='1'/><path d='M23 14 L28 19' stroke='%231d4e66' stroke-width='1.5' stroke-linecap='round'/><text x='23' y='26' text-anchor='middle' fill='%2315202a' font-family='monospace' font-size='4' font-weight='bold'>TEMP</text></g></svg>");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Right margin — vertical gauge stack, wiring, hex bolts */
+html::after {
+  content: "";
+  position: fixed;
+  top: 64px; bottom: 24px;
+  right: max(8px, calc(50% - 590px - 72px));
+  width: 58px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='900' viewBox='0 0 70 900' preserveAspectRatio='none' fill='none'><defs><linearGradient id='st' x1='0' x2='1'><stop offset='0' stop-color='%231d4e66'/><stop offset='0.5' stop-color='%2313507a'/><stop offset='1' stop-color='%230f3446'/></linearGradient></defs><rect x='28' y='0' width='14' height='900' fill='url(%23st)' rx='3'/><rect x='26' y='0' width='18' height='900' fill='none' stroke='rgba(0,0,0,0.2)' stroke-width='0.5'/><g fill='%23c9a047' stroke='%2315202a' stroke-width='0.7'><rect x='30' y='60' width='10' height='6' rx='1'/><rect x='30' y='200' width='10' height='6' rx='1'/><rect x='30' y='340' width='10' height='6' rx='1'/><rect x='30' y='480' width='10' height='6' rx='1'/><rect x='30' y='620' width='10' height='6' rx='1'/><rect x='30' y='760' width='10' height='6' rx='1'/></g><g transform='translate(12 100)'><circle cx='23' cy='23' r='22' fill='%23eaf0f4' stroke='%2315202a' stroke-width='1.5'/><circle cx='23' cy='23' r='17' fill='none' stroke='%2315202a' stroke-width='0.5'/><g stroke='%23666' stroke-width='0.6'><line x1='23' y1='6' x2='23' y2='10'/><line x1='23' y1='36' x2='23' y2='40'/><line x1='6' y1='23' x2='10' y2='23'/><line x1='36' y1='23' x2='40' y2='23'/></g><path d='M23 23 L33 15' stroke='%23a02a22' stroke-width='1.6' stroke-linecap='round'/><circle cx='23' cy='23' r='1.5' fill='%2315202a'/><text x='23' y='46' text-anchor='middle' font-family='monospace' font-size='5' fill='%2315202a' font-weight='bold'>HP SIDE</text></g><g transform='translate(12 380)'><rect x='0' y='0' width='46' height='50' rx='3' fill='%2315202a'/><rect x='3' y='3' width='40' height='14' fill='%23050807'/><rect x='5' y='5' width='36' height='10' fill='%234acf78' opacity='0.25'/><text x='23' y='13' text-anchor='middle' fill='%234acf78' font-family='monospace' font-size='7' font-weight='bold'>RUN</text><circle cx='10' cy='28' r='3' fill='%23e03f3f'/><circle cx='23' cy='28' r='3' fill='%23c9a047'/><circle cx='36' cy='28' r='3' fill='%234acf78'/><text x='23' y='43' text-anchor='middle' fill='%23c9a047' font-family='monospace' font-size='4'>COMPRESSOR</text></g><g transform='translate(12 640)'><circle cx='23' cy='23' r='22' fill='%23eaf0f4' stroke='%2315202a' stroke-width='1.5'/><circle cx='23' cy='23' r='17' fill='none' stroke='%2315202a' stroke-width='0.5'/><g stroke='%23666' stroke-width='0.6'><line x1='23' y1='6' x2='23' y2='10'/><line x1='23' y1='36' x2='23' y2='40'/><line x1='6' y1='23' x2='10' y2='23'/><line x1='36' y1='23' x2='40' y2='23'/></g><path d='M23 23 L13 15' stroke='%231d4e66' stroke-width='1.6' stroke-linecap='round'/><circle cx='23' cy='23' r='1.5' fill='%2315202a'/><text x='23' y='46' text-anchor='middle' font-family='monospace' font-size='5' fill='%2315202a' font-weight='bold'>LP SIDE</text></g></svg>");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Hide margin decor on narrower screens — container margin is too tight to fit schematic */
+@media (max-width: 1399px) {
+  html::before, html::after { display: none; }
+}
+
+/* 1400-1549: container is still 1180, so gutter is 110-185 each side. Fine for 58px schematic. */
+/* 1550+: container widens to 1340; use wider schematic & align to container edge. */
+@media (min-width: 1550px) {
+  html::before { left: max(8px, calc(50% - 670px - 80px)); width: 64px; opacity: 0.62; }
+  html::after  { right: max(8px, calc(50% - 670px - 80px)); width: 64px; opacity: 0.62; }
+}
+@media (min-width: 1700px) {
+  html::before { left: max(8px, calc(50% - 750px - 88px)); width: 72px; }
+  html::after  { right: max(8px, calc(50% - 750px - 88px)); width: 72px; }
+}
+@media (min-width: 1900px) {
+  html::before { left: max(8px, calc(50% - 830px - 98px)); width: 82px; opacity: 0.65; }
+  html::after  { right: max(8px, calc(50% - 830px - 98px)); width: 82px; opacity: 0.65; }
+}
+@media (min-width: 2100px) {
+  html::before { left: max(8px, calc(50% - 900px - 110px)); width: 92px; }
+  html::after  { right: max(8px, calc(50% - 900px - 110px)); width: 92px; }
+}
+
+/* Section dividers — schematic flow line between blocks */
+section.block + section.block {
+  margin-top: 18px;
+}
+section.block + section.block::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 12px;
+  margin: -8px auto 14px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='12' viewBox='0 0 72 12'><line x1='0' y1='6' x2='26' y2='6' stroke='%23b87333' stroke-width='2' stroke-linecap='round'/><line x1='46' y1='6' x2='72' y2='6' stroke='%23b87333' stroke-width='2' stroke-linecap='round'/><circle cx='36' cy='6' r='5' fill='%23eaf0f4' stroke='%2315202a' stroke-width='1.2'/><circle cx='36' cy='6' r='1.6' fill='%2315202a'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+}
+
+/* Hero — add inline schematic flourish */
+.hero::after {
+  background: radial-gradient(closest-side, rgba(184, 115, 51, 0.14), transparent 70%) !important;
+}
+
+/* Fill empty space inside hero with a schematic illustration on desktop */
+@media (min-width: 960px) {
+  .hero {
+    position: relative;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: 24px;
+    bottom: 16px;
+    width: 180px;
+    height: 130px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='130' viewBox='0 0 180 130' fill='none'><rect x='20' y='20' width='140' height='90' rx='4' fill='%23eaf0f4' stroke='%2315202a' stroke-width='1.5'/><rect x='28' y='28' width='60' height='74' fill='%231d4e66' opacity='0.2' stroke='%2315202a' stroke-width='0.8'/><path d='M32 40 L84 40 M32 48 L84 48 M32 56 L84 56 M32 64 L84 64 M32 72 L84 72 M32 80 L84 80 M32 88 L84 88 M32 96 L84 96' stroke='%231d4e66' stroke-width='0.5' opacity='0.5'/><circle cx='116' cy='52' r='18' fill='%23eaf0f4' stroke='%2315202a' stroke-width='1.2'/><path d='M116 52 L126 44' stroke='%23a5431b' stroke-width='1.5' stroke-linecap='round'/><circle cx='116' cy='52' r='1.5' fill='%2315202a'/><g stroke='%23666' stroke-width='0.4'><line x1='116' y1='38' x2='116' y2='42'/><line x1='116' y1='62' x2='116' y2='66'/><line x1='102' y1='52' x2='106' y2='52'/><line x1='126' y1='52' x2='130' y2='52'/></g><g stroke='%2315202a' stroke-width='0.5' opacity='0.6'><rect x='100' y='78' width='36' height='22' fill='none'/><line x1='100' y1='85' x2='136' y2='85'/><line x1='100' y1='92' x2='136' y2='92'/><circle cx='106' cy='81.5' r='1.2' fill='%234acf78'/><circle cx='112' cy='81.5' r='1.2' fill='%23c9a047'/><circle cx='118' cy='81.5' r='1.2' fill='%23a02a22'/></g><path d='M148 40 L170 40 L170 60 M148 80 L170 80 L170 60 L160 60' stroke='%23b87333' stroke-width='2' fill='none' stroke-linecap='round'/><circle cx='170' cy='40' r='3' fill='%23c9a047' stroke='%2315202a' stroke-width='0.5'/><circle cx='170' cy='80' r='3' fill='%23c9a047' stroke='%2315202a' stroke-width='0.5'/><text x='40' y='124' font-family='monospace' font-size='7' fill='%2315202a' font-weight='bold'>SECTION 608 / PLANT RM</text></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.75;
+    pointer-events: none;
+    z-index: 0;
+    filter: drop-shadow(0 2px 4px rgba(40, 60, 85, 0.18));
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Make sure content overlaps decoration properly */
+.hero > *:not(.hero-droplets) { position: relative; z-index: 1; }
+
+/* Corner watermark seal — bottom-right of container, subtle */
+main.container::after {
+  content: "";
+  position: fixed;
+  right: 110px; bottom: 28px;
+  width: 84px; height: 84px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84' fill='none'><polygon points='42,6 72,24 72,60 42,78 12,60 12,24' fill='none' stroke='%23b87333' stroke-width='1.2'/><polygon points='42,14 65,28 65,56 42,70 19,56 19,28' fill='none' stroke='%2313507a' stroke-width='0.8' stroke-dasharray='2 2'/><text x='42' y='38' text-anchor='middle' font-family='serif' font-size='10' font-weight='bold' fill='%2315202a'>608</text><text x='42' y='52' text-anchor='middle' font-family='monospace' font-size='5' fill='%2313507a'>SECTION</text><text x='42' y='60' text-anchor='middle' font-family='monospace' font-size='5' fill='%2313507a'>PREP</text></svg>");
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
+}
+/* Seal only shows in the narrow 1200-1399 window before the schematic rail takes over. */
+@media (max-width: 1200px), (min-width: 1400px) {
+  main.container::after { display: none; }
+}
+
+/* Inter-block breathing room for air */
+section.block { padding-top: 38px; padding-bottom: 38px; }
+
+/* ====================================================================
+   EXTENDED MARGIN FILL — more decorations for wider screens
+   ==================================================================== */
+
+/* Tiled vent-grille/schematic pattern in body margins — shows in empty sides */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    /* tiny copper dots spaced like rivets on the far left */
+    radial-gradient(circle at 10px 10px, rgba(184, 115, 51, 0.22) 1.4px, transparent 2px),
+    /* tiny blueprint-blue dots on the far right */
+    radial-gradient(circle at 10px 10px, rgba(19, 80, 122, 0.22) 1.4px, transparent 2px),
+    /* faint horizontal ticks along both outer edges */
+    repeating-linear-gradient(0deg, transparent 0, transparent 38px, rgba(21, 32, 42, 0.12) 38px, rgba(21, 32, 42, 0.12) 39px);
+  background-repeat: repeat, repeat, repeat-y;
+  background-size: 24px 24px, 24px 24px, 9px 100%;
+  background-position:
+    6px 60px,
+    calc(100% - 6px) 60px,
+    0 0, calc(100% - 0px) 0;
+  /* mask so the pattern only appears in the outer margins, not over content */
+  -webkit-mask-image: linear-gradient(90deg,
+    rgba(0, 0, 0, 0.65) 0,
+    rgba(0, 0, 0, 0.65) 96px,
+    transparent 140px,
+    transparent calc(100% - 140px),
+    rgba(0, 0, 0, 0.65) calc(100% - 96px),
+    rgba(0, 0, 0, 0.65) 100%);
+          mask-image: linear-gradient(90deg,
+    rgba(0, 0, 0, 0.65) 0,
+    rgba(0, 0, 0, 0.65) 96px,
+    transparent 140px,
+    transparent calc(100% - 140px),
+    rgba(0, 0, 0, 0.65) calc(100% - 96px),
+    rgba(0, 0, 0, 0.65) 100%);
+  opacity: 0.7;
+}
+@media (max-width: 1300px) {
+  body::after { display: none; }
+}
+
+/* Top-left corner — small isometric plant-room badge */
+.corner-plant {
+  position: fixed;
+  top: 78px; left: 14px;
+  width: 80px; height: 80px;
+  z-index: 0;
+  opacity: 0.45;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* We'll inject it via CSS pseudo on main.container — keeps markup clean */
+main.container::before {
+  content: "";
+  position: fixed;
+  top: 78px; left: 14px;
+  width: 84px; height: 84px;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84' fill='none'><circle cx='42' cy='42' r='36' fill='%23eaf0f4' stroke='%2315202a' stroke-width='1.2'/><circle cx='42' cy='42' r='28' fill='none' stroke='%2315202a' stroke-width='0.6' stroke-dasharray='2 2'/><g stroke='%2315202a' stroke-width='0.8'><line x1='42' y1='10' x2='42' y2='16'/><line x1='42' y1='68' x2='42' y2='74'/><line x1='10' y1='42' x2='16' y2='42'/><line x1='68' y1='42' x2='74' y2='42'/><line x1='19' y1='19' x2='23' y2='23'/><line x1='61' y1='19' x2='65' y2='23'/><line x1='19' y1='65' x2='23' y2='61'/><line x1='61' y1='65' x2='65' y2='61'/></g><text x='42' y='28' text-anchor='middle' font-family='monospace' font-size='5' fill='%2313507a' font-weight='bold'>PROTEAN</text><text x='42' y='52' text-anchor='middle' font-family='serif' font-size='14' fill='%23a5431b' font-weight='bold'>N</text><path d='M35 48 L42 36 L49 48' fill='%23a5431b' opacity='0.8'/><text x='42' y='66' text-anchor='middle' font-family='monospace' font-size='4.5' fill='%2315202a'>HVAC COMPASS</text></svg>");
+}
+/* Compass is hidden everywhere below 1960 — at 1400+ the schematic pipe takes over the gutter
+   role; at 1960+ this same pseudo is reused as the QUICK REF sidebar panel. */
+@media (max-width: 1959px) {
+  main.container::before { display: none; }
+}
+
+/* Wider screens also get a secondary floor-plan illustration at bottom-left.
+   Attached to footer.site::after (not body::before — that's already the grid).
+   Only shows at 1500px+ AND when the plant-status sidebar isn't active (1960+). */
+@media (min-width: 1500px) and (max-width: 1959px) {
+  footer.site::after {
+    content: "";
+    position: fixed;
+    left: 110px;
+    bottom: 30px;
+    width: 180px;
+    height: 120px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='120' viewBox='0 0 180 120' fill='none'><rect x='4' y='4' width='172' height='112' fill='%23eaf0f4' stroke='%2315202a' stroke-width='1.2'/><line x1='4' y1='54' x2='116' y2='54' stroke='%2315202a' stroke-width='0.8'/><line x1='116' y1='4' x2='116' y2='116' stroke='%2315202a' stroke-width='0.8'/><line x1='116' y1='72' x2='176' y2='72' stroke='%2315202a' stroke-width='0.8'/><text x='60' y='30' text-anchor='middle' font-family='monospace' font-size='6' fill='%2315202a'>TRAINING</text><text x='60' y='40' text-anchor='middle' font-family='monospace' font-size='6' fill='%2315202a'>LAB</text><text x='146' y='42' text-anchor='middle' font-family='monospace' font-size='6' fill='%2315202a'>OFFICE</text><text x='60' y='85' text-anchor='middle' font-family='monospace' font-size='6' fill='%2315202a'>RECOVERY</text><text x='60' y='95' text-anchor='middle' font-family='monospace' font-size='6' fill='%2315202a'>BAY</text><text x='146' y='97' text-anchor='middle' font-family='monospace' font-size='6' fill='%2315202a'>PLANT</text><rect x='80' y='100' width='8' height='4' fill='%2315202a'/><rect x='54' y='50' width='8' height='4' fill='%2315202a'/><circle cx='146' cy='20' r='4' fill='%23b87333' stroke='%2315202a' stroke-width='0.5'/><circle cx='146' cy='58' r='4' fill='%231d4e66' stroke='%2315202a' stroke-width='0.5'/><circle cx='146' cy='95' r='5' fill='%23c9a047' stroke='%2315202a' stroke-width='0.5'/><text x='90' y='15' text-anchor='middle' font-family='monospace' font-size='4.5' fill='%2313507a' font-weight='bold'>FLOOR PLAN  1:48</text></svg>");
+  }
+}
+
+/* Hero — fill more of the empty space with an additional lower-left pipe spray at desktop */
+@media (min-width: 1100px) {
+  .hero::after {
+    background:
+      radial-gradient(closest-side, rgba(184, 115, 51, 0.18), transparent 70%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='150' viewBox='0 0 220 150' fill='none'><path d='M10 130 Q50 130 50 90 L50 40 Q50 20 70 20 L140 20' stroke='%23b87333' stroke-width='4' fill='none' stroke-linecap='round'/><path d='M10 130 Q50 130 50 90 L50 40 Q50 20 70 20 L140 20' stroke='rgba(255,255,255,0.35)' stroke-width='1.2' fill='none' stroke-linecap='round'/><circle cx='50' cy='90' r='5' fill='%23c9a047' stroke='%2315202a' stroke-width='0.6'/><circle cx='140' cy='20' r='6' fill='%2313507a' stroke='%2315202a' stroke-width='0.6'/><rect x='80' y='12' width='20' height='16' rx='2' fill='%23eaf0f4' stroke='%2315202a' stroke-width='0.6'/><text x='90' y='23' text-anchor='middle' font-family='monospace' font-size='6' fill='%2315202a'>EXV</text><path d='M150 20 L190 20' stroke='%231d4e66' stroke-width='4' stroke-linecap='round'/><path d='M150 20 L190 20' stroke='rgba(255,255,255,0.35)' stroke-width='1.2' stroke-linecap='round'/></svg>") no-repeat left 32px bottom 16px !important;
+    background-size: auto, 220px auto !important;
+    opacity: 0.55 !important;
+  }
+}
+
+/* In-section drill area / practice page fillers — add watermark tags around the block headings */
+section.block h2 {
+  position: relative;
+}
+section.block h2::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 22px; height: 12px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='12' viewBox='0 0 22 12' fill='none'><rect x='1' y='3' width='20' height='6' rx='1' fill='none' stroke='%23b87333' stroke-width='1'/><line x1='5' y1='3' x2='5' y2='9' stroke='%23b87333' stroke-width='0.6'/><line x1='11' y1='3' x2='11' y2='9' stroke='%23b87333' stroke-width='0.6'/><line x1='17' y1='3' x2='17' y2='9' stroke='%23b87333' stroke-width='0.6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+}
+
+/* Footer — give it an extra copper strip above so the tail of the page isn't empty */
+footer.site {
+  position: relative;
+}
+footer.site::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: -3px;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--copper) 20%,
+    var(--brass) 50%,
+    var(--copper) 80%,
+    transparent 100%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Keep main & footer content above decorative pseudos (z:0). Header is already z:10 sticky. */
+body > main, body > footer { position: relative; z-index: 1; }
+
+/* ====================================================================
+   WIDESCREEN FILL v2 — widen content, grow grids, rails flank container
+   ==================================================================== */
+
+/* Generic grid helper used by resources.html */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* Grow the grids on wider screens so cards stretch less and use more real estate */
+@media (min-width: 1400px) {
+  .drill-hub { grid-template-columns: repeat(3, 1fr); }
+  .modern-lineup { grid-template-columns: repeat(3, 1fr); }
+  .refrigerant-lineup { grid-template-columns: repeat(4, 1fr); }
+  .pp-grid { grid-template-columns: repeat(6, 1fr); }
+  .grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+}
+@media (min-width: 1600px) {
+  .drill-hub { grid-template-columns: repeat(4, 1fr); }
+  .modern-lineup { grid-template-columns: repeat(4, 1fr); }
+  .refrigerant-lineup { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .badge-grid { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); }
+  .grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+}
+
+/* (Schematic sizing is handled above in the 1400/1550/1700/1900/2100 responsive block) */
+
+/* Alternating section: full-bleed tinted stripe that spans the viewport for rhythm on wide screens */
+@media (min-width: 1400px) {
+  section.block:nth-of-type(even) {
+    position: relative;
+    isolation: isolate;
+  }
+  section.block:nth-of-type(even)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1;
+    background:
+      linear-gradient(180deg,
+        rgba(19, 80, 122, 0.045) 0%,
+        rgba(19, 80, 122, 0.07) 50%,
+        rgba(19, 80, 122, 0.045) 100%);
+    pointer-events: none;
+    border-top: 1px solid rgba(19, 80, 122, 0.12);
+    border-bottom: 1px solid rgba(19, 80, 122, 0.12);
+  }
+}
+
+/* On 1960+ replace the small compass with a taller info sidebar panel.
+   At this width the gutter is ~150px and a 126-wide sidebar fits with breathing room. */
+@media (min-width: 1960px) {
+  main.container::before {
+    /* Swap compass for a taller quick-reference sidebar panel */
+    display: block;
+    content: "";
+    top: 96px;
+    left: max(6px, calc(50% - 830px - 140px));
+    width: 126px;
+    height: 340px;
+    opacity: 0.55;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='136' height='340' viewBox='0 0 136 340' fill='none'><rect x='1' y='1' width='134' height='338' rx='6' fill='%23eaf0f4' stroke='%2315202a' stroke-width='1.2'/><rect x='1' y='1' width='134' height='22' rx='6' fill='%2313507a'/><text x='68' y='15' text-anchor='middle' font-family='monospace' font-size='8' font-weight='bold' fill='%23eaf0f4' letter-spacing='1.2'>QUICK REF</text><g font-family='monospace' font-size='7' fill='%2315202a'><text x='8' y='40'>RECOVERY TGT</text><text x='128' y='40' text-anchor='end' fill='%23a5431b' font-weight='bold'>0 psig</text><text x='8' y='56'>HP &gt;=200lb</text><text x='128' y='56' text-anchor='end' fill='%23a5431b' font-weight='bold'>10 inHg</text><text x='8' y='72'>LOW PRESSURE</text><text x='128' y='72' text-anchor='end' fill='%231d4e66' font-weight='bold'>25 mmHg</text><text x='8' y='88'>CYL FILL MAX</text><text x='128' y='88' text-anchor='end' fill='%23a5431b' font-weight='bold'>80%</text><text x='8' y='104'>TYPE I LIMIT</text><text x='128' y='104' text-anchor='end' fill='%2315202a' font-weight='bold'>5 lb</text><text x='8' y='120'>LEAK RULE</text><text x='128' y='120' text-anchor='end' fill='%23a5431b' font-weight='bold'>50 lb+</text><text x='8' y='136'>PASS SCORE</text><text x='128' y='136' text-anchor='end' fill='%235a9450' font-weight='bold'>70%</text></g><line x1='6' y1='148' x2='130' y2='148' stroke='%2315202a' stroke-width='0.4' stroke-dasharray='2 2'/><text x='68' y='164' text-anchor='middle' font-family='monospace' font-size='7' font-weight='bold' fill='%2313507a'>REFRIGERANT</text><g font-family='monospace' font-size='7' fill='%2315202a'><text x='8' y='182'>R-32</text><circle cx='118' cy='180' r='3' fill='%237ab89a' stroke='%2315202a' stroke-width='0.5'/><text x='124' y='182' fill='%235a9450' font-size='6'>A2L</text><text x='8' y='198'>R-454B</text><circle cx='118' cy='196' r='3' fill='%238bbfc3' stroke='%2315202a' stroke-width='0.5'/><text x='124' y='198' fill='%235a9450' font-size='6'>A2L</text><text x='8' y='214'>R-410A</text><circle cx='118' cy='212' r='3' fill='%23e4536b' stroke='%2315202a' stroke-width='0.5'/><text x='124' y='214' fill='%2315202a' font-size='6'>A1</text><text x='8' y='230'>R-22</text><circle cx='118' cy='228' r='3' fill='%2370c06a' stroke='%2315202a' stroke-width='0.5'/><text x='124' y='230' fill='%2315202a' font-size='6'>A1</text><text x='8' y='246'>R-1234yf</text><circle cx='118' cy='244' r='3' fill='%23fff4d0' stroke='%2315202a' stroke-width='0.5'/><text x='124' y='246' fill='%235a9450' font-size='6'>A2L</text></g><line x1='6' y1='258' x2='130' y2='258' stroke='%2315202a' stroke-width='0.4' stroke-dasharray='2 2'/><text x='68' y='274' text-anchor='middle' font-family='monospace' font-size='7' font-weight='bold' fill='%2313507a'>VACUUM TARGET</text><text x='8' y='292' font-family='monospace' font-size='8' fill='%23a5431b' font-weight='bold'>500 microns</text><text x='8' y='310' font-family='monospace' font-size='6' fill='%23667585'>deep dehydration</text><text x='68' y='330' text-anchor='middle' font-family='monospace' font-size='6' fill='%2315202a' opacity='0.5'>PROTEAN · 608</text></svg>");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+/* Floating companion sidebar on the OPPOSITE side at 1960px+ — a pressure/temperature chart */
+@media (min-width: 1960px) {
+  footer.site::after {
+    /* Instead of floor plan here, promote this to a pressure/temperature dashboard */
+    content: "";
+    position: fixed;
+    right: max(6px, calc(50% - 830px - 140px));
+    bottom: auto;
+    top: 96px;
+    left: auto;
+    width: 126px;
+    height: 340px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='136' height='340' viewBox='0 0 136 340' fill='none'><rect x='1' y='1' width='134' height='338' rx='6' fill='%2315202a' stroke='%2315202a' stroke-width='1.2'/><rect x='1' y='1' width='134' height='22' rx='6' fill='%230f3446'/><text x='68' y='15' text-anchor='middle' font-family='monospace' font-size='8' font-weight='bold' fill='%23c9a047' letter-spacing='1.2'>PLANT STATUS</text><g transform='translate(12 40)'><circle cx='52' cy='52' r='48' fill='%23050807' stroke='%23b87333' stroke-width='1.2'/><circle cx='52' cy='52' r='38' fill='none' stroke='%23667585' stroke-width='0.5'/><g stroke='%23c9a047' stroke-width='0.6'><line x1='52' y1='10' x2='52' y2='18'/><line x1='52' y1='86' x2='52' y2='94'/><line x1='10' y1='52' x2='18' y2='52'/><line x1='86' y1='52' x2='94' y2='52'/><line x1='22' y1='22' x2='28' y2='28'/><line x1='82' y1='22' x2='76' y2='28'/><line x1='22' y1='82' x2='28' y2='76'/><line x1='82' y1='82' x2='76' y2='76'/></g><g font-family='monospace' font-size='5' fill='%23c9a047'><text x='52' y='24' text-anchor='middle'>0</text><text x='80' y='55' text-anchor='middle'>250</text><text x='52' y='92' text-anchor='middle'>500</text><text x='22' y='55' text-anchor='middle'>100</text></g><path d='M52 52 L78 28' stroke='%23e03f3f' stroke-width='2' stroke-linecap='round'/><circle cx='52' cy='52' r='3' fill='%23eaf0f4'/><text x='52' y='110' text-anchor='middle' font-family='monospace' font-size='7' fill='%234acf78' font-weight='bold'>HP 348 PSI</text></g><g transform='translate(10 162)'><rect x='0' y='0' width='116' height='44' rx='3' fill='%23050807' stroke='%23c9a047' stroke-width='0.6'/><text x='58' y='12' text-anchor='middle' font-family='monospace' font-size='6' fill='%23c9a047'>SUCT TEMP</text><text x='58' y='30' text-anchor='middle' font-family='monospace' font-size='13' fill='%234acf78' font-weight='bold'>45.2°F</text><text x='58' y='40' text-anchor='middle' font-family='monospace' font-size='5' fill='%23667585'>evap out</text></g><g transform='translate(10 214)'><rect x='0' y='0' width='116' height='44' rx='3' fill='%23050807' stroke='%23c9a047' stroke-width='0.6'/><text x='58' y='12' text-anchor='middle' font-family='monospace' font-size='6' fill='%23c9a047'>LIQ TEMP</text><text x='58' y='30' text-anchor='middle' font-family='monospace' font-size='13' fill='%23e6b547' font-weight='bold'>98.7°F</text><text x='58' y='40' text-anchor='middle' font-family='monospace' font-size='5' fill='%23667585'>sub-cooled</text></g><g transform='translate(10 266)'><text x='58' y='10' text-anchor='middle' font-family='monospace' font-size='6' fill='%23c9a047'>STATUS</text><circle cx='20' cy='24' r='5' fill='%234acf78'/><text x='30' y='27' font-family='monospace' font-size='6' fill='%23eaf0f4'>COMPRESSOR</text><circle cx='20' cy='40' r='5' fill='%234acf78'/><text x='30' y='43' font-family='monospace' font-size='6' fill='%23eaf0f4'>COND FAN</text><circle cx='20' cy='56' r='5' fill='%23c9a047'/><text x='30' y='59' font-family='monospace' font-size='6' fill='%23eaf0f4'>EEV MODULATE</text></g><text x='68' y='330' text-anchor='middle' font-family='monospace' font-size='6' fill='%23c9a047' opacity='0.5'>R-454B · 1.2 MPa</text></svg>");
+  }
+}
+
+/* Below 1500 nothing should render on footer.site::after (no floor plan, no sidebar). */
+@media (max-width: 1499px) {
+  footer.site::after { display: none; }
+}
+
+/* At 1960+ the sidebars replace the side schematics (no room for both) */
+@media (min-width: 1960px) {
+  html::before, html::after { display: none; }
+}
+
+/* At 2100+ nudge both sidebars further out since container keeps growing to 1800 */
+@media (min-width: 2100px) {
+  main.container::before { left: max(6px, calc(50% - 900px - 140px)); }
+  footer.site::after { right: max(6px, calc(50% - 900px - 140px)); }
+}
+
+/* ====================================================================
+   COLOR TOKENS (used by Field Tools and a few other recent additions).
+   These stay defined even after removing the thermodynamic chrome so
+   the gauge/table widgets keep their working palette.
+   ==================================================================== */
+
+:root {
+  --therm-0:    #1b3a5b;
+  --therm-cold: #2f6dad;
+  --therm-cool: #6ea9d0;
+  --therm-mid:  #e3d3ae;
+  --therm-warm: #d48a4a;
+  --therm-hot:  #b64220;
+  --therm-max:  #7a1f10;
+  --bg-clean:    #eef3f7;
+  --paper-clean: #f6f9fc;
+  --paper-ghost: #ffffff;
+  --rule-clean:  #cfd8e0;
+}
+
+
+/* =====================================================================
+   FIELD TOOLS — PT chart, SH/SC calc, unit converter, ref table
+   Manifold-gauge aesthetic: cream instrument face, monospace digital
+   readouts, thermal-palette accents. These are meant to feel like a
+   real service tool sitting open on the dashboard.
+   ===================================================================== */
+
+.tool-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 18px;
+}
+.tool-stack > .tool-slot { min-width: 0; }
+.tool-stack .tool-slot-wide { grid-column: 1 / -1; }
+@media (max-width: 980px) {
+  .tool-stack { grid-template-columns: 1fr; }
+}
+
+.tool-panel {
+  position: relative;
+  background: linear-gradient(180deg, #fefdf8 0%, #f5efe1 100%);
+  border: 1.5px solid #3a2f22;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.8) inset,
+    0 -2px 0 rgba(0,0,0,0.05) inset,
+    0 8px 24px rgba(29,24,16,0.08),
+    0 2px 6px rgba(29,24,16,0.06);
+  overflow: hidden;
+}
+.tool-panel::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--therm-cold) 0%,
+    var(--therm-cool) 25%,
+    var(--therm-mid) 50%,
+    var(--therm-warm) 75%,
+    var(--therm-hot) 100%);
+}
+.tool-panel::after {
+  content: "";
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #78d28b 0%, #2a7a3a 70%, #0c3a17 100%);
+  box-shadow: 0 0 6px rgba(120,210,139,0.6), 0 0 0 2px rgba(29,24,16,0.4);
+}
+.tool-panel-head { margin-bottom: 16px; }
+.tool-panel-head .tool-tag {
+  display: inline-block;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--therm-hot);
+  background: rgba(182, 66, 32, 0.08);
+  border: 1px solid rgba(182, 66, 32, 0.3);
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+.tool-panel-head h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.3rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.tool-panel-head .tool-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+/* ---------- PT Chart ---------- */
+.pt-body {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 22px;
+  align-items: center;
+}
+@media (max-width: 720px) {
+  .pt-body { grid-template-columns: 1fr; }
+}
+.pt-controls { display: flex; flex-direction: column; gap: 12px; }
+.pt-controls label {
+  display: flex; flex-direction: column; gap: 4px;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.pt-controls select,
+.pt-controls input[type="number"] {
+  background: #fff;
+  border: 1.3px solid var(--rule-clean);
+  border-radius: 5px;
+  padding: 8px 10px;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 1rem;
+  color: var(--ink);
+}
+.pt-controls input[type="range"] {
+  width: 100%;
+  accent-color: var(--therm-hot);
+}
+.pt-temp-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.pt-temp-row input {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.pt-unit {
+  font-family: ui-monospace, Menlo, monospace;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.pt-readout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.pt-gauge { width: 180px; max-width: 180px; }
+.pt-gauge svg {
+  width: 100%; height: auto;
+  filter: drop-shadow(0 2px 4px rgba(29,24,16,0.12));
+}
+#pt-needle { transition: transform 0.3s cubic-bezier(0.4, 1.6, 0.5, 1); }
+.pt-digital {
+  background: #1a1410;
+  border: 1.5px solid #3a2f22;
+  border-radius: 6px;
+  padding: 12px 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2) inset;
+}
+.pt-line {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  align-items: baseline;
+  padding: 3px 0;
+  border-bottom: 1px dashed rgba(227, 211, 174, 0.15);
+}
+.pt-line:last-child { border-bottom: 0; }
+.pt-line .pt-k {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: #8a7860;
+  text-transform: uppercase;
+}
+.pt-line .pt-v {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #e3d3ae;
+  text-shadow: 0 0 8px rgba(227, 211, 174, 0.45);
+  min-width: 3ch;
+  text-align: right;
+}
+.pt-line .pt-u {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.7rem;
+  color: #a08968;
+}
+
+/* ---------- Superheat / Subcool ---------- */
+.sh-body {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+@media (max-width: 780px) {
+  .sh-body { grid-template-columns: 1fr; }
+  .sh-divider { display: none; }
+}
+.sh-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--rule-clean);
+}
+.sh-suction { border-left: 3px solid var(--therm-cold); }
+.sh-liquid  { border-left: 3px solid var(--therm-hot); }
+.sh-divider {
+  background: linear-gradient(180deg, transparent, var(--rule-clean), transparent);
+}
+.sh-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.sh-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #1d1810;
+}
+.sh-dot-cold { background: var(--therm-cold); }
+.sh-dot-hot  { background: var(--therm-hot); }
+.sh-side label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.sh-side select,
+.sh-side input[type="number"] {
+  background: #fff;
+  border: 1.3px solid var(--rule-clean);
+  border-radius: 5px;
+  padding: 7px 9px;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.sh-result {
+  margin-top: 6px;
+  padding: 10px 12px;
+  background: #1a1410;
+  border-radius: 5px;
+}
+.sh-line {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 6px;
+  align-items: baseline;
+  padding: 2px 0;
+}
+.sh-line .sh-k {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #8a7860;
+  text-transform: uppercase;
+}
+.sh-line .sh-v {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e3d3ae;
+  text-shadow: 0 0 6px rgba(227, 211, 174, 0.4);
+}
+.sh-line .sh-u {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.65rem;
+  color: #a08968;
+}
+.sh-line.sh-big .sh-v {
+  font-size: 1.5rem;
+  color: #f5deb3;
+}
+.sh-verdict {
+  margin-top: 8px;
+  padding: 6px 8px;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+  border-radius: 3px;
+  background: rgba(227, 211, 174, 0.1);
+  color: #8a7860;
+}
+.sh-verdict.ok {
+  background: rgba(120, 210, 139, 0.18);
+  color: #3fd066;
+  border: 1px solid rgba(120, 210, 139, 0.4);
+}
+.sh-verdict.low {
+  background: rgba(110, 169, 208, 0.18);
+  color: #7fc3f2;
+  border: 1px solid rgba(110, 169, 208, 0.4);
+}
+.sh-verdict.high {
+  background: rgba(228, 83, 107, 0.18);
+  color: #ff7088;
+  border: 1px solid rgba(228, 83, 107, 0.4);
+}
+.sh-note {
+  margin: 14px 2px 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Unit Converter ---------- */
+.uc-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.uc-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr auto 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid var(--rule-clean);
+  border-radius: 6px;
+  border-left: 3px solid var(--therm-warm);
+}
+.uc-row:nth-child(even) { border-left-color: var(--therm-cold); }
+.uc-row:nth-child(3n)   { border-left-color: var(--therm-mid); }
+@media (max-width: 680px) {
+  .uc-row { grid-template-columns: 1fr; }
+  .uc-arrow { display: none; }
+}
+.uc-name {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 700;
+}
+.uc-row label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: baseline;
+  background: #1a1410;
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+.uc-row input[type="number"] {
+  background: transparent;
+  border: none;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e3d3ae;
+  text-shadow: 0 0 4px rgba(227, 211, 174, 0.3);
+  width: 100%;
+  outline: none;
+}
+.uc-row label span {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.7rem;
+  color: #a08968;
+  letter-spacing: 0.06em;
+}
+.uc-arrow {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--therm-hot);
+  font-weight: 700;
+}
+
+/* ---------- Refrigerant Spec Table ---------- */
+.rt-panel { padding: 22px; }
+.rt-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--rule-clean);
+  border-radius: 6px;
+  background: #fff;
+}
+.rt-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  min-width: 820px;
+}
+.rt-table thead th {
+  background: linear-gradient(180deg, #1a1410 0%, #2a2218 100%);
+  color: #f5deb3;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 8px;
+  text-align: left;
+  border-bottom: 2px solid var(--therm-hot);
+  white-space: nowrap;
+}
+.rt-table thead th sub { font-size: 0.65em; }
+.rt-table tbody tr {
+  border-bottom: 1px solid var(--rule-clean);
+  transition: background 0.12s;
+}
+.rt-table tbody tr:hover {
+  background: rgba(227, 211, 174, 0.18);
+}
+.rt-table tbody tr:last-child { border-bottom: 0; }
+.rt-table td {
+  padding: 9px 8px;
+  vertical-align: middle;
+  color: var(--ink);
+}
+.rt-id {
+  font-family: ui-monospace, Menlo, monospace;
+  font-weight: 700;
+  color: var(--therm-hot);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.rt-num {
+  font-family: ui-monospace, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.rt-status {
+  font-size: 0.82rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.rt-apps {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.rt-kind {
+  display: inline-block;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+.rt-k-CFC   { color:#b64220; border-color:#b64220; background:rgba(182,66,32,0.08); }
+.rt-k-HCFC  { color:#d48a4a; border-color:#d48a4a; background:rgba(212,138,74,0.1); }
+.rt-k-HFC   { color:#2f6dad; border-color:#2f6dad; background:rgba(47,109,173,0.08); }
+.rt-k-HFO   { color:#3a8a4a; border-color:#3a8a4a; background:rgba(58,138,74,0.08); }
+.rt-safety {
+  display: inline-block;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid #1d1810;
+}
+.rt-s-A1  { background:#e8ede4; color:#1d1810; }
+.rt-s-A2L { background:#f5e9d0; color:#8a5420; }
+.rt-s-A2  { background:#f5cfb0; color:#8a3614; }
+.rt-s-A3  { background:#f0a488; color:#5a1f0a; }
+.rt-s-B1  { background:#e0d6e8; color:#3a1f4a; }
+
+/* =====================================================================
+   HOME PAGE POLISH — wide-screen density + visual interest, no bars.
+   Keeps the parchment-engineering look and simply packs the layout so
+   widescreen users stop seeing a narrow stripe floating in empty space.
+   ===================================================================== */
+
+/* Fact-sheet dl.kv — on wide, flow term/def pairs through CSS columns so
+   each pair stays together. Each term gets a ledger-rule left edge. */
+dl.kv dt {
+  margin: 10px 0 2px;
+  font-weight: 700;
+  padding-left: 10px;
+  border-left: 2px solid #c9a066;
+  color: #2a1d10;
+}
+dl.kv dd {
+  margin: 0 0 10px 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed rgba(138, 84, 32, 0.18);
+  color: var(--ink-soft, #3a2f22);
+  line-height: 1.5;
+}
+dl.kv dd:last-of-type { border-bottom: 0; }
+@media (min-width: 900px) {
+  dl.kv { display: block; columns: 2; column-gap: 42px; grid-template-columns: none; }
+  dl.kv dt { break-after: avoid; break-inside: avoid; }
+  dl.kv dd { break-before: avoid; break-inside: avoid; }
+}
+@media (min-width: 1400px) {
+  dl.kv { columns: 3; column-gap: 36px; }
+}
+
+/* "Questions people actually ask" FAQ — 2-column on wide so the page fills.
+   First column gets half, second column gets the other half, details stay
+   collapsible individually. */
+@media (min-width: 900px) {
+  section.block > details.faq:first-of-type { margin-top: 4px; }
+  section.block:has(details.faq) {
+    display: block;
+  }
+  section.block:has(details.faq) > details.faq {
+    display: block;
+  }
+}
+@media (min-width: 1100px) {
+  section.block:has(> details.faq) {
+    /* wrap faqs in a visual grid using columns trick on the section */
+  }
+  /* CSS columns layout for details — keeps summary clickable, avoids JS */
+  section.block:has(> details.faq):not(:has(> h2 + p)) details.faq:first-of-type { margin-top: 0; }
+  /* Use a sibling grid by targeting the stack of details elements */
+}
+/* Cleaner approach: convert the list of faq details into a true 2-col grid */
+@media (min-width: 1100px) {
+  /* create a pseudo-grid by floating/flex — but easiest: wrap via CSS columns */
+  section.block > details.faq {
+    break-inside: avoid;
+  }
+  section.block {
+    /* sections that contain only faqs will multicolumn */
+  }
+  /* Use a class-less sibling selector: any section whose children are predominantly details.faq */
+  section.block:has(> details.faq + details.faq) {
+    column-count: 2;
+    column-gap: 34px;
+  }
+  section.block:has(> details.faq + details.faq) > h2,
+  section.block:has(> details.faq + details.faq) > .hvac-rule,
+  section.block:has(> details.faq + details.faq) > p:first-of-type {
+    column-span: all;
+  }
+  section.block:has(> details.faq + details.faq) > details.faq {
+    margin: 0 0 12px;
+    break-inside: avoid;
+    display: block;
+  }
+}
+
+/* Plain lists with 3+ bullets pack nicely into 2 columns on wide */
+@media (min-width: 1100px) {
+  ul.plain {
+    columns: 2;
+    column-gap: 40px;
+  }
+  ul.plain > li {
+    break-inside: avoid;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1600px) {
+  ul.plain { columns: 3; column-gap: 36px; }
+}
+
+/* Legacy cylinder grid — make sure the 4 cards use full width on widescreen */
+@media (min-width: 1400px) {
+  .cylinder-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+}
+@media (min-width: 1600px) {
+  .modern-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+}
+
+/* Sources — make them a dense card grid on wide */
+@media (min-width: 1100px) {
+  .sources {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    align-items: stretch;
+  }
+  .sources > * {
+    background: linear-gradient(180deg, #fffaee 0%, #f4ecd4 100%);
+    border: 1px solid rgba(138, 84, 32, 0.25);
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 2px rgba(60, 40, 15, 0.06);
+  }
+}
+
+/* Stat strip under the hero on desktop — gives widescreen users immediate
+   visual density instead of empty cream space between hero and first block. */
+.hero-stat-strip {
+  display: none;
+  margin: 18px auto 0;
+  max-width: 1100px;
+  padding: 14px 22px;
+  background: linear-gradient(180deg, #fffaee 0%, #f6ecd1 100%);
+  border: 1px solid rgba(138, 84, 32, 0.28);
+  border-radius: 10px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.7) inset,
+    0 2px 6px rgba(60, 40, 15, 0.06);
+}
+@media (min-width: 1100px) {
+  .hero-stat-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    align-items: center;
+  }
+}
+.hero-stat-strip > .hs-cell {
+  padding: 4px 18px;
+  border-left: 1px solid rgba(138, 84, 32, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hero-stat-strip > .hs-cell:first-child { border-left: 0; padding-left: 6px; }
+.hs-num {
+  font-family: var(--mono, ui-monospace, Menlo, monospace);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2a1d10;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.hs-lbl {
+  font-family: var(--mono, ui-monospace, Menlo, monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a5420;
+}
+.hs-note {
+  font-size: 0.82rem;
+  color: rgba(60, 40, 15, 0.65);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+/* Section number badge — quiet parchment coin to the left of h2 on wide.
+   Gives each section block a visual anchor without adding any bar.
+   Must fully override two pre-existing ::before rules (lines 438, 1751)
+   that set position:absolute, width:5px, height:26px as a vertical bar. */
+@media (min-width: 1200px) {
+  main.container { counter-reset: section-num; }
+  section.block > h2 {
+    position: static !important;
+    counter-increment: section-num;
+    padding-left: 0 !important;
+  }
+  section.block > h2::before {
+    content: counter(section-num, decimal-leading-zero) !important;
+    position: static !important;
+    display: inline-block !important;
+    width: auto !important;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    font-family: var(--mono, ui-monospace, Menlo, monospace);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #8a5420 !important;
+    background: linear-gradient(180deg, #fffaee 0%, #f4e4b9 100%) !important;
+    border: 1px solid rgba(138, 84, 32, 0.28) !important;
+    border-radius: 20px !important;
+    padding: 3px 10px !important;
+    margin: 0 12px 0 0 !important;
+    vertical-align: 3px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset !important;
+  }
+}
+
+/* Note callout — a little more visual weight so it reads as a real callout,
+   not a washed-out paragraph. Still parchment, still quiet. */
+.note {
+  background: linear-gradient(180deg, #fffaee 0%, #f4e9c8 100%);
+  border-left: 3px solid #c9a066;
+  padding: 14px 18px;
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset;
+}
+.note-label {
+  display: inline-block;
+  font-family: var(--mono, ui-monospace, Menlo, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a5420;
+  margin-right: 10px;
+}
+
+/* Progress panel — lift it slightly so the hero-to-progress transition has
+   a visible floor rather than vanishing into the background. */
+.progress-panel {
+  background: linear-gradient(180deg, #fffaee 0%, #faeed1 100%);
+  border: 1px solid rgba(138, 84, 32, 0.22);
+  border-radius: 12px;
+  padding: 22px 26px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.7) inset,
+    0 4px 14px rgba(60, 40, 15, 0.06);
+}
+
+/* About card, primer, source cards — align to same parchment card look */
+.about-card,
+.primer,
+.section-card {
+  background: linear-gradient(180deg, #fffaee 0%, #f7edd3 100%);
+  border: 1px solid rgba(138, 84, 32, 0.22);
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.75) inset, 0 2px 8px rgba(60, 40, 15, 0.05);
+}
+
+/* Final CTA — strip of warmth, no bar, just a richer parchment with a subtle
+   sealed-letter feel. */
+.cta {
+  background: linear-gradient(180deg, #fffaee 0%, #f5e5bd 100%);
+  border: 1px solid rgba(138, 84, 32, 0.25);
+  border-radius: 10px;
+  padding: 22px 26px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 4px 14px rgba(60, 40, 15, 0.06);
+}
+
+/* Kill any lingering thermal ribbon/state-point overrides from before (belt + suspenders) */
+header.site::after,
+header.site::before,
+footer.site::before { content: none !important; display: none !important; }
+
+/* ========== Hero h1 readability fix ==========
+   Two earlier rules put `background-clip: text` + `color: transparent` on
+   the h1 so the title renders as a gradient. But `.underline-doodle`
+   inside the h1 has its own highlighter-sweep background AND still
+   inherits `-webkit-text-fill-color: transparent`, which makes the
+   accent word ("the 608.") invisible. Fix: render the whole h1 in
+   solid ink, keep the highlighter sweep behind the accent word. */
+.hero h1,
+.hero h1 * {
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+          background-clip: border-box !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: #1d1810 !important;
+}
+.hero h1 .underline-doodle {
+  /* Restore the highlighter-sweep (semi-transparent coral band behind text). */
+  background-image: linear-gradient(180deg,
+    transparent 65%,
+    rgba(165, 67, 27, 0.16) 65%,
+    rgba(165, 67, 27, 0.16) 92%,
+    transparent 92%) !important;
+  padding: 0 3px;
+}
+.hero h1 .underline-doodle svg {
+  color: #a5431b;
+}
+

@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow">
   <title>Flashcards — Protean · R-32 / R-454B prep</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -50,6 +53,9 @@
 
   <main class="container">
     <section class="hero">
+      <div class="hero-droplets" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
       <h1>Flashcards</h1>
       <p class="lead">These are the facts the exam keeps asking about — the pressures, the dates, the threshold percentages, the cylinder colors. Click a card to flip it. Mark it <em>known</em> when you stop having to think. Unknown cards come back around.</p>
       <p class="small muted">Keyboard: <strong>space</strong> to flip, <strong>← →</strong> to navigate, <strong>K</strong> to mark known.</p>
