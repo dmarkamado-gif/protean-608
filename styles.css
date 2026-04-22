@@ -4015,3 +4015,351 @@ footer.site::before { content: none !important; display: none !important; }
   color: #a5431b;
 }
 
+/* ==========================================================================
+   TRADE-TOOL POLISH v2
+   Cleaner, tighter, more service-manual. Layered on top of the parchment
+   base so we keep the warmth but gain practical HVAC-shop density.
+   Palette: safety yellow, copper, steel — against the existing cream ink.
+   ========================================================================== */
+
+:root {
+  --safety-yellow: #f4c542;
+  --safety-yellow-ink: #8a6510;
+  --copper: #b87333;
+  --copper-dark: #7a4a1d;
+  --steel: #3a4048;
+  --steel-2: #5a626c;
+  --rule-ink: #8a5420;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+/* --- Side rails: quieter, cleaner pinstripe instead of ornamental schematic.
+      The old rails had busy SVG data-URI backgrounds; swap for a single thin
+      rule with a tiny tick-mark pattern at the top and bottom. Only render
+      on very wide screens so they never crowd the container. --- */
+@media (min-width: 1400px) and (max-width: 1960px) {
+  html::before,
+  html::after {
+    background: linear-gradient(180deg,
+      transparent 0,
+      transparent 40px,
+      rgba(138, 84, 32, 0.22) 40px,
+      rgba(138, 84, 32, 0.22) calc(100% - 40px),
+      transparent calc(100% - 40px)) !important;
+    background-size: 1px 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    width: 1px !important;
+    opacity: 0.9 !important;
+  }
+}
+@media (max-width: 1399px), (min-width: 1961px) {
+  html::before, html::after { display: none !important; }
+}
+
+/* --- Section header eyebrow: "SECTION 01" pill upgraded to a typeset
+      eyebrow with a bracket rule, like a service manual chapter header.
+      Only kicks in at wide widths where we already reset the old vertical bar. --- */
+@media (min-width: 1200px) {
+  section.block > h2::before {
+    content: "SEC " counter(section-num, decimal-leading-zero) !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 14px 0 0 !important;
+    font-family: var(--mono) !important;
+    font-size: 0.66rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.18em !important;
+    color: var(--copper-dark) !important;
+    box-shadow: none !important;
+    vertical-align: 4px !important;
+    border-left: 3px solid var(--safety-yellow) !important;
+    padding-left: 10px !important;
+  }
+  section.block > h2 {
+    border-bottom: 1px solid rgba(138, 84, 32, 0.22);
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+  }
+}
+
+/* --- Stat strip: upgrade to gauge-dial treatment. Each cell gets a subtle
+      circular dial ring behind the number, like a manifold gauge face. --- */
+.hero-stat-strip {
+  background: linear-gradient(180deg, #fffaee 0%, #f3e6c3 100%) !important;
+  border: 1px solid rgba(58, 64, 72, 0.22) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.75) inset,
+    0 0 0 1px rgba(255,255,255,0.4) inset,
+    0 2px 10px rgba(60, 40, 15, 0.08) !important;
+  position: relative;
+}
+.hero-stat-strip::before {
+  content: "FIELD REFERENCE · KEEP THESE MEMORIZED";
+  position: absolute;
+  top: -9px;
+  left: 22px;
+  background: #fffaee;
+  padding: 1px 10px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--copper-dark);
+  border: 1px solid rgba(58, 64, 72, 0.22);
+  border-radius: 2px;
+}
+.hero-stat-strip > .hs-cell {
+  position: relative;
+  padding: 10px 20px !important;
+  min-height: 62px;
+  justify-content: center;
+}
+.hero-stat-strip > .hs-cell::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 26px;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(58, 64, 72, 0.18);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255,255,255,0.6), transparent 60%),
+    conic-gradient(from 225deg,
+      var(--safety-yellow) 0deg,
+      var(--safety-yellow) 90deg,
+      transparent 90deg,
+      transparent 270deg);
+  background-clip: padding-box;
+  opacity: 0.22;
+  pointer-events: none;
+}
+.hero-stat-strip > .hs-cell:first-child::before { left: 14px; }
+.hs-num {
+  position: relative;
+  z-index: 1;
+  font-size: 1.55rem !important;
+  color: var(--steel) !important;
+  padding-left: 2px;
+}
+.hs-lbl {
+  position: relative;
+  z-index: 1;
+  color: var(--copper-dark) !important;
+  font-size: 0.64rem !important;
+  letter-spacing: 0.18em !important;
+}
+
+/* --- Cylinder refrigerant cards: cleaner top valve cap band in the
+      refrigerant's cylinder color, tighter type hierarchy. --- */
+.cylinder-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fffaee 0%, #f7edd3 100%);
+  border: 1px solid rgba(58, 64, 72, 0.2);
+  border-radius: 8px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.75) inset,
+    0 2px 6px rgba(60, 40, 15, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.cylinder-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--cyl-color, var(--steel));
+}
+.cylinder-card:nth-child(1) { --cyl-color: #5e7a3a; }
+.cylinder-card:nth-child(2) { --cyl-color: #c86578; }
+.cylinder-card:nth-child(3) { --cyl-color: #3a7fae; }
+.cylinder-card:nth-child(4) { --cyl-color: #8b8279; }
+.cylinder-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.85) inset,
+    0 6px 16px rgba(60, 40, 15, 0.10);
+}
+.cylinder-card .name {
+  font-family: var(--mono);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--steel);
+}
+.cylinder-card .sub {
+  font-size: 0.78rem;
+  color: rgba(60, 60, 72, 0.75);
+  line-height: 1.45;
+}
+
+/* --- Modern-cards (new refrigerants block): same discipline — top color
+      band, monospace label, steel ink. --- */
+.modern-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(58, 64, 72, 0.2) !important;
+}
+.modern-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--cyl-color, var(--safety-yellow));
+}
+.modern-card:nth-child(1) { --cyl-color: #d9a96b; }
+.modern-card:nth-child(2) { --cyl-color: #7ab89a; }
+.modern-card:nth-child(3) { --cyl-color: #4a90c2; }
+
+/* --- Hero: add a small pre-title eyebrow so the page opens like a spec sheet
+      rather than a magazine feature. Injected via CSS before the h1. --- */
+.hero {
+  position: relative;
+}
+.hero h1 {
+  position: relative;
+}
+.hero h1::before {
+  content: "EPA SECTION 608 · CERTIFICATION PREP";
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--copper-dark);
+  margin-bottom: 14px;
+  padding-left: 12px;
+  border-left: 3px solid var(--safety-yellow);
+  /* Must explicitly opt out of the gradient-clip override above */
+  background-image: none !important;
+  -webkit-text-fill-color: var(--copper-dark) !important;
+  color: var(--copper-dark) !important;
+}
+
+/* --- Primary nav: tighter, flatter, trade-toolbar feel. --- */
+header.site nav.primary a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+header.site nav.primary a:hover {
+  background: rgba(138, 84, 32, 0.08);
+  color: var(--copper-dark);
+}
+header.site nav.primary a.active {
+  background: var(--steel);
+  color: #fffaee;
+  box-shadow: inset 0 -2px 0 var(--safety-yellow);
+}
+
+/* --- Buttons: steel base + safety-yellow hover stripe reads like a real
+      shop control, not a marketing CTA. --- */
+.btn {
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: background 0.12s ease, box-shadow 0.12s ease, transform 0.1s ease;
+}
+.btn:hover {
+  box-shadow: inset 0 -3px 0 var(--safety-yellow), 0 2px 6px rgba(60, 40, 15, 0.12);
+  transform: translateY(-1px);
+}
+
+/* --- Data tables: service-manual treatment. Zebra rows via monospace digits,
+      safety-yellow left rule on header, copper borders. --- */
+table.data {
+  border-collapse: collapse;
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid rgba(58, 64, 72, 0.2);
+  background: linear-gradient(180deg, #fffaee 0%, #fbf3dc 100%);
+  box-shadow: 0 1px 2px rgba(60, 40, 15, 0.05);
+}
+table.data thead th {
+  background: var(--steel);
+  color: #fdf1de;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 3px solid var(--safety-yellow);
+}
+table.data tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(138, 84, 32, 0.12);
+  color: #2a1d10;
+}
+table.data tbody td:first-child {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--copper-dark);
+  white-space: nowrap;
+}
+table.data tbody tr:nth-child(even) td {
+  background: rgba(244, 197, 66, 0.05);
+}
+table.data tbody tr:hover td {
+  background: rgba(244, 197, 66, 0.12);
+}
+
+/* --- Footer: a thin safety-yellow hazard stripe at the top so the page
+      ends with a clear trade-shop punctuation mark. --- */
+footer.site {
+  border-top: 3px solid var(--safety-yellow);
+  background: linear-gradient(180deg, #f4e9c8 0%, #e8d7a3 100%);
+  position: relative;
+}
+footer.site::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--safety-yellow) 0 10px,
+    var(--steel) 10px 14px
+  );
+}
+
+/* --- Stats bar in header: condense to a compact pill with safety-yellow
+      accent so progress feels like a trade-shop readout. --- */
+#stats-bar {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+/* --- Card grids — tighten the borders so cards sit on their content, not
+      float in cream. --- */
+.grid .card,
+.about-card,
+.primer,
+.section-card {
+  border-color: rgba(58, 64, 72, 0.2) !important;
+}
+
+/* --- Brand badge polish: slightly brighter ring so the hex logo reads
+      as a physical stamped badge. --- */
+.brand-badge {
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,0.6))
+          drop-shadow(0 2px 3px rgba(60, 40, 15, 0.18));
+}
+.brand-tag {
+  font-family: var(--mono);
+  letter-spacing: 0.12em;
+  color: var(--copper-dark);
+}
+
