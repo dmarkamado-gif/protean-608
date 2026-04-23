@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaee"/>
+      <stop offset="1" stop-color="#f0e2c1"/>
+    </linearGradient>
+    <linearGradient id="hex" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e08148"/>
+      <stop offset="0.45" stop-color="#a5431b"/>
+      <stop offset="1" stop-color="#6b2708"/>
+    </linearGradient>
+    <linearGradient id="inner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaee"/>
+      <stop offset="1" stop-color="#f0e2c1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Safety-yellow hazard stripe top -->
+  <rect x="0" y="0" width="1200" height="10" fill="#f4c542"/>
+  <rect x="0" y="10" width="1200" height="4" fill="#3a4048"/>
+
+  <!-- Hazard stripe bottom -->
+  <rect x="0" y="616" width="1200" height="4" fill="#3a4048"/>
+  <rect x="0" y="620" width="1200" height="10" fill="#f4c542"/>
+
+  <!-- Corner tick marks -->
+  <g stroke="#8a5420" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M 40 60 L 40 90 M 40 60 L 70 60"/>
+    <path d="M 1160 60 L 1160 90 M 1160 60 L 1130 60"/>
+    <path d="M 40 570 L 40 540 M 40 570 L 70 570"/>
+    <path d="M 1160 570 L 1160 540 M 1160 570 L 1130 570"/>
+  </g>
+
+  <!-- Protean hex badge -->
+  <g transform="translate(80 180)">
+    <polygon points="132,18 240,78 240,210 132,270 24,210 24,78" fill="url(#hex)" stroke="#1d1810" stroke-width="9" stroke-linejoin="round"/>
+    <polygon points="132,18 240,78 132,138 24,78" fill="#ffffff" opacity="0.12"/>
+    <polygon points="132,54 210,96 210,192 132,234 54,192 54,96" fill="url(#inner)" stroke="#3a2f22" stroke-width="5"/>
+    <circle cx="99" cy="120" r="19" fill="#7ab89a" stroke="#1d1810" stroke-width="4"/>
+    <circle cx="165" cy="120" r="19" fill="#8bbfc3" stroke="#1d1810" stroke-width="4"/>
+    <circle cx="132" cy="174" r="19" fill="#e4536b" stroke="#1d1810" stroke-width="4"/>
+    <text x="132" y="85" font-family="ui-monospace, Menlo, monospace" font-size="14" font-weight="700" fill="#fdf1de" text-anchor="middle" letter-spacing="2">PROTEAN</text>
+  </g>
+
+  <!-- Eyebrow -->
+  <text x="400" y="210" font-family="ui-monospace, Menlo, monospace" font-size="22" font-weight="700" fill="#7a4a1d" letter-spacing="6">EPA SECTION 608 · CERTIFICATION PREP</text>
+
+  <!-- Main title -->
+  <text x="400" y="300" font-family="Georgia, serif" font-size="82" font-weight="700" fill="#1d1810" letter-spacing="-1">So you're taking</text>
+  <text x="400" y="385" font-family="Georgia, serif" font-size="82" font-weight="700" fill="#a5431b" letter-spacing="-1">the 608.</text>
+
+  <!-- Underline doodle -->
+  <path d="M 400 400 Q 480 392, 560 398 T 680 398" stroke="#a5431b" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- Lead text -->
+  <text x="400" y="450" font-family="Georgia, serif" font-size="26" fill="#3a2f22">Free study guide, flashcards, and hundreds of practice</text>
+  <text x="400" y="484" font-family="Georgia, serif" font-size="26" fill="#3a2f22">questions — Core, Type I, II, III. No signup.</text>
+
+  <!-- Spec-sheet footer strip -->
+  <text x="400" y="555" font-family="ui-monospace, Menlo, monospace" font-size="18" font-weight="700" fill="#8a5420" letter-spacing="4">R-32  ·  R-454B  ·  R-1234yf  ·  AIM ACT HFC PHASEDOWN</text>
+</svg>

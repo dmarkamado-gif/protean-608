@@ -6,9 +6,192 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="robots" content="index,follow">
-  <title>Protean — free Section 608 prep for the R-32 / R-454B era</title>
-  <meta name="description" content="Protean is a free, no-account study site for the Section 608 refrigerant certification, updated for the low-GWP era: R-32, R-454B, and R-1234yf.">
+  <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+
+  <!-- Search-engine ownership verification.
+       Uncomment a line and paste the token provided by each service:
+         Google  https://search.google.com/search-console   (Add property → URL prefix → HTML tag)
+         Bing    https://www.bing.com/webmasters            (Add site → Meta tag)
+         Yandex  https://webmaster.yandex.com               (Add site → Meta tag)
+       Bing + Yandex also read this site's IndexNow key at /23e8f795c06a60389ab9df9614d79e74.txt,
+       so meta-tag verification for those two is optional.
+  <meta name="google-site-verification" content="PASTE_GOOGLE_TOKEN">
+  <meta name="msvalidate.01" content="PASTE_BING_TOKEN">
+  <meta name="yandex-verification" content="PASTE_YANDEX_TOKEN">
+  -->
+
+  <title>Protean — free EPA Section 608 prep for the R-32 / R-454B era</title>
+  <meta name="description" content="Free EPA Section 608 certification prep — study guide, flashcards, and hundreds of practice questions for Core, Type I, II, and III. Updated for R-32, R-454B, and R-1234yf. No account, no paywall.">
+  <meta name="keywords" content="EPA 608, Section 608, 608 certification, HVAC certification, refrigerant certification, EPA 608 practice test, 608 study guide, R-32, R-454B, R-1234yf, AIM Act, HFC phasedown, Type I, Type II, Type III, Core, universal">
+  <meta name="author" content="Protean">
+  <link rel="canonical" href="https://dmarkamado-gif.github.io/protean-608/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Protean">
+  <meta property="og:title" content="Protean — free EPA Section 608 prep for the R-32 / R-454B era">
+  <meta property="og:description" content="Free EPA Section 608 certification prep — study guide, flashcards, and hundreds of practice questions. Updated for R-32, R-454B, and R-1234yf. No account, no paywall.">
+  <meta property="og:url" content="https://dmarkamado-gif.github.io/protean-608/">
+  <meta property="og:image" content="https://dmarkamado-gif.github.io/protean-608/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Protean — EPA Section 608 certification prep">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Protean — free EPA Section 608 prep">
+  <meta name="twitter:description" content="Free study guide, flashcards, and hundreds of practice questions for EPA Section 608. R-32, R-454B, R-1234yf era. No signup.">
+  <meta name="twitter:image" content="https://dmarkamado-gif.github.io/protean-608/og-image.svg">
+  <meta name="twitter:image:alt" content="Protean — EPA Section 608 certification prep">
+
+  <!-- Theme + icons -->
+  <meta name="theme-color" content="#a5431b">
+  <link rel="icon" type="image/svg+xml" href="og-image.svg">
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured data: the site is a free educational resource with a study course -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://dmarkamado-gif.github.io/protean-608/#website",
+        "url": "https://dmarkamado-gif.github.io/protean-608/",
+        "name": "Protean",
+        "description": "Free EPA Section 608 refrigerant certification prep — updated for the R-32, R-454B, and R-1234yf era.",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://dmarkamado-gif.github.io/protean-608/#org",
+        "name": "Protean",
+        "url": "https://dmarkamado-gif.github.io/protean-608/",
+        "logo": "https://dmarkamado-gif.github.io/protean-608/og-image.svg",
+        "description": "Free study resources for the EPA Section 608 technician certification exam."
+      },
+      {
+        "@type": "Course",
+        "name": "EPA Section 608 Certification Prep",
+        "description": "Free self-paced prep for the EPA Section 608 refrigerant-handling certification: Core, Type I (small appliances), Type II (high-pressure), and Type III (low-pressure). Includes study guide, flashcards, and practice questions. Updated for the low-GWP era — R-32, R-454B, R-1234yf — and the AIM Act HFC phasedown.",
+        "provider": {
+          "@id": "https://dmarkamado-gif.github.io/protean-608/#org"
+        },
+        "educationalCredentialAwarded": "EPA Section 608 Technician Certification",
+        "inLanguage": "en-US",
+        "isAccessibleForFree": true,
+        "learningResourceType": ["StudyGuide", "Flashcard", "Quiz"],
+        "teaches": [
+          "Refrigerant recovery procedures",
+          "Cylinder color coding and safe handling",
+          "Leak repair requirements and recordkeeping (40 CFR 82 Subpart F)",
+          "ASHRAE Standard 34 safety classifications",
+          "A2L mildly flammable refrigerants (R-32, R-454B)",
+          "AIM Act HFC phasedown schedule",
+          "SNAP-approved refrigerant alternatives"
+        ],
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "Online",
+          "courseWorkload": "PT10H"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is EPA Section 608 certification?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Section 608 of the Clean Air Act requires anyone who maintains, services, repairs, or disposes of stationary equipment that could release refrigerant to the atmosphere to be certified. There are four certification types: Core, Type I (small appliances), Type II (high- and very-high-pressure), and Type III (low-pressure). Passing all four earns Universal certification, and the certification is lifetime — it does not expire."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What passing score do I need on the EPA 608 exam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You need a 70% on each section you take (Core, Type I, Type II, and Type III). Type I is the only one that can be taken as an open-book online test; Types II, III, and Core must be proctored."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this site affiliated with the EPA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Protean is an independent, free study resource. The actual exam has to be taken through an EPA-approved certifying organization such as ESCO Institute, Mainstream Engineering, RSES, or HVAC Excellence."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the maximum fill of a recovery cylinder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "80% of the cylinder's water capacity, measured by weight. This headspace allows for liquid refrigerant expansion as temperature rises and prevents hydrostatic rupture."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are R-32, R-454B, and R-1234yf?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "They are the low-GWP refrigerants being adopted under the AIM Act HFC phasedown. R-32 and R-454B are A2L mildly flammable HFC/HFO blends replacing R-410A in residential and commercial AC. R-1234yf is the HFO replacing R-134a in mobile AC (MVAC). All three have dramatically lower global warming potential than the refrigerants they replace."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does EPA 608 certification last?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Section 608 certification is a lifetime credential — it does not expire and does not require renewal or continuing education. You just have to keep the original wallet card (or a copy of it) in your possession when buying or handling refrigerant."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Type I, Type II, and Type III?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Type I covers small appliances — hermetically sealed systems with 5 lbs of refrigerant or less (refrigerators, window ACs, dehumidifiers). Type II covers high-pressure and very-high-pressure appliances (residential split ACs, heat pumps, supermarket racks). Type III covers low-pressure appliances, which in practice means centrifugal chillers running refrigerants like R-123 and R-11. Pass all three sections plus Core and you earn Universal certification."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I take the EPA 608 exam online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Type I can be taken online as an open-book test through approved organizations like Mainstream Engineering (epatest.com). Core, Type II, and Type III must be proctored — either in-person at a testing center or via an EPA-approved remote proctor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an A2L refrigerant?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A2L is an ASHRAE Standard 34 safety classification for a refrigerant that has lower toxicity (class A) and is mildly flammable with a low burning velocity (class 2L). R-32 and R-454B are the two A2Ls rolling out under the HFC phasedown. Handling them requires attention to ignition sources, charge limits per IEC 60335-2-40, and proper leak detection — but they are not nearly as flammable as a hydrocarbon like propane (A3)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does the EPA 608 exam cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cost depends on the proctor and which sections you take. Type I online through Mainstream Engineering is typically free. Full Universal certification (Core + I + II + III) through ESCO or HVAC Excellence usually runs $20–$40 per section, so roughly $80–$160 total. Many community colleges and trade schools bundle the exam into a class."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site">
