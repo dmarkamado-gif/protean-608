@@ -4736,3 +4736,90 @@ dl.glossary dd code {
   margin: 10px auto 18px;
   line-height: 1.5;
 }
+
+/* ====================================================================
+   REGULATORY UPDATES CARD — index.html
+   Auto-populated from news.json by news.js. Uses the same spec-sheet
+   palette as the rest of the site (copper accent, safety-yellow badges).
+   ==================================================================== */
+
+.reg-news-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reg-news-item {
+  padding: 14px 16px;
+  background: rgba(255, 250, 238, 0.78);
+  border-left: 4px solid var(--copper, #b87333);
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(29, 24, 16, 0.06);
+}
+
+.reg-news-placeholder {
+  color: var(--muted, #6e6148);
+  font-style: italic;
+  border-left-color: rgba(184, 115, 51, 0.4);
+}
+
+.reg-news-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--muted, #6e6148);
+  margin-bottom: 4px;
+}
+
+.reg-news-top time { font-weight: 700; }
+
+.reg-news-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reg-news-badge-rule     { background: #2d6a3a; color: #fff; }
+.reg-news-badge-proposed { background: #d9a21b; color: #1d1810; }
+.reg-news-badge-notice   { background: #8b8279; color: #fff; }
+.reg-news-badge-other    { background: rgba(184, 115, 51, 0.2); color: var(--ink, #1d1810); }
+
+.reg-news-title {
+  display: block;
+  font-family: var(--serif, Georgia, serif);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink, #1d1810);
+  text-decoration: none;
+  margin: 4px 0 6px;
+}
+
+.reg-news-title:hover,
+.reg-news-title:focus-visible {
+  color: var(--copper, #b87333);
+  text-decoration: underline;
+}
+
+.reg-news-abstract {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink, #1d1810);
+  margin: 0;
+}
+
+.reg-news-meta {
+  margin-top: 6px;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.78rem;
+}
