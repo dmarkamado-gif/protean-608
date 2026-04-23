@@ -1,2 +1,10 @@
+# Protean — free EPA Section 608 certification prep
+# https://dmarkamado-gif.github.io/protean-608/
+
 User-agent: *
 Allow: /
+
+# Crawl-friendly: all pages are public, static, and no query parameters
+# are used as identifiers. Nothing behind auth.
+
+Sitemap: https://dmarkamado-gif.github.io/protean-608/sitemap.xml
