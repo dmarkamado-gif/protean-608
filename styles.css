@@ -4585,3 +4585,154 @@ dl.glossary dd code {
 @media (min-width: 1100px) {
   dl.glossary { columns: 3; column-gap: 32px; }
 }
+
+/* ====================================================================
+   MOCK EXAM HUB — practice.html
+   4 section-colored cards that launch a real-format exam. Colors pull
+   from the existing sect-* palette so Core / Type I/II/III stay visually
+   consistent with the quiz meta badges.
+   ==================================================================== */
+
+.exam-hub {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 18px 0 0;
+}
+
+@media (min-width: 640px) {
+  .exam-hub { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1000px) {
+  .exam-hub { grid-template-columns: repeat(4, 1fr); }
+}
+
+.exam-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 18px 18px 16px;
+  min-height: 180px;
+  background: linear-gradient(160deg, rgba(255, 250, 238, 0.95), rgba(240, 226, 193, 0.88));
+  border: 2px solid var(--copper, #b87333);
+  border-radius: 10px;
+  box-shadow: 0 2px 0 rgba(29, 24, 16, 0.18), 0 6px 14px rgba(29, 24, 16, 0.08);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: var(--ink, #1d1810);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.exam-card:hover,
+.exam-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 rgba(29, 24, 16, 0.22), 0 10px 20px rgba(29, 24, 16, 0.14);
+  outline: none;
+}
+
+.exam-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: var(--safety-yellow, #f4c542);
+}
+
+.exam-card.sect-core::before { background: #e08148; }
+.exam-card.sect-t1::before   { background: #7ab89a; }
+.exam-card.sect-t2::before   { background: #8bbfc3; }
+.exam-card.sect-t3::before   { background: #e4536b; }
+
+.exam-card-sec {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--copper, #b87333);
+  margin-top: 6px;
+}
+
+.exam-card-count {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink, #1d1810);
+}
+
+.exam-card-body {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--ink, #1d1810);
+  margin-top: 2px;
+  flex: 1;
+}
+
+.exam-card-cta {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--copper, #b87333);
+  margin-top: 8px;
+  align-self: flex-end;
+}
+
+/* ====================================================================
+   EXAM RESULT CARD — shown after a mock exam is submitted
+   ==================================================================== */
+
+.score-card.exam-result { padding: 28px 22px; }
+
+.exam-banner {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.exam-banner.pass {
+  background: #2d6a3a;
+  color: #fff;
+  box-shadow: 0 2px 0 rgba(22, 48, 28, 0.4);
+}
+
+.exam-banner.fail {
+  background: #a5431b;
+  color: #fff;
+  box-shadow: 0 2px 0 rgba(80, 32, 14, 0.4);
+}
+
+.score-card.exam-result .score-big {
+  font-size: 3.8rem;
+  line-height: 1;
+  margin: 4px 0;
+}
+
+.exam-sub {
+  font-size: 0.95rem;
+  color: var(--muted, #6e6148);
+  margin: 6px 0 2px;
+}
+
+.exam-note {
+  font-size: 0.9rem;
+  color: var(--ink, #1d1810);
+  max-width: 520px;
+  margin: 10px auto 18px;
+  line-height: 1.5;
+}

@@ -3,7 +3,7 @@
   const LETTERS = ["A", "B", "C", "D", "E"];
 
   const state = {
-    mode: "study",        // "study" | "lightning" | "daily"
+    mode: "study",        // "study" | "lightning" | "daily" | "exam" | "examReview"
     pool: [],
     current: 0,
     answers: [],
@@ -18,7 +18,10 @@
     lightningEndAt: 0,
     lightningScore: 0,
     lightningTimer: null,
-    lightningTotal: 0
+    lightningTotal: 0,
+    // mock exam
+    examSection: "Core",
+    examTarget: 25
   };
 
   const $ = (sel) => document.querySelector(sel);
@@ -41,6 +44,10 @@
     if (state.mode === "daily") {
       source = window.Game.dailyPick(source, 5);
       state.filter = "All";
+    } else if (state.mode === "exam") {
+      source = source.filter((q) => q.section === state.examSection);
+      source = shuffle(source).slice(0, state.examTarget);
+      state.filter = state.examSection;
     } else {
       if (state.filter !== "All") source = source.filter((q) => q.section === state.filter);
       if (state.onlyMissed && state.lastMissedIds.length) {
@@ -110,7 +117,9 @@
     quizArea.classList.remove("hide");
     quizArea.classList.toggle("lightning-mode", state.mode === "lightning");
 
-    $("#q-section").textContent = q.section;
+    $("#q-section").textContent = q.section +
+      (state.mode === "exam" ? " · mock exam" :
+       state.mode === "examReview" ? " · review" : "");
     $("#q-index").textContent =
       state.mode === "lightning"
         ? "Answered: " + state.lightningScore
@@ -138,7 +147,8 @@
     });
 
     const expl = $("#q-explanation");
-    if (revealed && state.mode !== "lightning") {
+    const showExplanation = revealed && state.mode !== "lightning";
+    if (showExplanation) {
       expl.innerHTML =
         "<strong>Correct answer: " + LETTERS[q.answer] + ".</strong> " + q.explanation;
       expl.classList.add("show");
@@ -154,6 +164,20 @@
       btnCheck.classList.add("hide");
       btnPrev.classList.add("hide");
       btnNext.classList.add("hide");
+    } else if (state.mode === "exam") {
+      // Exam: no "Check answer" — just next/prev. Advance freely.
+      btnCheck.classList.add("hide");
+      btnPrev.classList.remove("hide");
+      btnNext.classList.remove("hide");
+      btnPrev.disabled = state.current === 0;
+      btnNext.textContent = state.current === state.pool.length - 1 ? "Submit exam" : "Next";
+    } else if (state.mode === "examReview") {
+      // Reviewing a finished exam — just prev/next through revealed answers.
+      btnCheck.classList.add("hide");
+      btnPrev.classList.remove("hide");
+      btnNext.classList.remove("hide");
+      btnPrev.disabled = state.current === 0;
+      btnNext.textContent = state.current === state.pool.length - 1 ? "Back to score" : "Next";
     } else {
       btnCheck.classList.remove("hide");
       btnPrev.classList.remove("hide");
@@ -207,6 +231,7 @@
       }, 320);
       return;
     }
+    if (state.mode === "examReview") return; // locked once scored
     if (state.revealed[state.current]) return;
     state.answers[state.current] = i;
     renderQuestion();
@@ -248,7 +273,12 @@
       state.current++;
       renderQuestion();
     } else {
-      finish();
+      if (state.mode === "examReview") {
+        // "Back to score" — re-render the finished score card
+        showExamResult();
+      } else {
+        finish();
+      }
     }
   }
   function prev() {
@@ -258,7 +288,7 @@
     }
   }
 
-  function finish() {
+  function computeScore() {
     const total = state.pool.length;
     let correct = 0;
     const bySection = {};
@@ -274,10 +304,17 @@
       if (isCorrect) bySection[q.section].correct++;
     });
 
+    return { total, correct, bySection, missedIds, pct: total ? Math.round((correct / total) * 100) : 0 };
+  }
+
+  function finish() {
+    if (state.mode === "exam") return finishExam();
+
+    const { total, correct, bySection, missedIds, pct } = computeScore();
+    // Record per-question answers for exam / quiz stats (study mode already records on each check).
     state.finished = true;
     state.lastMissedIds = missedIds;
 
-    const pct = total ? Math.round((correct / total) * 100) : 0;
     const pass = pct >= 70;
 
     window.Game.recordQuizFinish({
@@ -328,6 +365,109 @@
     $("#btn-lightning").addEventListener("click", startLightning);
     renderControls();
     renderStreak();
+  }
+
+  // ---- Mock Exam ----
+  function startExam(section) {
+    if (!section) section = state.examSection;
+    state.mode = "exam";
+    state.examSection = section;
+    state.filter = section;
+    state.onlyMissed = false;
+    buildPool();
+    $("#score-area").classList.add("hide");
+    $("#quiz-area").classList.remove("hide");
+    const qc = document.querySelector(".quiz-controls");
+    if (qc) qc.classList.add("hide");
+    renderQuestion();
+    // Scroll to the quiz card so the user immediately sees question 1
+    const qa = $("#quiz-area");
+    if (qa && qa.scrollIntoView) qa.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function finishExam() {
+    // Score the exam: the real 608 awards nothing for unanswered, so count them as wrong.
+    state.pool.forEach((q, i) => {
+      const chosen = state.answers[i];
+      const isCorrect = chosen === q.answer;
+      window.Game.recordAnswer(!!isCorrect, q.section);
+      state.revealed[i] = true; // flag everything reviewable
+    });
+    state.finished = true;
+    showExamResult();
+  }
+
+  function showExamResult() {
+    const { total, correct, missedIds, pct } = computeScore();
+    state.lastMissedIds = missedIds;
+    state.mode = "exam"; // keep mode pinned so restart keeps exam behavior
+    const pass = pct >= 70;
+    const answered = state.answers.filter((a) => a !== null).length;
+    const unanswered = total - answered;
+
+    window.Game.recordQuizFinish({
+      section: state.examSection,
+      length: total,
+      correct
+    });
+    if (window.FX) {
+      window.FX.sfx.finish();
+      if (pct === 100) window.FX.confetti({ intensity: 2.5 });
+      else if (pass) window.FX.confetti({ intensity: 1.4 });
+    }
+
+    $("#quiz-area").classList.add("hide");
+    const scoreEl = $("#score-area");
+    scoreEl.innerHTML =
+      '<div class="score-card exam-result">' +
+        '<div class="exam-banner ' + (pass ? "pass" : "fail") + '">' +
+          (pass ? "Pass" : "Below 70%") +
+        '</div>' +
+        '<div class="score-big">' + pct + '%</div>' +
+        '<div class="exam-sub">' +
+          '<strong>' + correct + '</strong> correct of <strong>' + total + '</strong>' +
+          ' · ' + state.examSection + ' mock exam' +
+          (unanswered ? ' · ' + unanswered + ' left blank (counted wrong)' : '') +
+        '</div>' +
+        '<div class="exam-note">' +
+          (pass
+            ? "That would pass the real 608 section (70% minimum). Keep it up."
+            : "The real exam needs 70% to pass. Review what you missed and try again.")
+        + '</div>' +
+        '<div class="actions" style="justify-content:center;flex-wrap:wrap;gap:10px">' +
+          '<button class="btn primary" id="btn-exam-review">Review all ' + total + ' answers</button>' +
+          '<button class="btn" id="btn-exam-retry">New ' + state.examSection + ' mock</button>' +
+          '<button class="btn" id="btn-exam-other">Try a different section</button>' +
+        '</div>' +
+      '</div>';
+    scoreEl.classList.remove("hide");
+    $("#btn-exam-review").addEventListener("click", startExamReview);
+    $("#btn-exam-retry").addEventListener("click", () => startExam(state.examSection));
+    $("#btn-exam-other").addEventListener("click", () => {
+      // return to the mock-exam launch cards at the top of practice.html
+      const qc = document.querySelector(".quiz-controls");
+      if (qc) qc.classList.remove("hide");
+      $("#score-area").classList.add("hide");
+      state.mode = "study";
+      buildPool();
+      renderQuestion();
+      $("#quiz-area").classList.remove("hide");
+      const hub = document.getElementById("exam-hub");
+      if (hub && hub.scrollIntoView) hub.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    renderControls();
+    renderStreak();
+  }
+
+  function startExamReview() {
+    state.mode = "examReview";
+    state.current = 0;
+    // Answers stay as-recorded; revealed already true from finishExam
+    $("#score-area").classList.add("hide");
+    $("#quiz-area").classList.remove("hide");
+    renderQuestion();
+    const qa = $("#quiz-area");
+    if (qa && qa.scrollIntoView) qa.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function restart() {
@@ -454,10 +594,24 @@
     const db = $("#btn-start-daily");
     if (db) db.addEventListener("click", startDaily);
 
+    // Mock-exam launch cards on practice.html (data-exam="Core" / "Type I" / etc.)
+    document.querySelectorAll("[data-exam]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const sec = btn.getAttribute("data-exam");
+        startExam(sec);
+      });
+    });
+
     // Respond to URL flags
     const params = new URLSearchParams(window.location.search);
     if (params.get("mode") === "lightning") { startLightning(); return; }
     if (params.get("mode") === "daily") { startDaily(); return; }
+    if (params.get("mode") === "exam") {
+      const sec = params.get("section") || "Core";
+      const valid = ["Core", "Type I", "Type II", "Type III"];
+      startExam(valid.includes(sec) ? sec : "Core");
+      return;
+    }
 
     buildPool();
     renderQuestion();
