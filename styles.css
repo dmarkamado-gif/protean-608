@@ -1033,6 +1033,41 @@ footer.site .container { max-width: 900px; }
   .tool-row svg { max-height: 140px; }
 }
 
+/* Real photography in the hero — meshed with the warm palette via a light
+   sepia filter and a dark hairline frame so it reads as "tool of the trade",
+   not a stock shot dropped in. */
+.hero-photo {
+  margin: 0;
+  max-width: 420px;
+  align-self: center;
+}
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid #1d1810;
+  border-radius: 3px;
+  box-shadow:
+    0 14px 30px rgba(29, 24, 16, 0.28),
+    0 3px 8px rgba(29, 24, 16, 0.15),
+    inset 0 0 0 4px #fffaee;
+  filter: sepia(0.22) saturate(1.10) contrast(1.05) brightness(0.97);
+}
+.hero-photo figcaption {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .hero-photo { max-width: 320px; margin: 16px auto 0; }
+}
+
 /* Refrigerant-line dashed divider with inline valve icon */
 .hvac-rule {
   display: flex;
