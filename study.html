@@ -484,85 +484,78 @@
 
       <div class="cheat-grid">
 
-        <section class="cheat-card">
+        <section class="cheat-card qr-card">
           <h2>Recovery vacuum targets</h2>
-          <table class="data compact">
-            <thead><tr><th>System</th><th>Target</th></tr></thead>
-            <tbody>
-              <tr><td>Type I small appliance (system-dependent)</td><td class="num">4 in. Hg</td></tr>
-              <tr><td>HCFC-22 &lt; 200 lb</td><td class="num">0 psig</td></tr>
-              <tr><td>HCFC-22 ≥ 200 lb</td><td class="num">10 in. Hg</td></tr>
-              <tr><td>Other high-pressure &lt; 200 lb</td><td class="num">0 psig</td></tr>
-              <tr><td>Other high-pressure ≥ 200 lb</td><td class="num">10 in. Hg</td></tr>
-              <tr><td>Very high-pressure</td><td class="num">0 psig</td></tr>
-              <tr><td>Low-pressure (Type III)</td><td class="num">25 mm Hg abs</td></tr>
-              <tr><td>Equipment mfr'd &lt; 11/15/1993</td><td class="num">one step back</td></tr>
-            </tbody>
-          </table>
-          <p class="small muted">40 CFR 82.156. "≥ 200 lb" = full charge.</p>
+          <ul class="qr-stat-list">
+            <li><span class="qr-label">Type I small appliance <em>(system-dependent)</em></span><span class="qr-pill qr-pill-num">4 in. Hg</span></li>
+            <li><span class="qr-label">HCFC-22 &lt; 200 lb</span><span class="qr-pill qr-pill-num">0 psig</span></li>
+            <li><span class="qr-label">HCFC-22 ≥ 200 lb</span><span class="qr-pill qr-pill-num">10 in. Hg</span></li>
+            <li><span class="qr-label">Other high-pressure &lt; 200 lb</span><span class="qr-pill qr-pill-num">0 psig</span></li>
+            <li><span class="qr-label">Other high-pressure ≥ 200 lb</span><span class="qr-pill qr-pill-num">10 in. Hg</span></li>
+            <li><span class="qr-label">Very high-pressure</span><span class="qr-pill qr-pill-num">0 psig</span></li>
+            <li><span class="qr-label">Low-pressure (Type III)</span><span class="qr-pill qr-pill-num">25 mm Hg abs</span></li>
+            <li><span class="qr-label">Equipment mfr'd &lt; 11/15/1993</span><span class="qr-pill qr-pill-soft">one step back</span></li>
+          </ul>
+          <p class="qr-foot">40 CFR 82.156. "≥ 200 lb" = full charge.</p>
         </section>
 
-        <section class="cheat-card">
+        <section class="cheat-card qr-card">
           <h2>Key numbers</h2>
-          <table class="data compact">
-            <tbody>
-              <tr><td class="num">70 %</td><td>Passing score per section</td></tr>
-              <tr><td class="num">80 %</td><td>Max cylinder fill by water capacity</td></tr>
-              <tr><td class="num">5 lb</td><td>Type I ceiling (hermetic)</td></tr>
-              <tr><td class="num">15 lb</td><td>Leak-repair threshold from <strong>1 Jan 2026</strong></td></tr>
-              <tr><td class="num">50 lb</td><td>Current leak-repair / recordkeeping trigger</td></tr>
-              <tr><td class="num">500 µ</td><td>Deep-vacuum dehydration target</td></tr>
-              <tr><td class="num">150 °F</td><td>Max refrigerant warming during recovery</td></tr>
-              <tr><td class="num">15 psig</td><td>Rupture-disk set pressure, low-pressure chiller</td></tr>
-              <tr><td class="num">10 psig</td><td>Max nitrogen test pressure on low-pressure</td></tr>
-              <tr><td class="num">5 years</td><td>DOT hydrostatic retest interval (refillable)</td></tr>
-              <tr><td class="num">85 %</td><td>HFC phasedown target by 2036 (AIM Act)</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="cheat-card">
-          <h2>Refrigerant quick ref</h2>
-          <table class="data compact">
-            <thead><tr><th>Name</th><th>Class</th><th>ODP</th><th>GWP</th><th>Group</th></tr></thead>
-            <tbody>
-              <tr><td>R-11</td><td>CFC</td><td>1.0</td><td>4 750</td><td>A1</td></tr>
-              <tr><td>R-12</td><td>CFC</td><td>1.0</td><td>10 900</td><td>A1</td></tr>
-              <tr><td>R-22</td><td>HCFC</td><td>0.05</td><td>1 810</td><td>A1</td></tr>
-              <tr><td>R-123</td><td>HCFC</td><td>0.02</td><td>77</td><td>B1</td></tr>
-              <tr><td>R-134a</td><td>HFC</td><td>0</td><td>1 430</td><td>A1</td></tr>
-              <tr><td>R-404A</td><td>HFC</td><td>0</td><td>3 920</td><td>A1</td></tr>
-              <tr><td>R-410A</td><td>HFC</td><td>0</td><td>2 088</td><td>A1</td></tr>
-              <tr><td>R-32</td><td>HFC</td><td>0</td><td>675</td><td><strong>A2L</strong></td></tr>
-              <tr><td>R-454B</td><td>HFC/HFO</td><td>0</td><td>466</td><td><strong>A2L</strong></td></tr>
-              <tr><td>R-1234yf</td><td>HFO</td><td>0</td><td>&lt; 1</td><td><strong>A2L</strong></td></tr>
-              <tr><td>R-744</td><td>Natural</td><td>0</td><td>1</td><td>A1</td></tr>
-              <tr><td>R-717</td><td>Natural</td><td>0</td><td>0</td><td>B2L</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="cheat-card">
-          <h2>Dates worth knowing</h2>
-          <ul class="tight">
-            <li><strong>1987</strong> — Montreal Protocol signed.</li>
-            <li><strong>1990</strong> — Clean Air Act adds Sections 608 &amp; 609.</li>
-            <li><strong>7/1/1992</strong> — CFC &amp; HCFC venting ban.</li>
-            <li><strong>11/15/1993</strong> — Recovery-equipment cert in force.</li>
-            <li><strong>11/14/1994</strong> — Tech cert required to buy refrigerant.</li>
-            <li><strong>11/15/1995</strong> — Venting ban extends to HFCs &amp; substitutes.</li>
-            <li><strong>1/1/2010</strong> — No new R-22 equipment.</li>
-            <li><strong>1/1/2020</strong> — R-22 production &amp; import banned.</li>
-            <li><strong>2020</strong> — AIM Act signed (85 % HFC phasedown by 2036).</li>
-            <li><strong>1/1/2025</strong> — New residential AC on A2L refrigerants.</li>
-            <li><strong>1/1/2026</strong> — Leak threshold drops 50 lb → 15 lb.</li>
-            <li><strong>2036</strong> — 85 % HFC phasedown target.</li>
+          <ul class="qr-num-list">
+            <li><span class="qr-bignum">70<span class="qr-unit">%</span></span><span class="qr-cap">Passing score per section</span></li>
+            <li><span class="qr-bignum">80<span class="qr-unit">%</span></span><span class="qr-cap">Max cylinder fill by water capacity</span></li>
+            <li><span class="qr-bignum">5<span class="qr-unit">lb</span></span><span class="qr-cap">Type I ceiling (hermetic)</span></li>
+            <li><span class="qr-bignum">15<span class="qr-unit">lb</span></span><span class="qr-cap">Leak-repair threshold from <strong>1 Jan 2026</strong></span></li>
+            <li><span class="qr-bignum">50<span class="qr-unit">lb</span></span><span class="qr-cap">Current leak-repair / recordkeeping trigger</span></li>
+            <li><span class="qr-bignum">500<span class="qr-unit">µ</span></span><span class="qr-cap">Deep-vacuum dehydration target</span></li>
+            <li><span class="qr-bignum">150<span class="qr-unit">°F</span></span><span class="qr-cap">Max refrigerant warming during recovery</span></li>
+            <li><span class="qr-bignum">15<span class="qr-unit">psig</span></span><span class="qr-cap">Rupture-disk set pressure, low-pressure chiller</span></li>
+            <li><span class="qr-bignum">10<span class="qr-unit">psig</span></span><span class="qr-cap">Max nitrogen test pressure on low-pressure</span></li>
+            <li><span class="qr-bignum">5<span class="qr-unit">yr</span></span><span class="qr-cap">DOT hydrostatic retest interval (refillable)</span></li>
+            <li><span class="qr-bignum">85<span class="qr-unit">%</span></span><span class="qr-cap">HFC phasedown target by 2036 (AIM Act)</span></li>
           </ul>
         </section>
 
-        <section class="cheat-card">
+        <section class="cheat-card qr-card qr-card-wide">
+          <h2>Refrigerant quick ref</h2>
+          <ul class="qr-ref-grid">
+            <li class="qr-ref qr-cls-cfc"><span class="qr-ref-name">R-11</span><div class="qr-ref-meta"><span class="qr-ref-cls">CFC</span><span class="qr-ref-stats">ODP <b>1.0</b> &middot; GWP <b>4 750</b></span></div><span class="qr-ref-grp">A1</span></li>
+            <li class="qr-ref qr-cls-cfc"><span class="qr-ref-name">R-12</span><div class="qr-ref-meta"><span class="qr-ref-cls">CFC</span><span class="qr-ref-stats">ODP <b>1.0</b> &middot; GWP <b>10 900</b></span></div><span class="qr-ref-grp">A1</span></li>
+            <li class="qr-ref qr-cls-hcfc"><span class="qr-ref-name">R-22</span><div class="qr-ref-meta"><span class="qr-ref-cls">HCFC</span><span class="qr-ref-stats">ODP <b>0.05</b> &middot; GWP <b>1 810</b></span></div><span class="qr-ref-grp">A1</span></li>
+            <li class="qr-ref qr-cls-hcfc"><span class="qr-ref-name">R-123</span><div class="qr-ref-meta"><span class="qr-ref-cls">HCFC</span><span class="qr-ref-stats">ODP <b>0.02</b> &middot; GWP <b>77</b></span></div><span class="qr-ref-grp qr-grp-b">B1</span></li>
+            <li class="qr-ref qr-cls-hfc"><span class="qr-ref-name">R-134a</span><div class="qr-ref-meta"><span class="qr-ref-cls">HFC</span><span class="qr-ref-stats">ODP <b>0</b> &middot; GWP <b>1 430</b></span></div><span class="qr-ref-grp">A1</span></li>
+            <li class="qr-ref qr-cls-hfc"><span class="qr-ref-name">R-404A</span><div class="qr-ref-meta"><span class="qr-ref-cls">HFC</span><span class="qr-ref-stats">ODP <b>0</b> &middot; GWP <b>3 920</b></span></div><span class="qr-ref-grp">A1</span></li>
+            <li class="qr-ref qr-cls-hfc"><span class="qr-ref-name">R-410A</span><div class="qr-ref-meta"><span class="qr-ref-cls">HFC</span><span class="qr-ref-stats">ODP <b>0</b> &middot; GWP <b>2 088</b></span></div><span class="qr-ref-grp">A1</span></li>
+            <li class="qr-ref qr-cls-hfc"><span class="qr-ref-name">R-32</span><div class="qr-ref-meta"><span class="qr-ref-cls">HFC</span><span class="qr-ref-stats">ODP <b>0</b> &middot; GWP <b>675</b></span></div><span class="qr-ref-grp qr-grp-a2l">A2L</span></li>
+            <li class="qr-ref qr-cls-hfo"><span class="qr-ref-name">R-454B</span><div class="qr-ref-meta"><span class="qr-ref-cls">HFC/HFO</span><span class="qr-ref-stats">ODP <b>0</b> &middot; GWP <b>466</b></span></div><span class="qr-ref-grp qr-grp-a2l">A2L</span></li>
+            <li class="qr-ref qr-cls-hfo"><span class="qr-ref-name">R-1234yf</span><div class="qr-ref-meta"><span class="qr-ref-cls">HFO</span><span class="qr-ref-stats">ODP <b>0</b> &middot; GWP <b>&lt; 1</b></span></div><span class="qr-ref-grp qr-grp-a2l">A2L</span></li>
+            <li class="qr-ref qr-cls-nat"><span class="qr-ref-name">R-744</span><div class="qr-ref-meta"><span class="qr-ref-cls">Natural</span><span class="qr-ref-stats">ODP <b>0</b> &middot; GWP <b>1</b></span></div><span class="qr-ref-grp">A1</span></li>
+            <li class="qr-ref qr-cls-nat"><span class="qr-ref-name">R-717</span><div class="qr-ref-meta"><span class="qr-ref-cls">Natural</span><span class="qr-ref-stats">ODP <b>0</b> &middot; GWP <b>0</b></span></div><span class="qr-ref-grp qr-grp-b">B2L</span></li>
+          </ul>
+          <p class="qr-foot"><span class="qr-key qr-key-cfc">CFC</span><span class="qr-key qr-key-hcfc">HCFC</span><span class="qr-key qr-key-hfc">HFC</span><span class="qr-key qr-key-hfo">HFO</span><span class="qr-key qr-key-nat">Natural</span></p>
+        </section>
+
+        <section class="cheat-card qr-card">
+          <h2>Dates worth knowing</h2>
+          <ol class="qr-timeline">
+            <li><time>1987</time><span class="qr-event">Montreal Protocol signed.</span></li>
+            <li><time>1990</time><span class="qr-event">Clean Air Act adds Sections 608 &amp; 609.</span></li>
+            <li><time>7/1/1992</time><span class="qr-event">CFC &amp; HCFC venting ban.</span></li>
+            <li><time>11/15/1993</time><span class="qr-event">Recovery-equipment cert in force.</span></li>
+            <li><time>11/14/1994</time><span class="qr-event">Tech cert required to buy refrigerant.</span></li>
+            <li><time>11/15/1995</time><span class="qr-event">Venting ban extends to HFCs &amp; substitutes.</span></li>
+            <li><time>1/1/2010</time><span class="qr-event">No new R-22 equipment.</span></li>
+            <li><time>1/1/2020</time><span class="qr-event">R-22 production &amp; import banned.</span></li>
+            <li><time>2020</time><span class="qr-event">AIM Act signed (85 % HFC phasedown by 2036).</span></li>
+            <li><time>1/1/2025</time><span class="qr-event">New residential AC on A2L refrigerants.</span></li>
+            <li class="qr-tl-now"><time>1/1/2026</time><span class="qr-event">Leak threshold drops 50 lb → 15 lb.</span></li>
+            <li><time>2036</time><span class="qr-event">85 % HFC phasedown target.</span></li>
+          </ol>
+        </section>
+
+        <section class="cheat-card qr-card">
           <h2>Common trick questions</h2>
-          <ul class="tight">
+          <ul class="qr-tricks">
             <li>Type I "open-book online" rule applies <em>only</em> to Type I. Core, II, III must be proctored.</li>
             <li>"Recovery" ≠ "reclaim." Reclaim implies AHRI 700 purity.</li>
             <li>80 % cylinder fill is by <em>water capacity</em>, not refrigerant weight.</li>
