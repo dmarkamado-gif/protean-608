@@ -1,13 +1,13 @@
 :root {
   /* Blueprint + plant-room base */
-  --bg: #dde7ee;
-  --paper: #eaf0f4;
-  --paper-2: #d4dde4;
-  --ink: #15202a;
-  --ink-soft: #2e3c48;
-  --muted: #667585;
-  --rule: #b3c0cb;
-  --rule-2: #c6d0d9;
+  --bg: #e3ecf2;
+  --paper: #f0f4f7;
+  --paper-2: #dae2e9;
+  --ink: #0d1820;
+  --ink-soft: #1f2c38;
+  --muted: #425060;
+  --rule: #94a3af;
+  --rule-2: #b9c3cc;
 
   /* HVAC schematic palette */
   --accent: #a5431b;          /* hot-supply terracotta */
@@ -3377,6 +3377,17 @@ section.block + section.block::before {
 .row-pair > .pair-card > h2::before { display: none; }
 @media (max-width: 900px) {
   .row-pair { grid-template-columns: 1fr; gap: 12px; }
+}
+
+.sources-prose {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.sources-prose code,
+.sources-prose strong {
+  white-space: nowrap;
 }
 
 /* Compact subsection used when two old sections are merged under one header */
