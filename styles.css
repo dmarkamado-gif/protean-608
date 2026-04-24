@@ -5027,19 +5027,46 @@ footer.site::before {
 }
 
 /* ===== Quick reference bubble cards ===== */
+.qr-section .qr-intro {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.qr-section .cheat-grid {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: stretch;
+  justify-items: stretch;
+}
+@media (min-width: 760px) {
+  .qr-section .cheat-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
 .qr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: linear-gradient(180deg, #fffaee 0%, #f6ecd1 100%);
   border: 1px solid rgba(138, 84, 32, 0.28);
   border-radius: 18px;
-  padding: 18px 20px 16px;
+  padding: 22px 22px 20px;
   box-shadow:
     0 2px 14px rgba(60, 40, 15, 0.07),
     0 1px 0 rgba(255, 255, 255, 0.6) inset;
 }
+.qr-card > * { width: 100%; max-width: 460px; }
+.qr-card-wide > * { max-width: 920px; }
 .qr-card h2 {
-  display: inline-block;
-  margin: 0 0 14px;
-  padding: 5px 14px 6px;
+  align-self: center;
+  width: auto;
+  max-width: none;
+  margin: 0 auto 16px;
+  padding: 5px 16px 6px;
   font-family: var(--mono);
   font-size: 0.78rem;
   letter-spacing: 0.14em;
@@ -5050,29 +5077,35 @@ footer.site::before {
   border-radius: 999px;
   border-bottom: 1px solid rgba(138, 84, 32, 0.35);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset;
+  text-align: center;
 }
 .qr-card-wide { grid-column: span 1; }
-@media (min-width: 1100px) {
+@media (min-width: 760px) {
   .qr-card-wide { grid-column: span 2; }
 }
 
 .qr-foot {
-  margin: 12px 0 0;
+  margin: 14px auto 0;
   font-size: 0.78rem;
   color: rgba(60, 40, 15, 0.62);
-  display: flex; flex-wrap: wrap; gap: 6px 10px;
+  display: flex; flex-wrap: wrap; gap: 6px 14px;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* --- Recovery vacuum targets: stat-row pattern --- */
 .qr-stat-list {
   list-style: none; margin: 0; padding: 0;
-  display: flex; flex-direction: column; gap: 7px;
+  display: grid; grid-template-columns: 1fr;
+  gap: 7px;
 }
 .qr-stat-list li {
-  display: flex; align-items: center; justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  align-items: center;
   gap: 12px;
-  padding: 7px 12px;
+  padding: 8px 14px;
   background: rgba(255, 250, 235, 0.72);
   border: 1px solid rgba(138, 84, 32, 0.16);
   border-radius: 12px;
@@ -5081,23 +5114,24 @@ footer.site::before {
   font-size: 0.85rem;
   color: var(--ink, #1d1810);
   line-height: 1.35;
-  flex: 1 1 auto;
   min-width: 0;
 }
 .qr-label em {
   font-style: normal;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: rgba(60, 40, 15, 0.62);
   display: block;
+  margin-top: 1px;
 }
 .qr-pill {
-  flex: 0 0 auto;
-  padding: 4px 11px 5px;
+  justify-self: end;
+  padding: 4px 12px 5px;
   border-radius: 999px;
   font-family: var(--mono);
   font-size: 0.82rem;
   font-weight: 700;
   white-space: nowrap;
+  text-align: center;
   border: 1px solid rgba(138, 84, 32, 0.35);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
@@ -5118,21 +5152,22 @@ footer.site::before {
   grid-template-columns: 1fr;
 }
 .qr-num-list li {
-  display: flex; align-items: center; gap: 14px;
-  padding: 8px 12px 8px 8px;
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px 8px 8px;
   background: rgba(255, 250, 235, 0.72);
   border: 1px solid rgba(138, 84, 32, 0.16);
   border-radius: 14px;
 }
 .qr-bignum {
-  flex: 0 0 auto;
   display: inline-flex; align-items: baseline; justify-content: center;
   gap: 2px;
-  min-width: 70px;
   padding: 8px 10px 9px;
   font-family: var(--mono);
   font-weight: 800;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   line-height: 1;
   color: #5a3a14;
   background: linear-gradient(180deg, #f8ebc6 0%, #eed9a1 100%);
@@ -5142,7 +5177,7 @@ footer.site::before {
   text-align: center;
 }
 .qr-unit {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   margin-left: 1px;
@@ -5157,20 +5192,22 @@ footer.site::before {
 /* --- Refrigerant chips --- */
 .qr-ref-grid {
   list-style: none; margin: 0; padding: 0;
-  display: grid; gap: 9px;
+  display: grid; gap: 10px;
   grid-template-columns: 1fr;
+  justify-items: stretch;
 }
-@media (min-width: 560px) {
+@media (min-width: 520px) {
   .qr-ref-grid { grid-template-columns: 1fr 1fr; }
 }
-@media (min-width: 1100px) {
+@media (min-width: 900px) {
   .qr-ref-grid { grid-template-columns: 1fr 1fr 1fr; }
 }
 .qr-ref {
-  display: flex;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
   align-items: center;
   gap: 10px;
-  padding: 8px 10px;
+  padding: 8px 12px 8px 10px;
   background: rgba(255, 250, 235, 0.78);
   border: 1px solid rgba(138, 84, 32, 0.18);
   border-left: 3px solid var(--qr-cls, #b87333);
@@ -5182,20 +5219,20 @@ footer.site::before {
 .qr-cls-hfo  { --qr-cls: #5e7a3a; }
 .qr-cls-nat  { --qr-cls: #6b5d3c; }
 .qr-ref-name {
-  flex: 0 0 auto;
   font-family: var(--mono);
   font-weight: 800;
   font-size: 0.95rem;
   color: var(--ink);
   white-space: nowrap;
+  text-align: left;
 }
 .qr-ref-meta {
-  flex: 1 1 auto;
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1px;
   line-height: 1.25;
+  text-align: left;
 }
 .qr-ref-cls {
   font-family: var(--mono);
@@ -5211,16 +5248,18 @@ footer.site::before {
 }
 .qr-ref-stats b { color: var(--ink); font-weight: 700; }
 .qr-ref-grp {
-  flex: 0 0 auto;
+  justify-self: end;
+  min-width: 36px;
   font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 800;
-  padding: 4px 8px 5px;
+  padding: 4px 10px 5px;
   border-radius: 999px;
   background: linear-gradient(180deg, #d8e7f1 0%, #b9d2e3 100%);
   color: #1d3c54;
   border: 1px solid rgba(58, 127, 174, 0.4);
   white-space: nowrap;
+  text-align: center;
 }
 .qr-grp-a2l {
   background: linear-gradient(180deg, #f7e0c0 0%, #ebc287 100%);
@@ -5254,21 +5293,22 @@ footer.site::before {
 
 /* --- Timeline of dates --- */
 .qr-timeline {
-  list-style: none; margin: 0; padding: 0 0 0 4px;
+  list-style: none; margin: 0 auto; padding: 0;
   position: relative;
+  max-width: 440px;
 }
 .qr-timeline::before {
   content: "";
   position: absolute;
-  left: 78px; top: 8px; bottom: 8px;
+  left: 92px; top: 10px; bottom: 10px;
   width: 2px;
-  background: linear-gradient(180deg, transparent, rgba(138, 84, 32, 0.28) 8%, rgba(138, 84, 32, 0.28) 92%, transparent);
+  background: linear-gradient(180deg, transparent, rgba(138, 84, 32, 0.3) 8%, rgba(138, 84, 32, 0.3) 92%, transparent);
 }
 .qr-timeline li {
   display: grid;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 86px 1fr;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   padding: 4px 0;
   position: relative;
 }
@@ -5277,18 +5317,18 @@ footer.site::before {
   font-size: 0.74rem;
   font-weight: 700;
   text-align: right;
-  padding: 3px 8px 4px 0;
+  padding: 3px 10px 4px 0;
   color: #5a3a14;
   position: relative;
   z-index: 1;
-  background: linear-gradient(90deg, transparent, #fff8e8 28%);
+  background: linear-gradient(90deg, transparent, #fff8e8 35%);
 }
 .qr-event {
   font-size: 0.86rem;
   line-height: 1.35;
-  padding: 5px 11px 6px 18px;
-  background: rgba(255, 250, 235, 0.78);
-  border: 1px solid rgba(138, 84, 32, 0.18);
+  padding: 6px 12px 7px 16px;
+  background: rgba(255, 250, 235, 0.85);
+  border: 1px solid rgba(138, 84, 32, 0.2);
   border-radius: 10px;
   color: var(--ink);
   position: relative;
@@ -5300,8 +5340,8 @@ footer.site::before {
   width: 9px; height: 9px;
   margin-top: -4.5px;
   background: linear-gradient(135deg, #fffaee 50%, transparent 50%);
-  border-top: 1px solid rgba(138, 84, 32, 0.18);
-  border-left: 1px solid rgba(138, 84, 32, 0.18);
+  border-top: 1px solid rgba(138, 84, 32, 0.2);
+  border-left: 1px solid rgba(138, 84, 32, 0.2);
   transform: rotate(-45deg);
 }
 .qr-timeline li.qr-tl-now .qr-event {
@@ -5317,12 +5357,13 @@ footer.site::before {
 
 /* --- Trick questions: speech-bubble cards --- */
 .qr-tricks {
-  list-style: none; margin: 0; padding: 0;
+  list-style: none; margin: 0 auto; padding: 0;
   display: flex; flex-direction: column; gap: 9px;
+  max-width: 440px;
 }
 .qr-tricks li {
   position: relative;
-  padding: 10px 13px 11px 38px;
+  padding: 10px 14px 11px 42px;
   background: linear-gradient(180deg, rgba(234, 240, 244, 0.85) 0%, rgba(213, 222, 229, 0.85) 100%);
   border: 1px solid rgba(58, 127, 174, 0.32);
   border-left: 3px solid #3a7fae;
@@ -5334,7 +5375,7 @@ footer.site::before {
 .qr-tricks li::before {
   content: "?";
   position: absolute;
-  left: 10px; top: 50%;
+  left: 12px; top: 50%;
   transform: translateY(-50%);
   width: 22px; height: 22px;
   display: inline-flex; align-items: center; justify-content: center;
