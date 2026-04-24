@@ -2838,25 +2838,19 @@ nav.primary {
 /* Hero padding scales down on narrow screens (override the fixed 32/28 we added) */
 .hero { padding: clamp(20px, 4vw, 36px) clamp(16px, 3vw, 32px); }
 
-/* Large desktop / ultrawide — widen container progressively so content fills the screen.
-   Breakpoints are chosen so the margin gutter stays ~100-150px for side decorations. */
-@media (min-width: 1200px) {
+/* Large desktop — keep a fixed, comfortable reading width centered on the page.
+   Wider screens just get larger side gutters for the decorative trim. */
+@media (min-width: 1000px) {
   .container, header.site .inner {
-    max-width: 1180px;
+    max-width: 1040px;
   }
 }
-@media (min-width: 1550px) {
-  .container, header.site .inner { max-width: 1340px; }
+@media (min-width: 1400px) {
+  .container, header.site .inner { max-width: 1080px; }
 }
 @media (min-width: 1700px) {
-  body { font-size: 18px; }
-  .container, header.site .inner { max-width: 1500px; }
-}
-@media (min-width: 1900px) {
-  .container, header.site .inner { max-width: 1660px; }
-}
-@media (min-width: 2100px) {
-  .container, header.site .inner { max-width: 1800px; }
+  body { font-size: 17px; }
+  .container, header.site .inner { max-width: 1120px; }
 }
 
 /* Tablet — keep comfortable horizontal rhythm */
