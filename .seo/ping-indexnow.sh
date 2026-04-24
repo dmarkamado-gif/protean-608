@@ -17,7 +17,6 @@ URLS='[
   "https://dmarkamado-gif.github.io/protean-608/study.html",
   "https://dmarkamado-gif.github.io/protean-608/flashcards.html",
   "https://dmarkamado-gif.github.io/protean-608/practice.html",
-  "https://dmarkamado-gif.github.io/protean-608/cheatsheet.html",
   "https://dmarkamado-gif.github.io/protean-608/resources.html"
 ]'
 

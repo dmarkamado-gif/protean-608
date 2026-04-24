@@ -4903,22 +4903,23 @@ footer.site::before {
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
 }
 
-.cheatsheet .cheat-grid {
+.cheat-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
   margin-top: 18px;
 }
 @media (min-width: 720px) {
-  .cheatsheet .cheat-grid {
-    grid-template-columns: 1fr 1fr;
+  .cheat-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 @media (min-width: 1100px) {
-  .cheatsheet .cheat-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+  .cheat-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   }
 }
+.cheat-card { min-width: 0; }
 
 .cheat-card {
   background: linear-gradient(180deg, #fffaee 0%, #f7edd3 100%);
@@ -4949,6 +4950,22 @@ footer.site::before {
 }
 .cheat-card table.data.compact td.num,
 .cheat-card table.data.compact th.num {
+  font-family: var(--mono);
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--steel);
+}
+/* Inside cheat-cards, allow the first column to wrap so long labels
+   ("Type I small appliance (system-dependent)") don't overflow the card. */
+.cheat-card table.data tbody td:first-child {
+  white-space: normal;
+  font-family: inherit;
+  font-weight: 400;
+  color: inherit;
+}
+/* But the .num cells in the first column (Key numbers card) keep their
+   monospace look. */
+.cheat-card table.data tbody td:first-child.num {
   font-family: var(--mono);
   font-weight: 700;
   white-space: nowrap;
