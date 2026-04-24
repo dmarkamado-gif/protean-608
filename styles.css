@@ -3345,7 +3345,50 @@ main.container::after {
 }
 
 /* Inter-block breathing room for air */
-section.block { padding-top: 18px; padding-bottom: 18px; }
+section.block { padding-top: 12px; padding-bottom: 12px; }
+section.block + section.block { margin-top: 10px; }
+section.block + section.block::before {
+  margin: -4px auto 8px;
+  opacity: 0.5;
+}
+
+/* Row-pair: two sections/cards side by side on wide screens */
+.row-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 12px 0;
+}
+.row-pair > .pair-card {
+  min-width: 0;
+  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: rgba(255, 250, 238, 0.55);
+  box-shadow: 0 1px 3px rgba(29, 24, 16, 0.06);
+}
+.row-pair > .pair-card > h2,
+.row-pair > .pair-card > h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+.row-pair > .pair-card > h2::before { display: none; }
+@media (max-width: 900px) {
+  .row-pair { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* Compact subsection used when two old sections are merged under one header */
+.subsection { margin-top: 18px; }
+.subsection:first-of-type { margin-top: 10px; }
+.subsection > h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-family: var(--serif);
+  border-bottom: 1px dashed var(--rule);
+  padding-bottom: 4px;
+}
 
 /* ====================================================================
    EXTENDED MARGIN FILL — more decorations for wider screens
