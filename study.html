@@ -125,6 +125,7 @@
         <a href="study.html" class="active">Study</a>
         <a href="flashcards.html">Flashcards</a>
         <a href="practice.html">Practice</a>
+        <a href="tools.html">Tools</a>
         <a href="resources.html">Resources</a>
       </nav>
       <div id="stats-bar"></div>
@@ -195,77 +196,97 @@
       <h3>Ozone depletion &amp; the atmosphere</h3>
       <p>The <strong>stratospheric ozone layer</strong> absorbs harmful UV-B radiation. Chlorine atoms released from CFCs and HCFCs destroy ozone molecules — a single chlorine atom can destroy thousands of ozone molecules before being deactivated.</p>
       <p>Two measures of refrigerant environmental impact:</p>
-      <ul>
-        <li><strong>ODP</strong> (Ozone Depletion Potential) — R-11 is the baseline at 1.0.</li>
-        <li><strong>GWP</strong> (Global Warming Potential) — CO₂ is the baseline at 1.0.</li>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">ODP</span><span class="core-bdesc"><em>Ozone Depletion Potential</em> — R-11 is the baseline at <b>1.0</b>.</span></li>
+        <li><span class="core-bpill">GWP</span><span class="core-bdesc"><em>Global Warming Potential</em> — CO₂ is the baseline at <b>1.0</b>.</span></li>
       </ul>
       <div class="callout"><strong>Likely question:</strong> HFCs have <em>zero</em> ODP (no chlorine) but high GWP. HFOs have near-zero of both.</div>
 
       <h3>Laws &amp; treaties</h3>
-      <table class="data">
-        <thead><tr><th>Instrument</th><th>What it does</th></tr></thead>
-        <tbody>
-          <tr><td>Montreal Protocol (1987)</td><td>International treaty phasing out ozone-depleting substances (CFCs, HCFCs).</td></tr>
-          <tr><td>Clean Air Act — Section 608</td><td>U.S. law regulating refrigerant use in <em>stationary</em> equipment.</td></tr>
-          <tr><td>Clean Air Act — Section 609</td><td>Regulates <em>motor vehicle</em> air conditioning. Separate certification.</td></tr>
-          <tr><td>AIM Act (2020)</td><td>Authorizes EPA to phase down HFCs 85% by 2036.</td></tr>
-        </tbody>
-      </table>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Montreal Protocol <em>1987</em></span><span class="core-bdesc">International treaty phasing out ozone-depleting substances (CFCs, HCFCs).</span></li>
+        <li><span class="core-bpill">Clean Air Act §608</span><span class="core-bdesc">U.S. law regulating refrigerant use in <em>stationary</em> equipment.</span></li>
+        <li><span class="core-bpill">Clean Air Act §609</span><span class="core-bdesc">Regulates <em>motor vehicle</em> air conditioning. Separate certification.</span></li>
+        <li><span class="core-bpill">AIM Act <em>2020</em></span><span class="core-bdesc">Authorizes EPA to phase down HFCs 85 % by 2036.</span></li>
+      </ul>
 
       <h3>Refrigerant classifications</h3>
-      <table class="data">
-        <thead><tr><th>Class</th><th>Contains</th><th>ODP</th><th>Examples</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td>CFC</td><td>Cl, F, C</td><td>High</td><td>R-11, R-12, R-502</td><td>Production banned 1996</td></tr>
-          <tr><td>HCFC</td><td>H, Cl, F, C</td><td>Lower</td><td>R-22, R-123</td><td>R-22 production banned 2020</td></tr>
-          <tr><td>HFC</td><td>H, F, C</td><td>Zero</td><td>R-134a, R-410A, R-404A</td><td>Being phased down (AIM Act)</td></tr>
-          <tr><td>HFO</td><td>H, F, C (unsaturated)</td><td>Zero</td><td>R-1234yf, R-1234ze</td><td>Preferred replacements</td></tr>
-        </tbody>
-      </table>
+      <ul class="core-class-grid">
+        <li class="core-class cls-cfc">
+          <div class="core-class-head"><span class="core-class-name">CFC</span><span class="core-class-odp core-odp-high">ODP high</span></div>
+          <div class="core-class-contains">contains <b>Cl, F, C</b></div>
+          <div class="core-class-examples">R-11 · R-12 · R-502</div>
+          <div class="core-class-status">Production banned <b>1996</b></div>
+        </li>
+        <li class="core-class cls-hcfc">
+          <div class="core-class-head"><span class="core-class-name">HCFC</span><span class="core-class-odp core-odp-low">ODP lower</span></div>
+          <div class="core-class-contains">contains <b>H, Cl, F, C</b></div>
+          <div class="core-class-examples">R-22 · R-123</div>
+          <div class="core-class-status">R-22 production banned <b>2020</b></div>
+        </li>
+        <li class="core-class cls-hfc">
+          <div class="core-class-head"><span class="core-class-name">HFC</span><span class="core-class-odp core-odp-zero">ODP zero</span></div>
+          <div class="core-class-contains">contains <b>H, F, C</b></div>
+          <div class="core-class-examples">R-134a · R-410A · R-404A</div>
+          <div class="core-class-status">Phasing down (AIM Act)</div>
+        </li>
+        <li class="core-class cls-hfo">
+          <div class="core-class-head"><span class="core-class-name">HFO</span><span class="core-class-odp core-odp-zero">ODP zero</span></div>
+          <div class="core-class-contains">contains <b>H, F, C</b> (unsaturated)</div>
+          <div class="core-class-examples">R-1234yf · R-1234ze</div>
+          <div class="core-class-status">Preferred replacements</div>
+        </li>
+      </ul>
 
       <h3>Safety groups (ASHRAE Standard 34)</h3>
       <p>Two letters: toxicity (A = low, B = higher) and flammability (1 = none, 2L = mild, 2 = moderate, 3 = high).</p>
-      <ul>
-        <li><strong>A1</strong> — low toxicity, no flame propagation (R-22, R-134a, R-410A).</li>
-        <li><strong>A2L</strong> — mildly flammable, lower toxicity (R-32, R-1234yf).</li>
-        <li><strong>B1</strong> — higher toxicity, no flame propagation (R-123).</li>
+      <ul class="core-bubble-list core-safety-list">
+        <li><span class="core-bpill core-sg-a1">A1</span><span class="core-bdesc">low toxicity, no flame propagation <em>— R-22, R-134a, R-410A</em></span></li>
+        <li><span class="core-bpill core-sg-a2l">A2L</span><span class="core-bdesc">mildly flammable, lower toxicity <em>— R-32, R-1234yf</em></span></li>
+        <li><span class="core-bpill core-sg-b1">B1</span><span class="core-bdesc">higher toxicity, no flame propagation <em>— R-123</em></span></li>
       </ul>
 
       <h3>The venting prohibition</h3>
       <p>Since <strong>July 1, 1992</strong> (CFC/HCFC) and <strong>November 15, 1995</strong> (HFC/other substitutes), knowingly releasing refrigerant during service, maintenance, repair, or disposal is prohibited.</p>
       <p><strong>Exceptions (de minimis):</strong></p>
-      <ul>
-        <li>Small releases associated with good-faith recovery.</li>
-        <li>Releases from purging hoses or connections.</li>
-        <li>Mixtures of refrigerant and nitrogen used for leak testing.</li>
+      <ul class="core-bubble-list core-plain-list">
+        <li><span class="core-bpill core-bpill-tight">Good-faith</span><span class="core-bdesc">Small releases associated with good-faith recovery.</span></li>
+        <li><span class="core-bpill core-bpill-tight">Purging</span><span class="core-bdesc">Releases from purging hoses or connections.</span></li>
+        <li><span class="core-bpill core-bpill-tight">Leak test</span><span class="core-bdesc">Mixtures of refrigerant and nitrogen used for leak testing.</span></li>
       </ul>
 
       <h3>Three Rs: Recover, Recycle, Reclaim</h3>
-      <table class="data">
-        <thead><tr><th>Process</th><th>Where</th><th>Definition</th></tr></thead>
-        <tbody>
-          <tr><td>Recover</td><td>On-site</td><td>Remove refrigerant from a system and store it in an external container — no cleaning or testing.</td></tr>
-          <tr><td>Recycle</td><td>On-site</td><td>Clean refrigerant with oil separation and filter-drier passes. Intended for the same owner's equipment.</td></tr>
-          <tr><td>Reclaim</td><td>Off-site</td><td>Reprocess refrigerant to meet <strong>AHRI Standard 700</strong> (new-product spec). Only reclaimed refrigerant may be resold.</td></tr>
-        </tbody>
-      </table>
+      <ul class="core-bubble-list core-rs-list">
+        <li>
+          <div class="core-rs-head"><span class="core-bpill">Recover</span><span class="core-subpill core-sub-onsite">On-site</span></div>
+          <span class="core-bdesc">Remove refrigerant from a system and store it in an external container — no cleaning or testing.</span>
+        </li>
+        <li>
+          <div class="core-rs-head"><span class="core-bpill">Recycle</span><span class="core-subpill core-sub-onsite">On-site</span></div>
+          <span class="core-bdesc">Clean refrigerant with oil separation and filter-drier passes. Intended for the <em>same owner's</em> equipment.</span>
+        </li>
+        <li>
+          <div class="core-rs-head"><span class="core-bpill">Reclaim</span><span class="core-subpill core-sub-offsite">Off-site</span></div>
+          <span class="core-bdesc">Reprocess refrigerant to meet <strong>AHRI Standard 700</strong> (new-product spec). Only reclaimed refrigerant may be <em>resold</em>.</span>
+        </li>
+      </ul>
 
       <h3>Evacuation (recovery) requirements</h3>
       <p>For equipment manufactured on or after <strong>November 15, 1993</strong>, you must evacuate to specific vacuum levels unless the unit is leaking and cannot reach them.</p>
-      <ul>
-        <li>Small appliances (Type I): 90% recovery efficiency (80% if compressor is non-operational) — or achieve 4 in. Hg vacuum.</li>
-        <li>Type II high-pressure (&lt;200 lbs): 0 psig.</li>
-        <li>Type II high-pressure (≥200 lbs): 10 in. Hg vacuum.</li>
-        <li>Type III low-pressure: 25 mm Hg absolute pressure (29 in. Hg vacuum).</li>
+      <ul class="core-bubble-list core-vac-list">
+        <li><span class="core-bpill core-bp-type core-bp-t1">Type I</span><span class="core-bdesc">Small appliances — <b>90 %</b> recovery efficiency (80 % if compressor is non-operational) — or achieve <b>4 in. Hg</b> vacuum.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t2">Type II &lt;200 lb</span><span class="core-bdesc">High-pressure — <b>0 psig</b>.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t2">Type II ≥200 lb</span><span class="core-bdesc">High-pressure — <b>10 in. Hg</b> vacuum.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t3">Type III</span><span class="core-bdesc">Low-pressure — <b>25 mm Hg</b> absolute (<b>29 in. Hg</b> vacuum).</span></li>
       </ul>
       <div class="callout"><strong>Likely question:</strong> If a system is leaking and can't hold the required vacuum, you only have to recover to 0 psig before opening it.</div>
 
       <h3>Leak repair requirements</h3>
       <p>For appliances with 50 lbs or more of refrigerant, a leak exceeding the applicable annual leak rate must be repaired (or the appliance retrofitted/retired):</p>
-      <ul>
-        <li><strong>Commercial refrigeration</strong> — 20%/year (previously 35%).</li>
-        <li><strong>Industrial process refrigeration</strong> — 30%/year.</li>
-        <li><strong>Comfort cooling &amp; all others</strong> — 10%/year.</li>
+      <ul class="core-bubble-list core-leak-list">
+        <li><span class="core-bpill core-bp-leak">Commercial refrigeration</span><span class="core-bdesc"><b>20 %</b> / year <em>(previously 35 %)</em></span></li>
+        <li><span class="core-bpill core-bp-leak">Industrial process</span><span class="core-bdesc"><b>30 %</b> / year</span></li>
+        <li><span class="core-bpill core-bp-leak">Comfort cooling &amp; all others</span><span class="core-bdesc"><b>10 %</b> / year</span></li>
       </ul>
       <p>Initial verification test after repair, then a follow-up verification test. Records must be kept.</p>
 
@@ -273,19 +294,19 @@
       <p>Only EPA-certified technicians may purchase regulated refrigerant. For <strong>HFCs</strong>, the sales restriction also applies (AIM Act rulemaking) in containers other than small cans under 2 lb with self-sealing valves for MVAC.</p>
 
       <h3>Refrigerant cylinders</h3>
-      <ul>
-        <li><strong>Never fill above 80%</strong> of the cylinder's water capacity — liquid refrigerant expands with temperature.</li>
-        <li>Recovery cylinders have <strong>gray bodies with yellow tops</strong> (DOT 4BA or 4BW) and must be hydrostatically tested every <strong>5 years</strong>.</li>
-        <li>Disposable cylinders may <strong>not</strong> be refilled — it's a DOT violation.</li>
-        <li>Ship under DOT as "Refrigerant gas, n.o.s., 2.2."</li>
+      <ul class="core-bubble-list core-cyl-list">
+        <li><span class="core-bpill core-bp-cyl">80 % rule</span><span class="core-bdesc"><b>Never fill above 80 %</b> of the cylinder's water capacity — liquid refrigerant expands with temperature.</span></li>
+        <li><span class="core-bpill core-bp-cyl">Recovery tank</span><span class="core-bdesc"><b>Gray body, yellow top</b> (DOT 4BA / 4BW) — hydrostatic test every <b>5 years</b>.</span></li>
+        <li><span class="core-bpill core-bp-cyl">Disposable</span><span class="core-bdesc">May <b>not</b> be refilled — it's a DOT violation.</span></li>
+        <li><span class="core-bpill core-bp-cyl">DOT label</span><span class="core-bdesc">Ship as <em>"Refrigerant gas, n.o.s., 2.2."</em></span></li>
       </ul>
 
       <h3>Safety</h3>
-      <ul>
-        <li>Refrigerants are heavier than air — displace oxygen in low areas. Watch for asphyxiation.</li>
-        <li>At open flame, refrigerant decomposes into <strong>phosgene, hydrofluoric acid, hydrochloric acid</strong> — highly toxic.</li>
-        <li>Never use oxygen or compressed air to pressure-test a system with refrigerant — use dry nitrogen.</li>
-        <li>Wear safety glasses and butyl-lined gloves. Liquid refrigerant on skin causes frostbite.</li>
+      <ul class="core-bubble-list core-safety2-list">
+        <li><span class="core-bpill core-bp-safety">Asphyxiation</span><span class="core-bdesc">Refrigerants are heavier than air — displace oxygen in low areas.</span></li>
+        <li><span class="core-bpill core-bp-safety">Open flame</span><span class="core-bdesc">Decomposes into <b>phosgene, hydrofluoric acid, hydrochloric acid</b> — highly toxic.</span></li>
+        <li><span class="core-bpill core-bp-safety">Pressure test</span><span class="core-bdesc">Never use oxygen or compressed air — use <b>dry nitrogen</b>.</span></li>
+        <li><span class="core-bpill core-bp-safety">PPE</span><span class="core-bdesc">Safety glasses and butyl-lined gloves. Liquid refrigerant on skin causes <em>frostbite</em>.</span></li>
       </ul>
 
       <h3>Recovery equipment</h3>
