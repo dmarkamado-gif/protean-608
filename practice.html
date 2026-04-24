@@ -125,6 +125,7 @@
         <a href="study.html">Study</a>
         <a href="flashcards.html">Flashcards</a>
         <a href="practice.html" class="active">Practice</a>
+        <a href="tools.html">Tools</a>
         <a href="resources.html">Resources</a>
       </nav>
       <div id="stats-bar"></div>
@@ -284,6 +285,58 @@
         </div>
 
         <div id="score-area" class="hide"></div>
+      </div>
+    </section>
+
+    <section class="block" id="progress">
+      <div class="hvac-rule">
+        <svg viewBox="0 0 40 26" aria-hidden="true">
+          <polygon points="20,3 30,9 30,21 20,27 10,21 10,9" fill="#d9a96b" stroke="#8a5420" stroke-width="1.5"/>
+          <circle cx="20" cy="15" r="3" fill="#a5431b"/>
+        </svg>
+        <span class="tag">your progress</span>
+      </div>
+      <h2>Level up as you study</h2>
+      <p>
+        The 608 is pass-at-70% for each section. Most people who fail don't fail because the material is hard — they fail because the test is full of specific numbers and dates that you either remember or you don't. <strong>80% cylinder fill. 25 mm Hg for low-pressure recovery. 150 °F warming limit.</strong> Drill them here until they stop slipping. Streaks, XP, and badges are baked in — a little dopamine helps when you're sitting with regulations for three hours straight.
+      </p>
+      <div class="progress-panel" id="progress-panel">
+        <div class="pp-head">
+          <div class="pp-level-big">
+            <svg class="pp-ring" viewBox="0 0 96 96" aria-hidden="true">
+              <circle cx="48" cy="48" r="40" fill="none" stroke="rgba(165,67,27,0.15)" stroke-width="7"/>
+              <circle id="pp-ring-fg" cx="48" cy="48" r="40" fill="none" stroke="url(#ppGrad)" stroke-width="7" stroke-linecap="round" transform="rotate(-90 48 48)" stroke-dasharray="0 999"/>
+              <defs><linearGradient id="ppGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e08148"/><stop offset="1" stop-color="#8a3614"/></linearGradient></defs>
+            </svg>
+            <div class="pp-level-inner">
+              <div class="pp-level-label">LEVEL</div>
+              <div class="pp-level-num" id="pp-level">1</div>
+            </div>
+          </div>
+          <div class="pp-stats">
+            <div class="pp-xp"><span id="pp-xp-current">0</span> / <span id="pp-xp-next">100</span> XP</div>
+            <div class="pp-bar"><span id="pp-bar-fill"></span></div>
+            <dl class="pp-grid">
+              <div><dt>Total XP</dt><dd id="pp-total-xp">0</dd></div>
+              <div><dt>Questions</dt><dd id="pp-questions">0</dd></div>
+              <div><dt>Accuracy</dt><dd id="pp-accuracy">—</dd></div>
+              <div><dt>Best streak</dt><dd id="pp-streak">0</dd></div>
+              <div><dt>Quizzes</dt><dd id="pp-quizzes">0</dd></div>
+              <div><dt>Lightning PR</dt><dd id="pp-lightning">0</dd></div>
+            </dl>
+          </div>
+        </div>
+        <div class="pp-rewards">
+          <div class="pp-rewards-head">
+            <h3>Badges</h3>
+            <span class="pp-counter"><span id="pp-earned">0</span> / <span id="pp-total">0</span></span>
+          </div>
+          <div class="badge-grid" id="badge-grid"></div>
+        </div>
+        <div class="pp-actions">
+          <button class="btn" id="pp-reset">Reset progress</button>
+          <span class="pp-note">Progress is saved locally in your browser. Nothing is sent anywhere.</span>
+        </div>
       </div>
     </section>
   </main>
