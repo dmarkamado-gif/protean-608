@@ -1230,6 +1230,20 @@ footer.site .container { max-width: 900px; }
   font-weight: 700;
 }
 .study-brief-list strong { color: var(--ink); }
+.study-brief-list a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+.study-brief-list a:hover,
+.study-brief-list a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  outline: none;
+}
+.study-brief-list a:hover strong,
+.study-brief-list a:focus-visible strong { color: var(--accent); }
 .study-brief-stats {
   margin: 0;
   padding: 10px 0 0;
@@ -6226,5 +6240,511 @@ section.block > .hvac-rule {
   .refrigerant-lineup {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
+  }
+}
+
+/* ============================================================
+   Study page — wider container so sections breathe full width
+   ============================================================ */
+body.study-page .container,
+body.study-page header.site .inner,
+body.study-page footer.site .container {
+  max-width: 1160px;
+}
+/* Two-column bubble grid on wide study viewports */
+@media (min-width: 1000px) {
+  body.study-page .study-section .core-bubble-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 14px;
+  }
+  /* Leak-detection, safety, dates lists have an odd number of short rows — 2-up still reads fine */
+  body.study-page .study-section .core-rs-list,
+  body.study-page .study-section .core-leak-list,
+  body.study-page .study-section .core-vac-list {
+    grid-template-columns: 1fr; /* keep single-column for reference-heavy rows */
+  }
+}
+
+/* ============================================================
+   Progression tab — compact summary at top of practice.html.
+   Hover (or focus-within / click on touch) reveals the full
+   progress panel with badges below it.
+   ============================================================ */
+.prog-tab-wrap {
+  position: relative;
+  margin: 18px 0 22px;
+  z-index: 30;
+}
+.prog-tab-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 14px 20px;
+  background: #fffaee;
+  border: 1px solid #e3c98a;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(120, 80, 20, 0.05);
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--ink);
+  text-align: left;
+  transition: border-color .15s ease, box-shadow .18s ease, background .15s ease;
+}
+.prog-tab-trigger:hover,
+.prog-tab-trigger:focus-visible {
+  border-color: var(--accent, #a5431b);
+  background: #fff5dc;
+  box-shadow: 0 4px 14px rgba(165, 67, 27, 0.12);
+  outline: none;
+}
+.prog-tab-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.prog-tab-icon svg { width: 26px; height: 26px; display: block; }
+.prog-tab-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  position: relative;
+  padding-right: 22px;
+}
+.prog-tab-stat + .prog-tab-stat::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: rgba(138, 84, 32, 0.22);
+}
+.prog-tab-stat:last-of-type { padding-right: 0; }
+.prog-tab-stat-xp { flex: 1; min-width: 90px; }
+.prog-tab-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #8a5420;
+  font-weight: 600;
+}
+.prog-tab-value {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: 0.2px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+}
+.prog-tab-divide { color: rgba(138, 84, 32, 0.5); font-weight: 400; padding: 0 1px; }
+.prog-tab-bar {
+  margin-top: 6px;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: rgba(165, 67, 27, 0.12);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.prog-tab-bar > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #e08148 0%, #a5431b 100%);
+  border-radius: 4px;
+  transition: width .35s ease;
+}
+.prog-tab-caret {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--accent, #a5431b);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(165, 67, 27, 0.08);
+  transition: transform .25s ease, background .15s ease;
+}
+.prog-tab-wrap:hover .prog-tab-caret,
+.prog-tab-wrap:focus-within .prog-tab-caret,
+.prog-tab-wrap.is-open .prog-tab-caret {
+  transform: rotate(180deg);
+  background: rgba(165, 67, 27, 0.16);
+}
+
+.prog-tab-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 60;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #fffaee;
+  border: 1px solid #e3c98a;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(80, 40, 10, 0.18);
+  transition: max-height .35s ease, opacity .2s ease, padding .25s ease;
+  padding: 0 22px;
+}
+.prog-tab-wrap:hover .prog-tab-panel,
+.prog-tab-wrap:focus-within .prog-tab-panel,
+.prog-tab-wrap.is-open .prog-tab-panel {
+  max-height: 1500px;
+  opacity: 1;
+  pointer-events: auto;
+  padding: 22px;
+}
+.prog-tab-title {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+.prog-tab-blurb {
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft, #5a4a30);
+}
+.prog-tab-panel .progress-panel { margin: 0; }
+
+@media (max-width: 720px) {
+  .prog-tab-wrap { margin: 14px 0 18px; }
+  .prog-tab-trigger { padding: 12px 14px; gap: 14px; }
+  .prog-tab-stat { padding-right: 14px; }
+  .prog-tab-stat + .prog-tab-stat::before { left: -7px; }
+  .prog-tab-label { font-size: 0.55rem; letter-spacing: 1.3px; }
+  .prog-tab-value { font-size: 0.95rem; }
+  .prog-tab-bar { margin-top: 5px; }
+  .prog-tab-icon svg { width: 22px; height: 22px; }
+  .prog-tab-panel { padding: 0 16px; }
+  .prog-tab-wrap:hover .prog-tab-panel,
+  .prog-tab-wrap:focus-within .prog-tab-panel,
+  .prog-tab-wrap.is-open .prog-tab-panel { padding: 18px 16px; }
+  .prog-tab-title { font-size: 1.1rem; }
+}
+@media (max-width: 460px) {
+  .prog-tab-stat-xp .prog-tab-bar { display: none; }
+}
+
+/* ============================================================
+   ESCO practice exam callout — practice.html
+   Two-column block: an info column with what ESCO offers, and
+   a call-to-action aside (amber-bubble style) with the link.
+   ============================================================ */
+.esco-practice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 18px;
+  align-items: start;
+}
+@media (min-width: 760px) {
+  .esco-practice-grid {
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+.esco-practice-info h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+.esco-practice-list {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.esco-practice-list li {
+  padding: 6px 0 6px 22px;
+  position: relative;
+  border-bottom: 1px dashed rgba(138, 84, 32, 0.22);
+}
+.esco-practice-list li:last-child { border-bottom: 0; }
+.esco-practice-list li::before {
+  content: "›";
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.esco-practice-list strong { color: var(--ink); }
+
+.esco-practice-cta {
+  align-self: start;
+  padding: 22px 22px 20px;
+  background: linear-gradient(180deg, #fef3d3 0%, #fadea0 100%);
+  border: 1px solid #e6c276;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(120, 80, 20, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.esco-practice-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--accent-deep, #7a2e10);
+  font-weight: 700;
+}
+.esco-practice-title {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.esco-practice-blurb {
+  margin: 0 0 4px;
+  font-size: 0.88rem;
+  color: var(--ink-soft, #5a4a30);
+  line-height: 1.4;
+}
+.esco-practice-cta .btn.primary {
+  margin-top: 4px;
+  align-self: flex-start;
+}
+.esco-practice-domain {
+  margin: 6px 0 0;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.4px;
+  color: #8a5420;
+}
+
+/* ============================================================
+   Certifier comparison table (resources.html)
+   Amber gradient header row, dashed row separators, hover tint,
+   stacked-card layout under 720px.
+   ============================================================ */
+.lead-sub {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0 0 14px;
+  max-width: 70ch;
+}
+.cert-compare-wrap {
+  background: linear-gradient(180deg, #fefaee 0%, var(--paper) 100%);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+table.cert-compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  color: var(--ink);
+  min-width: 880px;
+}
+table.cert-compare thead th {
+  background: linear-gradient(180deg, #fdf5e2 0%, #f4e6c4 100%);
+  border-bottom: 1px solid var(--accent-deep);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0;
+  vertical-align: bottom;
+}
+table.cert-compare thead th:first-child { border-top-left-radius: var(--radius-lg); }
+table.cert-compare thead th:last-child { border-top-right-radius: var(--radius-lg); }
+table.cert-compare thead th button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 12px 14px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+table.cert-compare thead th button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+table.cert-compare .sort-ind {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  opacity: 0.4;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 2px;
+}
+table.cert-compare th[aria-sort="ascending"] .sort-ind {
+  opacity: 1;
+  transform: rotate(-135deg);
+}
+table.cert-compare th[aria-sort="descending"] .sort-ind {
+  opacity: 1;
+  transform: rotate(45deg);
+}
+table.cert-compare tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px dashed var(--rule-2);
+  vertical-align: top;
+  color: var(--ink-soft);
+}
+table.cert-compare tbody td strong { color: var(--ink); }
+table.cert-compare tbody tr:last-child td { border-bottom: 0; }
+table.cert-compare tbody tr:hover td {
+  background: #fdf0dd;
+}
+table.cert-compare .cell-note {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.4px;
+  margin-top: 2px;
+}
+table.cert-compare sup {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  margin-left: 2px;
+}
+.cert-compare-cite {
+  margin: 12px 0 0;
+  padding: 12px 16px;
+  background: var(--paper);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--radius);
+  list-style: none;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+.cert-compare-cite li { margin: 3px 0; }
+.cert-compare-cite sup {
+  color: var(--accent);
+  font-family: var(--mono);
+  margin-right: 4px;
+}
+.cert-compare-cite .cite-disclaimer {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule-2);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .cert-compare-wrap {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+    padding: 0;
+  }
+  table.cert-compare { min-width: 0; display: block; }
+  table.cert-compare thead { display: none; }
+  table.cert-compare tbody { display: block; }
+  table.cert-compare tbody tr {
+    display: block;
+    background: linear-gradient(180deg, #fefaee 0%, var(--paper) 100%);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    padding: 10px 14px;
+    margin-bottom: 14px;
+  }
+  table.cert-compare tbody tr:hover td { background: transparent; }
+  table.cert-compare tbody td {
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--rule-2);
+  }
+  table.cert-compare tbody td:last-child { border-bottom: 0; }
+  table.cert-compare tbody td::before {
+    content: attr(data-label);
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--muted);
+    align-self: start;
+    padding-top: 2px;
+  }
+  table.cert-compare tbody tr:last-child td { border-bottom: 1px dashed var(--rule-2); }
+  table.cert-compare tbody tr:last-child td:last-child { border-bottom: 0; }
+}
+
+/* ============================================================
+   Study page — table-of-contents card grid (replaces bullet list)
+   Each section gets its own clearly-bounded card with breathing
+   room — no visual run-together.
+   ============================================================ */
+
+/* ============================================================
+   Last-reviewed freshness badge
+   Mono-uppercase pill under each page's h1 signaling that the
+   content is current. The hover tooltip surfaces the next
+   scheduled review date (six-month cadence).
+   ============================================================ */
+.last-reviewed {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 6px 0 14px;
+  padding: 4px 10px 4px 8px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #8a5420;
+  background: rgba(217, 169, 107, 0.10);
+  border: 1px solid rgba(165, 67, 27, 0.18);
+  border-radius: 999px;
+  cursor: help;
+  white-space: nowrap;
+}
+.last-reviewed::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent, #a5431b);
+  box-shadow: 0 0 0 2px rgba(165, 67, 27, 0.15);
+  flex: 0 0 auto;
+}
+.hero .last-reviewed,
+.hero-split .last-reviewed {
+  margin-top: 2px;
+}
+@media (max-width: 640px) {
+  .last-reviewed {
+    font-size: 0.58rem;
+    letter-spacing: 1.3px;
+    padding: 3px 9px 3px 7px;
   }
 }

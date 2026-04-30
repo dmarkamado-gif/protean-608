@@ -84,12 +84,57 @@
         "inLanguage": "en-US",
         "isAccessibleForFree": true,
         "mainEntityOfPage": { "@id": "https://dmarkamado-gif.github.io/protean-608/study.html#webpage" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does it take to study for the EPA 608?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most people who already work in HVAC pass after 8–12 hours of focused prep. If you're new to refrigeration, plan on 20–30 hours spread over a couple of weeks: read a study guide cover to cover, drill flashcards, and take at least one full-length practice test per section. The full study guide on study.html is built to be skimmable in one sitting and re-readable section by section."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What's the difference between Type I, Type II, and Type III?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Type I covers small appliances — hermetically sealed systems with 5 lbs of refrigerant or less, like window ACs, refrigerators, and dehumidifiers. Type II covers high-pressure and very-high-pressure equipment: residential split systems, heat pumps, and supermarket racks. Type III covers low-pressure appliances, which in practice means centrifugal chillers running R-123 or R-11. Each type is a separate exam section — see study.html#type1, #type2, and #type3 for the full breakdown."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need Universal certification or just one Type?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only get the type you'll actually use. A residential service tech only needs Core + Type II. A vending or appliance-repair tech only needs Core + Type I. Universal (Core + I + II + III) is worth it if you'll touch chillers or want maximum flexibility on the job market — otherwise it's extra study time for sections you won't use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What's a passing score on the 608?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "70% on each section you sit for — Core, Type I, Type II, and Type III are scored independently. You only have to retake the sections you fail, not the whole exam. Test-day specifics are summarized at study.html#test-day."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the 608 exam open-book?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only Type I, when taken online through an EPA-approved provider like Mainstream Engineering, is open-book. Core, Type II, and Type III must be proctored — either in-person or via an approved remote proctor — and are closed-book. Even on the open-book Type I, the questions are written so that flipping through a manual without understanding the material won't get you to 70%."
+            }
+          }
+        ]
       }
     ]
   }
   </script>
 </head>
-<body>
+<body class="study-page">
   <header class="site">
     <div class="inner">
       <a class="brand" href="index.html">
@@ -137,6 +182,7 @@
       <div class="hero-split">
         <div>
           <h1>Study guide</h1>
+          <div class="last-reviewed" title="Next review · October 2026">Last reviewed · April 2026</div>
           <p class="lead">The material the 608 actually tests you on, in plain language — with a printable <a href="#quick-ref">quick-reference card</a> built in. Skim cover to cover, then hit the practice quiz. Come back to any section you keep tripping on.</p>
           <p class="small muted">Core covers everyone. Type sections are specific to the kind of equipment you'll handle. Pick based on your goal — or read all four if you're going for Universal.</p>
           <div class="cta hero-cta">
@@ -151,11 +197,11 @@
             <h2 class="study-brief-title">What's in this guide</h2>
           </div>
           <ul class="study-brief-list">
-            <li><strong>Core</strong> — the law, safety, the Three Rs, cylinders</li>
-            <li><strong>Type I</strong> — small appliances (≤ 5 lb)</li>
-            <li><strong>Type II</strong> — high-pressure A/C &amp; heat pumps</li>
-            <li><strong>Type III</strong> — low-pressure centrifugal chillers</li>
-            <li><strong>Test-day tips</strong> — what to expect, what to bring</li>
+            <li><a href="#core"><strong>Core</strong></a> — the law, safety, the Three Rs, cylinders</li>
+            <li><a href="#type1"><strong>Type I</strong></a> — small appliances (≤ 5 lb)</li>
+            <li><a href="#type2"><strong>Type II</strong></a> — high-pressure A/C &amp; heat pumps</li>
+            <li><a href="#type3"><strong>Type III</strong></a> — low-pressure centrifugal chillers</li>
+            <li><a href="#test-day"><strong>Test-day tips</strong></a> — what to expect, what to bring</li>
           </ul>
           <dl class="study-brief-stats">
             <div><dt>Read time</dt><dd>~45 min cover-to-cover</dd></div>
@@ -166,18 +212,6 @@
       </div>
     </section>
 
-    <div class="toc">
-      <strong>Sections</strong>
-      <ul>
-        <li><a href="#core">Core</a></li>
-        <li><a href="#type1">Type I — Small Appliances</a></li>
-        <li><a href="#type2">Type II — High-Pressure</a></li>
-        <li><a href="#type3">Type III — Low-Pressure</a></li>
-        <li><a href="#test-day">Test-day tips</a></li>
-        <li><a href="#quick-ref">Quick reference card</a></li>
-        <li><a href="#glossary">Glossary</a></li>
-      </ul>
-    </div>
 
     <section class="block study-section sect-core" id="core">
       <h2>
@@ -288,10 +322,16 @@
         <li><span class="core-bpill core-bp-leak">Industrial process</span><span class="core-bdesc"><b>30 %</b> / year</span></li>
         <li><span class="core-bpill core-bp-leak">Comfort cooling &amp; all others</span><span class="core-bdesc"><b>10 %</b> / year</span></li>
       </ul>
-      <p>Initial verification test after repair, then a follow-up verification test. Records must be kept.</p>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Verify</span><span class="core-bdesc">Initial verification test after repair, then a follow-up verification test.</span></li>
+        <li><span class="core-bpill">Recordkeeping</span><span class="core-bdesc">Records of leak rate, repair, and verification must be kept.</span></li>
+      </ul>
 
       <h3>Sales restriction</h3>
-      <p>Only EPA-certified technicians may purchase regulated refrigerant. For <strong>HFCs</strong>, the sales restriction also applies (AIM Act rulemaking) in containers other than small cans under 2 lb with self-sealing valves for MVAC.</p>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Who may buy</span><span class="core-bdesc">Only <b>EPA-certified technicians</b> may purchase regulated refrigerant.</span></li>
+        <li><span class="core-bpill">HFCs</span><span class="core-bdesc">The sales restriction also applies to <b>HFCs</b> under the AIM Act — except small cans under <b>2 lb</b> with self-sealing valves for MVAC.</span></li>
+      </ul>
 
       <h3>Refrigerant cylinders</h3>
       <ul class="core-bubble-list core-cyl-list">
@@ -310,7 +350,10 @@
       </ul>
 
       <h3>Recovery equipment</h3>
-      <p>Equipment manufactured on or after <strong>November 15, 1993</strong> must be EPA-certified to meet ARI 740 standards. Techs must use certified equipment matched to the refrigerant type.</p>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">ARI 740</span><span class="core-bdesc">Equipment manufactured on or after <b>Nov 15, 1993</b> must be EPA-certified to ARI 740 standards.</span></li>
+        <li><span class="core-bpill">Match type</span><span class="core-bdesc">Techs must use certified equipment <em>matched to the refrigerant type</em>.</span></li>
+      </ul>
     </section>
 
     <section class="block study-section sect-t1" id="type1">
@@ -332,28 +375,31 @@
 
       <h3>What qualifies</h3>
       <p>Fully manufactured, hermetically sealed, factory-charged systems containing <strong>5 lbs or less</strong> of refrigerant:</p>
-      <ul>
-        <li>Household refrigerators and freezers</li>
-        <li>Window A/C units and packaged terminal A/C</li>
-        <li>Vending machines, water coolers, dehumidifiers</li>
-        <li>Small heat pumps (under the weight threshold)</li>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill core-bp-type core-bp-t1">Refrigerators</span><span class="core-bdesc">Household refrigerators and freezers.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t1">Window A/C</span><span class="core-bdesc">Window units and packaged terminal A/C (PTAC).</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t1">Vending &amp; coolers</span><span class="core-bdesc">Vending machines, water coolers, dehumidifiers.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t1">Small heat pumps</span><span class="core-bdesc">Heat pumps under the <b>5 lb</b> charge threshold.</span></li>
       </ul>
 
       <h3>Recovery requirements</h3>
-      <ul>
-        <li>If using <strong>self-contained</strong> (active) recovery: achieve 90% of refrigerant (80% if compressor inoperative) or 4 in. Hg vacuum.</li>
-        <li>If using <strong>system-dependent</strong> (passive) recovery: 4 in. Hg after two separate access points.</li>
-        <li>System-dependent recovery is <em>only</em> allowed for small appliances.</li>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Self-contained</span><span class="core-bdesc"><em>Active recovery.</em> Achieve <b>90 %</b> of refrigerant (<b>80 %</b> if compressor inoperative) or <b>4 in. Hg</b> vacuum.</span></li>
+        <li><span class="core-bpill">System-dependent</span><span class="core-bdesc"><em>Passive recovery.</em> <b>4 in. Hg</b> after two separate access points.</span></li>
+        <li><span class="core-bpill core-bpill-tight">Only here</span><span class="core-bdesc">System-dependent recovery is <em>only</em> allowed for small appliances.</span></li>
       </ul>
 
       <h3>Access methods</h3>
-      <ul>
-        <li><strong>Saddle valves</strong> (piercing-type) are commonly installed on the process tube for recovery access.</li>
-        <li>After service, a process stub must be <strong>pinched off and brazed</strong> shut — not left with the saddle valve.</li>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Saddle valves</span><span class="core-bdesc">Piercing-type, commonly installed on the process tube for recovery access.</span></li>
+        <li><span class="core-bpill">Pinch &amp; braze</span><span class="core-bdesc">After service, the process stub must be <b>pinched off and brazed</b> shut — not left with the saddle valve.</span></li>
       </ul>
 
       <h3>Disposal</h3>
-      <p>The final person in the disposal chain is responsible for ensuring refrigerant is recovered before the appliance is scrapped. A signed statement that recovery was performed may be accepted from the previous party.</p>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill core-bp-type core-bp-t1">Last in chain</span><span class="core-bdesc">The final person in the disposal chain is responsible for ensuring refrigerant is recovered <em>before the appliance is scrapped</em>.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t1">Signed statement</span><span class="core-bdesc">A signed statement from the previous party attesting that recovery was performed may be accepted.</span></li>
+      </ul>
     </section>
 
     <section class="block study-section sect-t2" id="type2">
@@ -377,43 +423,44 @@
 
       <h3>What qualifies</h3>
       <p>Equipment that uses a refrigerant with a boiling point between <strong>-50 °C and 10 °C</strong> at atmospheric pressure — high-pressure refrigerants like R-22, R-410A, R-404A, R-134a, R-407C. Examples:</p>
-      <ul>
-        <li>Residential central A/C and heat pumps</li>
-        <li>Supermarket refrigeration racks</li>
-        <li>Commercial ice machines</li>
-        <li>Reach-in coolers and freezers over 5 lbs</li>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill core-bp-type core-bp-t2">Residential</span><span class="core-bdesc">Central A/C and heat pumps.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t2">Supermarket</span><span class="core-bdesc">Supermarket refrigeration racks.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t2">Ice machines</span><span class="core-bdesc">Commercial ice machines.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t2">Reach-ins</span><span class="core-bdesc">Reach-in coolers and freezers over <b>5 lbs</b>.</span></li>
       </ul>
       <p>Very-high-pressure (R-410A, R-13, R-503) is grouped with Type II on the exam.</p>
 
       <h3>Recovery vacuum targets</h3>
-      <table class="data">
-        <thead><tr><th>Appliance</th><th>Recovery target</th></tr></thead>
-        <tbody>
-          <tr><td>High-pressure, &lt;200 lbs</td><td>0 psig</td></tr>
-          <tr><td>High-pressure, ≥200 lbs</td><td>10 in. Hg vacuum</td></tr>
-          <tr><td>Very-high-pressure</td><td>0 psig</td></tr>
-        </tbody>
-      </table>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill core-bp-type core-bp-t2">&lt; 200 lbs</span><span class="core-bdesc">High-pressure — <b>0 psig</b>.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t2">≥ 200 lbs</span><span class="core-bdesc">High-pressure — <b>10 in. Hg</b> vacuum.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t2">Very-high</span><span class="core-bdesc">Very-high-pressure — <b>0 psig</b>.</span></li>
+      </ul>
 
       <h3>Leak detection</h3>
-      <ul>
-        <li><strong>Electronic leak detectors</strong> — fast, but false-trip near cleaners/solvents.</li>
-        <li><strong>Ultrasonic detectors</strong> — catch leaks by sound; helpful in noisy plant rooms only if tuned.</li>
-        <li><strong>Soap bubbles</strong> — cheap, reliable, won't find small leaks.</li>
-        <li><strong>Halide torch</strong> — old, detects Cl-based refrigerants only (not HFCs).</li>
-        <li><strong>Fluorescent dye + UV light</strong> — persistent, good for intermittent leaks.</li>
-        <li><strong>Standing pressure test</strong> with dry nitrogen (never O₂) &amp; a small trace of refrigerant.</li>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Electronic</span><span class="core-bdesc">Fast, but false-trips near cleaners and solvents.</span></li>
+        <li><span class="core-bpill">Ultrasonic</span><span class="core-bdesc">Catches leaks by sound; helpful in noisy plant rooms <em>only if tuned</em>.</span></li>
+        <li><span class="core-bpill">Soap bubbles</span><span class="core-bdesc">Cheap and reliable — won't find small leaks.</span></li>
+        <li><span class="core-bpill">Halide torch</span><span class="core-bdesc">Old. Detects <em>Cl-based</em> refrigerants only (not HFCs).</span></li>
+        <li><span class="core-bpill">UV dye</span><span class="core-bdesc">Fluorescent dye + UV light — persistent, good for intermittent leaks.</span></li>
+        <li><span class="core-bpill">Standing test</span><span class="core-bdesc">Dry nitrogen (<em>never O₂</em>) with a small trace of refrigerant.</span></li>
       </ul>
 
       <h3>Dehydration (evacuation)</h3>
-      <p>After repair and before recharging, evacuate to remove moisture and non-condensables. <strong>500 microns</strong> is the typical field target. A <strong>deep vacuum of 500 microns held for 10 minutes</strong> with the pump isolated indicates the system is dry and tight.</p>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Why</span><span class="core-bdesc">After repair and before recharging, evacuate to remove <em>moisture and non-condensables</em>.</span></li>
+        <li><span class="core-bpill">Target</span><span class="core-bdesc"><b>500 microns</b> is the typical field target.</span></li>
+        <li><span class="core-bpill">Hold test</span><span class="core-bdesc">A deep vacuum of <b>500 microns held for 10 minutes</b> with the pump isolated indicates the system is dry and tight.</span></li>
+      </ul>
 
       <h3>Retrofits</h3>
-      <ul>
-        <li>R-22 → R-407C or R-422 series for existing equipment (mineral oil → POE usually required).</li>
-        <li>Never mix refrigerants of different types. Never top off a blended refrigerant with vapor — charge as liquid to preserve the blend ratio (critical for R-410A, R-407C).</li>
-        <li><strong>Zeotropic blends</strong> (400 series) have temperature glide — always charge as liquid.</li>
-        <li><strong>Azeotropic blends</strong> (500 series) behave like a single refrigerant — no glide.</li>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">R-22 swap</span><span class="core-bdesc">→ R-407C or R-422 series for existing equipment (mineral oil → POE usually required).</span></li>
+        <li><span class="core-bpill">Charge liquid</span><span class="core-bdesc">Never top off a blended refrigerant with vapor — charge as liquid to preserve the blend ratio (critical for R-410A, R-407C). Never mix refrigerant types.</span></li>
+        <li><span class="core-bpill">Zeotropic</span><span class="core-bdesc"><em>400 series.</em> Have temperature glide — always charge as liquid.</span></li>
+        <li><span class="core-bpill">Azeotropic</span><span class="core-bdesc"><em>500 series.</em> Behave like a single refrigerant — no glide.</span></li>
       </ul>
     </section>
 
@@ -440,27 +487,38 @@
 
       <h3>What qualifies</h3>
       <p>Equipment using refrigerant with a <strong>boiling point above 10 °C</strong> at atmospheric pressure. Examples:</p>
-      <ul>
-        <li>R-11, R-113, R-123</li>
-        <li>Large centrifugal chillers</li>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill core-bp-type core-bp-t3">Refrigerants</span><span class="core-bdesc">R-11, R-113, R-123.</span></li>
+        <li><span class="core-bpill core-bp-type core-bp-t3">Equipment</span><span class="core-bdesc">Large centrifugal chillers.</span></li>
       </ul>
-      <p>Low-pressure systems operate in a <strong>vacuum</strong> on the low side — any leak pulls <em>air and moisture in</em>, not refrigerant out.</p>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill core-bp-type core-bp-t3">Vacuum side</span><span class="core-bdesc">Low-pressure systems operate in a <b>vacuum</b> on the low side — any leak pulls <em>air and moisture in</em>, not refrigerant out.</span></li>
+      </ul>
 
       <h3>Recovery target</h3>
-      <p><strong>25 mm Hg absolute</strong> (≈ 29 in. Hg vacuum).</p>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill core-bp-type core-bp-t3">Target</span><span class="core-bdesc"><b>25 mm Hg absolute</b> (≈ <b>29 in. Hg</b> vacuum).</span></li>
+      </ul>
 
       <h3>Purge units</h3>
-      <p>Because low-pressure systems operate under vacuum, air and moisture collect in the condenser. A <strong>purge unit</strong> removes non-condensables. Modern (high-efficiency) purge units lose less than <strong>0.1 lb of refrigerant per lb of air purged</strong>.</p>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Why</span><span class="core-bdesc">Low-pressure systems run under vacuum, so air and moisture collect in the condenser.</span></li>
+        <li><span class="core-bpill">What it does</span><span class="core-bdesc">A <b>purge unit</b> removes non-condensables.</span></li>
+        <li><span class="core-bpill">Efficiency</span><span class="core-bdesc">Modern (high-efficiency) purge units lose less than <b>0.1 lb of refrigerant per lb of air purged</b>.</span></li>
+      </ul>
 
       <h3>Water box &amp; pressure</h3>
-      <ul>
-        <li>To speed recovery, warm the refrigerant to <strong>no more than 150 °F</strong> — heating blankets only, never an open flame.</li>
-        <li>A <strong>rupture disk</strong> set at 15 psig protects low-pressure vessels.</li>
-        <li>During recovery, watch the disk — pressure rising toward 15 psig means non-condensables are building up.</li>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Warm it up</span><span class="core-bdesc">To speed recovery, warm the refrigerant to <b>no more than 150 °F</b> — heating blankets only, never an open flame.</span></li>
+        <li><span class="core-bpill">Rupture disk</span><span class="core-bdesc">Set at <b>15 psig</b> — protects low-pressure vessels from overpressure.</span></li>
+        <li><span class="core-bpill">Watch it</span><span class="core-bdesc">During recovery, watch the disk — pressure rising toward <b>15 psig</b> means non-condensables are building up.</span></li>
       </ul>
 
       <h3>Leak testing low-pressure systems</h3>
-      <p>Pressure-test at no more than <strong>10 psig</strong>, using nitrogen (with a trace of refrigerant if needed). Over-pressurizing can rupture the vessel.</p>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Max pressure</span><span class="core-bdesc">Pressure-test at no more than <b>10 psig</b> — over-pressurizing can <em>rupture the vessel</em>.</span></li>
+        <li><span class="core-bpill">Gas</span><span class="core-bdesc">Use nitrogen (with a small trace of refrigerant if needed).</span></li>
+      </ul>
     </section>
 
     <section class="block study-section" id="test-day">
@@ -481,12 +539,12 @@
         </span>Test-day tips
       </h2>
       <p><span class="sect-badge">strategy · independent of section</span></p>
-      <ul>
-        <li><strong>Read every choice</strong>. On 608 questions, two choices are often technically correct but one is more complete — pick the most specific.</li>
-        <li>Watch for "always," "never," and "only" — absolute qualifiers are usually wrong unless the rule is truly absolute (like the venting prohibition).</li>
-        <li>Know your pressures: 0 psig, 10 in. Hg, 25 mm Hg, 15 psig, 500 microns, 80% fill.</li>
-        <li>Know the dates: 1987 Montreal Protocol, 1992 CFC/HCFC venting ban, 1993 recovery equipment cert, 1995 HFC venting ban, 2020 R-22 production ban.</li>
-        <li>If you're guessing, eliminate anything that would release refrigerant to atmosphere — that answer is almost never right.</li>
+      <ul class="core-bubble-list">
+        <li><span class="core-bpill">Read all choices</span><span class="core-bdesc">On 608 questions, two choices are often technically correct but one is more complete — <b>pick the most specific</b>.</span></li>
+        <li><span class="core-bpill">Absolutes</span><span class="core-bdesc">Watch for <em>"always," "never," "only"</em> — absolute qualifiers are usually wrong unless the rule is truly absolute (like the venting prohibition).</span></li>
+        <li><span class="core-bpill">Key pressures</span><span class="core-bdesc"><b>0 psig</b> · <b>10 in. Hg</b> · <b>25 mm Hg</b> · <b>15 psig</b> · <b>500 microns</b> · <b>80 % fill</b>.</span></li>
+        <li><span class="core-bpill">Key dates</span><span class="core-bdesc"><b>1987</b> Montreal Protocol · <b>1992</b> CFC/HCFC venting ban · <b>1993</b> recovery-equipment cert · <b>1995</b> HFC venting ban · <b>2020</b> R-22 production ban.</span></li>
+        <li><span class="core-bpill">When guessing</span><span class="core-bdesc">Eliminate anything that would release refrigerant to atmosphere — that answer is <em>almost never right</em>.</span></li>
       </ul>
     </section>
 
@@ -896,16 +954,16 @@
       <p class="lead">Every rule on this page traces back to one of these. If a practice question feels like a trick, it's almost always pulling from one of these documents.</p>
       <aside class="sources-bubble" role="note" aria-label="Source documents">
         <dl>
-          <div><dt><code>40 CFR Part 82, Subpart F</code></dt><dd>Venting prohibition, recovery requirements, leak-repair thresholds, sales restriction, and technician certification.</dd></div>
-          <div><dt><code>49 CFR 173</code></dt><dd>DOT cylinder rules — 80% fill limit, 5-year hydrostatic retest, and cylinder marking.</dd></div>
-          <div><dt>Clean Air Act §608</dt><dd>Stationary refrigerant law. Authorizes the entire 608 program.</dd></div>
-          <div><dt>Clean Air Act §609</dt><dd>Motor-vehicle A/C rules. Separate certification (not 608).</dd></div>
-          <div><dt>Montreal Protocol (1987)</dt><dd>International treaty that phased out ozone-depleting substances (CFCs, HCFCs).</dd></div>
-          <div><dt>AIM Act (2020)</dt><dd>Authorizes EPA to phase down HFCs 85% by 2036.</dd></div>
-          <div><dt>ASHRAE Standard 34</dt><dd>Refrigerant designations (R-numbers) and A/B toxicity + 1/2L/2/3 flammability classifications.</dd></div>
-          <div><dt>ASHRAE Standard 15</dt><dd>Refrigerant charge limits in occupied spaces — paired with Standard 34 safety groups.</dd></div>
-          <div><dt>AHRI Standard 700</dt><dd>Reclaimed-refrigerant purity spec. Defines the line between "recycled" and "reclaimed."</dd></div>
-          <div><dt>ARI Standard 740</dt><dd>Performance spec for EPA-certified recovery and recycling equipment.</dd></div>
+          <div><dt><a href="https://www.ecfr.gov/current/title-40/part-82/subpart-F" target="_blank" rel="noopener"><code>40 CFR Part 82, Subpart F</code></a></dt><dd>Venting prohibition, recovery requirements, leak-repair thresholds, sales restriction, and technician certification.</dd></div>
+          <div><dt><a href="https://www.ecfr.gov/current/title-49/part-173" target="_blank" rel="noopener"><code>49 CFR 173</code></a></dt><dd>DOT cylinder rules — 80% fill limit, 5-year hydrostatic retest, and cylinder marking.</dd></div>
+          <div><dt><a href="https://www.epa.gov/section608" target="_blank" rel="noopener">Clean Air Act §608</a></dt><dd>Stationary refrigerant law. Authorizes the entire 608 program.</dd></div>
+          <div><dt><a href="https://www.epa.gov/mvac" target="_blank" rel="noopener">Clean Air Act §609</a></dt><dd>Motor-vehicle A/C rules. Separate certification (not 608).</dd></div>
+          <div><dt><a href="https://www.epa.gov/ozone-layer-protection" target="_blank" rel="noopener">Montreal Protocol (1987)</a></dt><dd>International treaty that phased out ozone-depleting substances (CFCs, HCFCs).</dd></div>
+          <div><dt><a href="https://www.epa.gov/climate-hfcs-reduction" target="_blank" rel="noopener">AIM Act (2020)</a></dt><dd>Authorizes EPA to phase down HFCs 85% by 2036.</dd></div>
+          <div><dt><a href="https://www.ashrae.org" target="_blank" rel="noopener">ASHRAE Standard 34</a></dt><dd>Refrigerant designations (R-numbers) and A/B toxicity + 1/2L/2/3 flammability classifications.</dd></div>
+          <div><dt><a href="https://www.ashrae.org" target="_blank" rel="noopener">ASHRAE Standard 15</a></dt><dd>Refrigerant charge limits in occupied spaces — paired with Standard 34 safety groups.</dd></div>
+          <div><dt><a href="https://www.ahrinet.org" target="_blank" rel="noopener">AHRI Standard 700</a></dt><dd>Reclaimed-refrigerant purity spec. Defines the line between "recycled" and "reclaimed."</dd></div>
+          <div><dt><a href="https://www.ahrinet.org" target="_blank" rel="noopener">ARI Standard 740</a></dt><dd>Performance spec for EPA-certified recovery and recycling equipment.</dd></div>
         </dl>
       </aside>
     </section>

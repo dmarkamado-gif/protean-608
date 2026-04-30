@@ -103,6 +103,10 @@
     setText("pp-level", p.level);
     setText("pp-xp-current", p.current);
     setText("pp-xp-next", p.needed);
+    // Mirror compact-tab summary at the top of the page
+    setText("pt-level", p.level);
+    setText("pt-xp-current", p.current);
+    setText("pt-xp-next", p.needed);
     setText("pp-total-xp", s.xp);
     setText("pp-questions", s.questionsAnswered);
     const acc = s.questionsAnswered ? Math.round((s.questionsCorrect / s.questionsAnswered) * 100) + "%" : "—";
@@ -113,6 +117,8 @@
 
     const barFill = document.getElementById("pp-bar-fill");
     if (barFill) barFill.style.width = pct.toFixed(1) + "%";
+    const ptBarFill = document.getElementById("pt-bar-fill");
+    if (ptBarFill) ptBarFill.style.width = pct.toFixed(1) + "%";
 
     const grid = document.getElementById("badge-grid");
     if (grid) {
@@ -120,6 +126,9 @@
       const earned = badges.filter(b => b.earned).length;
       setText("pp-earned", earned);
       setText("pp-total", badges.length);
+      // Mirror to compact tab
+      setText("pt-earned", earned);
+      setText("pt-total", badges.length);
       grid.innerHTML = badges.map(b =>
         '<div class="badge-card ' + (b.earned ? "earned" : "locked") + '" title="' + (b.earned ? b.name + ": " + b.desc : "Locked — " + b.desc) + '">' +
           '<div class="badge-ic">' + icon(b.icon) + '</div>' +

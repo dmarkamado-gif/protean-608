@@ -84,6 +84,51 @@
         "author": { "@id": "https://dmarkamado-gif.github.io/protean-608/#org" },
         "publisher": { "@id": "https://dmarkamado-gif.github.io/protean-608/#org" },
         "mainEntityOfPage": { "@id": "https://dmarkamado-gif.github.io/protean-608/practice.html#webpage" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are these practice questions on the real EPA 608 exam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — the real exam is a closed bank maintained by EPA-approved certifying organizations like ESCO Institute, Mainstream Engineering, RSES, and HVAC Excellence. Our questions are written to mirror the topics, difficulty, and phrasing of the real test using the public 40 CFR Part 82 rules and EPA guidance. If you can pass our full quiz consistently above 80%, you're in good shape for the actual proctored exam."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many questions are on the actual 608?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each section is 25 multiple-choice questions: 25 for Core, 25 for Type I, 25 for Type II, and 25 for Type III. Universal candidates take all four sections (100 questions total). You need 18 of 25 correct (72%) to pass each section under most providers; the EPA minimum is 70%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I take practice quizzes on my phone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — the entire practice hub on this page is mobile-friendly with no app install or signup. Progress, XP, and badges sync via local storage on the device, so coming back to the same browser picks up where you left off. There's no account, no paywall, and no ads."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What if I fail the 608 — can I retake it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You only have to retake the section(s) you failed, not the whole exam, and most proctors let you reschedule within a few days. Retake fees vary by provider but are usually $10–$25 per section. Use this practice page to drill the section you missed before re-sitting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the 608 scored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each section is scored independently as a percent correct, with 70% the EPA-mandated passing threshold (most providers round to 18 of 25). There is no penalty for guessing — every blank is counted wrong, so always answer every question. Your wallet card lists each section you passed; pass all four and it reads Universal."
+            }
+          }
+        ]
       }
     ]
   }
@@ -138,12 +183,92 @@
         <span></span><span></span><span></span><span></span><span></span>
       </div>
       <h1>Practice</h1>
+      <div class="last-reviewed" title="Next review · October 2026">Last reviewed · April 2026</div>
       <p class="lead">Three ways to drill the material. Take a <strong>full mock exam</strong> that mirrors the real 608 format — one section, no hints, scored at 70% to pass. Or loosen up with mini-games, a daily drill, or the 60-second speed round. Every question has an explanation with a CFR citation once you review it.</p>
       <div class="cta">
         <button class="btn" id="btn-start-daily">Today's daily drill (5 Qs)</button>
         <button class="btn" id="btn-start-lightning">60-second speed round</button>
       </div>
     </section>
+
+    <div class="prog-tab-wrap" id="progress">
+      <button class="prog-tab-trigger" type="button" id="prog-tab-trigger" aria-controls="prog-tab-panel" aria-expanded="false">
+        <span class="prog-tab-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <polygon points="16,3 28,10 28,22 16,29 4,22 4,10" fill="#d9a96b" stroke="#8a5420" stroke-width="1.5"/>
+            <circle cx="16" cy="16" r="4" fill="#a5431b"/>
+          </svg>
+        </span>
+        <span class="prog-tab-stat">
+          <span class="prog-tab-label">Level</span>
+          <span class="prog-tab-value" id="pt-level">1</span>
+        </span>
+        <span class="prog-tab-stat prog-tab-stat-xp">
+          <span class="prog-tab-label">XP</span>
+          <span class="prog-tab-value">
+            <span id="pt-xp-current">0</span>
+            <span class="prog-tab-divide">/</span>
+            <span id="pt-xp-next">100</span>
+          </span>
+          <span class="prog-tab-bar" aria-hidden="true"><span id="pt-bar-fill"></span></span>
+        </span>
+        <span class="prog-tab-stat">
+          <span class="prog-tab-label">Badges</span>
+          <span class="prog-tab-value">
+            <span id="pt-earned">0</span>
+            <span class="prog-tab-divide">/</span>
+            <span id="pt-total">0</span>
+          </span>
+        </span>
+        <span class="prog-tab-caret" aria-hidden="true">
+          <svg viewBox="0 0 12 8" width="12" height="8"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="prog-tab-panel" id="prog-tab-panel" role="region" aria-labelledby="prog-tab-trigger">
+        <h2 class="prog-tab-title">Level up as you study</h2>
+        <p class="prog-tab-blurb">
+          The 608 is pass-at-70% for each section. Most people who fail don't fail because the material is hard — they fail because the test is full of specific numbers and dates that you either remember or you don't. <strong>80% cylinder fill. 25 mm Hg for low-pressure recovery. 150 °F warming limit.</strong> Drill them here until they stop slipping.
+        </p>
+        <div class="progress-panel" id="progress-panel">
+          <div class="pp-head">
+            <div class="pp-level-big">
+              <svg class="pp-ring" viewBox="0 0 96 96" aria-hidden="true">
+                <circle cx="48" cy="48" r="40" fill="none" stroke="rgba(165,67,27,0.15)" stroke-width="7"/>
+                <circle id="pp-ring-fg" cx="48" cy="48" r="40" fill="none" stroke="url(#ppGrad)" stroke-width="7" stroke-linecap="round" transform="rotate(-90 48 48)" stroke-dasharray="0 999"/>
+                <defs><linearGradient id="ppGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e08148"/><stop offset="1" stop-color="#8a3614"/></linearGradient></defs>
+              </svg>
+              <div class="pp-level-inner">
+                <div class="pp-level-label">LEVEL</div>
+                <div class="pp-level-num" id="pp-level">1</div>
+              </div>
+            </div>
+            <div class="pp-stats">
+              <div class="pp-xp"><span id="pp-xp-current">0</span> / <span id="pp-xp-next">100</span> XP</div>
+              <div class="pp-bar"><span id="pp-bar-fill"></span></div>
+              <dl class="pp-grid">
+                <div><dt>Total XP</dt><dd id="pp-total-xp">0</dd></div>
+                <div><dt>Questions</dt><dd id="pp-questions">0</dd></div>
+                <div><dt>Accuracy</dt><dd id="pp-accuracy">—</dd></div>
+                <div><dt>Best streak</dt><dd id="pp-streak">0</dd></div>
+                <div><dt>Quizzes</dt><dd id="pp-quizzes">0</dd></div>
+                <div><dt>Lightning PR</dt><dd id="pp-lightning">0</dd></div>
+              </dl>
+            </div>
+          </div>
+          <div class="pp-rewards">
+            <div class="pp-rewards-head">
+              <h3>Badges</h3>
+              <span class="pp-counter"><span id="pp-earned">0</span> / <span id="pp-total">0</span></span>
+            </div>
+            <div class="badge-grid" id="badge-grid"></div>
+          </div>
+          <div class="pp-actions">
+            <button class="btn" id="pp-reset">Reset progress</button>
+            <span class="pp-note">Progress is saved locally in your browser. Nothing is sent anywhere.</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="block" id="exam-hub-block">
       <div class="hvac-rule">
@@ -184,6 +309,41 @@
         </button>
       </div>
       <p class="small muted" style="margin-top:12px">Our question pool has 36 Core / 20 Type I / 24 Type II / 24 Type III. The real exam is 25 per section — Type I is the tightest. We'll keep expanding the pool.</p>
+    </section>
+
+    <section class="block" id="esco-practice">
+      <div class="hvac-rule">
+        <svg viewBox="0 0 40 26" aria-hidden="true">
+          <rect x="6" y="5" width="28" height="16" rx="2" fill="#fffaee" stroke="#8a5420" stroke-width="1.5"/>
+          <path d="M 12 13 l 3 3 l 6 -6" fill="none" stroke="#a5431b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="24" y1="11" x2="30" y2="11" stroke="#6b5d3c" stroke-width="0.8"/>
+          <line x1="24" y1="14" x2="30" y2="14" stroke="#6b5d3c" stroke-width="0.8"/>
+          <line x1="24" y1="17" x2="28" y2="17" stroke="#6b5d3c" stroke-width="0.8"/>
+        </svg>
+        <span class="tag">official source</span>
+      </div>
+      <h2>Free practice exams from ESCO Institute</h2>
+      <p>ESCO is one of the four EPA-approved certifying bodies and the proctor most community colleges and trade schools use. They publish their own free practice exam — straight from a group that writes and administers the real 608. Pair it with our quizzes: drill our pool to learn the material, then sit ESCO's set to gauge how close you are to test-ready.</p>
+
+      <div class="esco-practice-grid">
+        <div class="esco-practice-info">
+          <h3>What you get on escogroup.org/practice</h3>
+          <ul class="esco-practice-list">
+            <li><strong>50+ questions</strong> for each section — Core, Type I, Type II, Type III</li>
+            <li>A <strong>simulated Universal exam</strong> drawing from all four sections</li>
+            <li>Works on phone, tablet, or desktop — no signup, no paywall</li>
+            <li>Written by ESCO staff who build the actual proctored exam</li>
+          </ul>
+          <p class="small muted">Practice questions are not the real exam questions and aren't a substitute for studying — but they're the closest free preview of the format and tone you'll see on test day.</p>
+        </div>
+        <aside class="esco-practice-cta">
+          <span class="esco-practice-eyebrow">external · free</span>
+          <h3 class="esco-practice-title">Take ESCO's practice exam</h3>
+          <p class="esco-practice-blurb">Opens on escogroup.org in a new tab.</p>
+          <a class="btn primary" href="https://www.escogroup.org/practice/" target="_blank" rel="noopener">Open ESCO practice exam ↗</a>
+          <p class="esco-practice-domain">escogroup.org/practice</p>
+        </aside>
+      </div>
     </section>
 
     <section class="block">
@@ -288,57 +448,6 @@
       </div>
     </section>
 
-    <section class="block" id="progress">
-      <div class="hvac-rule">
-        <svg viewBox="0 0 40 26" aria-hidden="true">
-          <polygon points="20,3 30,9 30,21 20,27 10,21 10,9" fill="#d9a96b" stroke="#8a5420" stroke-width="1.5"/>
-          <circle cx="20" cy="15" r="3" fill="#a5431b"/>
-        </svg>
-        <span class="tag">your progress</span>
-      </div>
-      <h2>Level up as you study</h2>
-      <p>
-        The 608 is pass-at-70% for each section. Most people who fail don't fail because the material is hard — they fail because the test is full of specific numbers and dates that you either remember or you don't. <strong>80% cylinder fill. 25 mm Hg for low-pressure recovery. 150 °F warming limit.</strong> Drill them here until they stop slipping. Streaks, XP, and badges are baked in — a little dopamine helps when you're sitting with regulations for three hours straight.
-      </p>
-      <div class="progress-panel" id="progress-panel">
-        <div class="pp-head">
-          <div class="pp-level-big">
-            <svg class="pp-ring" viewBox="0 0 96 96" aria-hidden="true">
-              <circle cx="48" cy="48" r="40" fill="none" stroke="rgba(165,67,27,0.15)" stroke-width="7"/>
-              <circle id="pp-ring-fg" cx="48" cy="48" r="40" fill="none" stroke="url(#ppGrad)" stroke-width="7" stroke-linecap="round" transform="rotate(-90 48 48)" stroke-dasharray="0 999"/>
-              <defs><linearGradient id="ppGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e08148"/><stop offset="1" stop-color="#8a3614"/></linearGradient></defs>
-            </svg>
-            <div class="pp-level-inner">
-              <div class="pp-level-label">LEVEL</div>
-              <div class="pp-level-num" id="pp-level">1</div>
-            </div>
-          </div>
-          <div class="pp-stats">
-            <div class="pp-xp"><span id="pp-xp-current">0</span> / <span id="pp-xp-next">100</span> XP</div>
-            <div class="pp-bar"><span id="pp-bar-fill"></span></div>
-            <dl class="pp-grid">
-              <div><dt>Total XP</dt><dd id="pp-total-xp">0</dd></div>
-              <div><dt>Questions</dt><dd id="pp-questions">0</dd></div>
-              <div><dt>Accuracy</dt><dd id="pp-accuracy">—</dd></div>
-              <div><dt>Best streak</dt><dd id="pp-streak">0</dd></div>
-              <div><dt>Quizzes</dt><dd id="pp-quizzes">0</dd></div>
-              <div><dt>Lightning PR</dt><dd id="pp-lightning">0</dd></div>
-            </dl>
-          </div>
-        </div>
-        <div class="pp-rewards">
-          <div class="pp-rewards-head">
-            <h3>Badges</h3>
-            <span class="pp-counter"><span id="pp-earned">0</span> / <span id="pp-total">0</span></span>
-          </div>
-          <div class="badge-grid" id="badge-grid"></div>
-        </div>
-        <div class="pp-actions">
-          <button class="btn" id="pp-reset">Reset progress</button>
-          <span class="pp-note">Progress is saved locally in your browser. Nothing is sent anywhere.</span>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site">
@@ -364,6 +473,33 @@
         }
       });
     });
+
+    // Progression tab — click toggles open/close (for touch devices that
+    // don't support hover). Hover/focus-within still works on desktop.
+    (function () {
+      const wrap = document.getElementById("progress");
+      const trigger = document.getElementById("prog-tab-trigger");
+      if (!wrap || !trigger) return;
+      trigger.addEventListener("click", () => {
+        const isOpen = wrap.classList.toggle("is-open");
+        trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+      // Close on outside click when forced-open via tap
+      document.addEventListener("click", (e) => {
+        if (!wrap.contains(e.target) && wrap.classList.contains("is-open")) {
+          wrap.classList.remove("is-open");
+          trigger.setAttribute("aria-expanded", "false");
+        }
+      });
+      // Esc closes the open panel
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && wrap.classList.contains("is-open")) {
+          wrap.classList.remove("is-open");
+          trigger.setAttribute("aria-expanded", "false");
+          trigger.focus();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
