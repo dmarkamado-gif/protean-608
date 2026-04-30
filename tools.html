@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+
+  <meta name="google-site-verification" content="J1SQXeSG9s6lRcwILQ0Rli2w-byoKEDBs0yGA85hP8Q">
+
+  <title>Field tools — PT chart, superheat, subcool, converter | Protean</title>
+  <meta name="description" content="Live HVAC field tools: a PT chart that interpolates, a superheat/subcool calculator that grades the reading, a unit converter, and a refrigerant reference. Runs on your device, no sign-in.">
+  <meta name="keywords" content="HVAC PT chart, refrigerant pressure temperature chart, superheat calculator, subcool calculator, target superheat, HVAC unit converter, refrigerant reference, EPA 608 tools">
+  <link rel="canonical" href="https://dmarkamado-gif.github.io/protean-608/tools.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Protean">
+  <meta property="og:title" content="Field tools — PT chart, superheat, subcool, converter | Protean">
+  <meta property="og:description" content="Live HVAC field tools that run on your device: PT chart, superheat / subcool calculator, unit converter, refrigerant reference.">
+  <meta property="og:url" content="https://dmarkamado-gif.github.io/protean-608/tools.html">
+  <meta property="og:image" content="https://dmarkamado-gif.github.io/protean-608/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Field tools — Protean">
+  <meta name="twitter:description" content="PT chart, superheat/subcool calculator, unit converter, refrigerant reference. Runs on your device.">
+  <meta name="twitter:image" content="https://dmarkamado-gif.github.io/protean-608/og-image.svg">
+
+  <meta name="theme-color" content="#a5431b">
+  <link rel="icon" type="image/svg+xml" href="og-image.svg">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://dmarkamado-gif.github.io/protean-608/tools.html#webpage",
+        "url": "https://dmarkamado-gif.github.io/protean-608/tools.html",
+        "name": "Field tools — PT chart, superheat, subcool, converter",
+        "description": "Live HVAC field tools that run on your device: PT chart, superheat/subcool calculator, unit converter, refrigerant reference.",
+        "isPartOf": { "@id": "https://dmarkamado-gif.github.io/protean-608/#website" },
+        "inLanguage": "en-US",
+        "breadcrumb": { "@id": "https://dmarkamado-gif.github.io/protean-608/tools.html#breadcrumb" },
+        "primaryImageOfPage": "https://dmarkamado-gif.github.io/protean-608/og-image.svg"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://dmarkamado-gif.github.io/protean-608/tools.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dmarkamado-gif.github.io/protean-608/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://dmarkamado-gif.github.io/protean-608/tools.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true">
+          <svg viewBox="0 0 44 48" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoHex" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#e08148"/>
+                <stop offset="0.45" stop-color="#a5431b"/>
+                <stop offset="1" stop-color="#6b2708"/>
+              </linearGradient>
+              <linearGradient id="logoInner" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fffaee"/>
+                <stop offset="1" stop-color="#f0e2c1"/>
+              </linearGradient>
+            </defs>
+            <polygon points="22,3 40,13 40,35 22,45 4,35 4,13" fill="url(#logoHex)" stroke="#1d1810" stroke-width="1.5" stroke-linejoin="round"/>
+            <polygon points="22,3 40,13 22,23 4,13" fill="#fff" opacity="0.12"/>
+            <polygon points="22,9 35,16 35,32 22,39 9,32 9,16" fill="url(#logoInner)" stroke="#3a2f22" stroke-width="0.9"/>
+            <circle cx="16.5" cy="20" r="3.1" fill="#7ab89a" stroke="#1d1810" stroke-width="0.7"/>
+            <circle cx="27.5" cy="20" r="3.1" fill="#8bbfc3" stroke="#1d1810" stroke-width="0.7"/>
+            <circle cx="22" cy="29" r="3.1" fill="#e4536b" stroke="#1d1810" stroke-width="0.7"/>
+            <text x="22" y="14.2" font-family="ui-monospace,monospace" font-size="2.4" font-weight="700" fill="#fdf1de" text-anchor="middle" letter-spacing="0.35">PROTEAN</text>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Protean</span>
+          <span class="brand-tag">R-32 · R-454B · R-1234yf</span>
+        </span>
+      </a>
+      <nav class="primary">
+        <a href="index.html">Home</a>
+        <a href="study.html">Study</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="practice.html">Practice</a>
+        <a href="tools.html" class="active">Tools</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+      <div id="stats-bar"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-droplets" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <h1>Working tools, not just study material</h1>
+      <div class="last-reviewed" title="Next review · October 2026">Last reviewed · April 2026</div>
+      <p class="lead">Four live widgets you can actually pull out in the truck: a PT chart that interpolates between rows, a superheat/subcool calculator that grades the reading, a unit converter for the numbers you write on the ticket, and a refrigerant reference you can skim. Everything runs on your device — no sign-in, no tracking.</p>
+    </section>
+
+    <section class="block" id="field-tools">
+      <div class="hvac-rule">
+        <svg viewBox="0 0 40 26" aria-hidden="true">
+          <circle cx="20" cy="15" r="9" fill="none" stroke="#8a5420" stroke-width="1.5"/>
+          <line x1="20" y1="15" x2="26" y2="9" stroke="#a5431b" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="20" cy="15" r="1.6" fill="#1d1810"/>
+        </svg>
+        <span class="tag">field tools</span>
+      </div>
+      <h2>Four widgets, one page</h2>
+      <p class="lead" style="margin-top:-6px;">Want the full kit in one dashboard — PT chart + superheat + subcool + target SH + converter + refrigerant reference + flashcards + practice exam? See <a href="../hvac-608-game/index.html"><strong>Freon's Toolbox</strong></a>, the field-tool companion app with a gamified study mode attached.</p>
+
+      <div class="tool-stack">
+        <div id="pt-chart" class="tool-slot"></div>
+        <div id="sh-calc" class="tool-slot"></div>
+        <div id="uc-widget" class="tool-slot tool-slot-wide"></div>
+        <div id="ref-table" class="tool-slot tool-slot-wide"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="container">
+      Not affiliated with the U.S. EPA. External links open in a new tab and are not endorsements.
+    </div>
+  </footer>
+
+  <script src="game.js"></script>
+  <script src="fx.js"></script>
+  <script src="stats.js"></script>
+  <script src="tools.js"></script>
+</body>
+</html>

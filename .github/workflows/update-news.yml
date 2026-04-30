@@ -1,0 +1,40 @@
+name: Update regulatory news
+
+on:
+  schedule:
+    - cron: "15 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-news
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run fetcher
+        run: node scripts/fetch-news.mjs
+
+      - name: Commit news.json if changed
+        run: |
+          if git diff --quiet -- news.json; then
+            echo "No changes to news.json — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "protean-news-bot"
+          git config user.email "protean-news-bot@users.noreply.github.com"
+          git add news.json
+          git commit -m "chore(news): refresh regulatory updates from Federal Register"
+          git push

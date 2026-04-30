@@ -1,10 +1,64 @@
 # Protean — free EPA Section 608 certification prep
 # https://dmarkamado-gif.github.io/protean-608/
 
+# Default policy: any crawler welcome. All pages are public, static, no
+# auth, no query parameters as identifiers — easy to crawl.
 User-agent: *
 Allow: /
 
-# Crawl-friendly: all pages are public, static, and no query parameters
-# are used as identifiers. Nothing behind auth.
+# Explicit allow for LLM / answer-engine crawlers. Many publishers block
+# these by default; we want to be discoverable when users ask AI assistants
+# for EPA 608 prep recommendations. ESCO is behind a Cloudflare bot wall;
+# this is our discoverability moat.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yeti
+Allow: /
 
 Sitemap: https://dmarkamado-gif.github.io/protean-608/sitemap.xml
