@@ -1,8 +1,24 @@
 {
-  "lastUpdated": "2026-04-23T21:47:54.377Z",
+  "lastUpdated": "2026-05-26T14:10:09.829Z",
   "source": "Federal Register (U.S. EPA)",
   "sourceUrl": "https://www.federalregister.gov/",
   "items": [
+    {
+      "date": "2026-05-26",
+      "title": "Phasedown of Hydrofluorocarbons: Excluding Road and Intermodal Container Transport Refrigeration Units From the Hydrofluorocarbon Leak Repair Requirements",
+      "abstract": "The U.S. Environmental Protection Agency (EPA) is proposing an exemption for road and intermodal container transport refrigeration units (TRUs) from the leak repair requirements established under the American Innovation and Manufacturing (AIM) Act. In the final rule \"Phasedown…",
+      "url": "https://www.federalregister.gov/documents/2026/05/26/2026-10388/phasedown-of-hydrofluorocarbons-excluding-road-and-intermodal-container-transport-refrigeration",
+      "docNumber": "2026-10388",
+      "type": "Proposed Rule"
+    },
+    {
+      "date": "2026-05-26",
+      "title": "Phasedown of Hydrofluorocarbons: Reconsideration of Certain Regulatory Requirements Promulgated Under the Technology Transitions Provisions of the American Innovation and Manufacturing Act of 2020",
+      "abstract": "The U.S. Environmental Protection Agency (EPA) is finalizing changes to regulations promulgated under the Technology Transitions provision of the American Innovation and Manufacturing Act of 2020 (AIM Act), which authorizes the Administrator to restrict fully, partially, or on a…",
+      "url": "https://www.federalregister.gov/documents/2026/05/26/2026-10387/phasedown-of-hydrofluorocarbons-reconsideration-of-certain-regulatory-requirements-promulgated-under",
+      "docNumber": "2026-10387",
+      "type": "Rule"
+    },
     {
       "date": "2026-04-06",
       "title": "Protection of Stratospheric Ozone: Listing of Substitutes Under the Significant New Alternatives Policy Program in Refrigeration and Air Conditioning and Fire Suppression; Supplemental Notice of Proposed Rulemaking",
@@ -26,22 +42,6 @@
       "url": "https://www.federalregister.gov/documents/2025/11/10/2025-19812/protection-of-stratospheric-ozone-listing-of-substitutes-under-the-significant-new-alternatives",
       "docNumber": "2025-19812",
       "type": "Proposed Rule"
-    },
-    {
-      "date": "2025-10-03",
-      "title": "Phasedown of Hydrofluorocarbons: Reconsideration of Certain Regulatory Requirements Promulgated Under the Technology Transitions Provisions of the American Innovation and Manufacturing Act of 2020",
-      "abstract": "The Environmental Protection Agency is proposing changes to regulations promulgated under the Technology Transitions section of the American Innovation and Manufacturing Act of 2020, which authorizes the Administrator to restrict the use of particular hydrofluorocarbons in the…",
-      "url": "https://www.federalregister.gov/documents/2025/10/03/2025-19438/phasedown-of-hydrofluorocarbons-reconsideration-of-certain-regulatory-requirements-promulgated-under",
-      "docNumber": "2025-19438",
-      "type": "Proposed Rule"
-    },
-    {
-      "date": "2025-08-26",
-      "title": "Phasedown of Hydrofluorocarbons: Review and Renewal of Eligibility for Application-Specific Allowances",
-      "abstract": "The U.S. Environmental Protection Agency (EPA) is finalizing, pursuant to the statutory framework established in the American Innovation and Manufacturing Act of 2020 (AIM Act), the eligibility of six applications to continue to receive priority access to allowances to produce…",
-      "url": "https://www.federalregister.gov/documents/2025/08/26/2025-16357/phasedown-of-hydrofluorocarbons-review-and-renewal-of-eligibility-for-application-specific",
-      "docNumber": "2025-16357",
-      "type": "Rule"
     }
   ]
 }
