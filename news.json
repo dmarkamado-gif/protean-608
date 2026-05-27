@@ -1,8 +1,16 @@
 {
-  "lastUpdated": "2026-05-26T14:10:09.829Z",
+  "lastUpdated": "2026-05-27T14:33:11.111Z",
   "source": "Federal Register (U.S. EPA)",
   "sourceUrl": "https://www.federalregister.gov/",
   "items": [
+    {
+      "date": "2026-05-27",
+      "title": "Phasedown of Hydrofluorocarbons: Allocation of 2026 Production and Consumption Allowances Set Aside for Metered Dose Inhalers",
+      "abstract": "The Environmental Protection Agency (EPA) is providing notice that the Agency allocated hydrofluorocarbon (HFC) set-aside allowances to general pool production and consumption allowance holders. For the calendar year 2026 allocation of HFC allowances, the EPA withheld a limited…",
+      "url": "https://www.federalregister.gov/documents/2026/05/27/2026-10534/phasedown-of-hydrofluorocarbons-allocation-of-2026-production-and-consumption-allowances-set-aside",
+      "docNumber": "2026-10534",
+      "type": "Notice"
+    },
     {
       "date": "2026-05-26",
       "title": "Phasedown of Hydrofluorocarbons: Excluding Road and Intermodal Container Transport Refrigeration Units From the Hydrofluorocarbon Leak Repair Requirements",
@@ -34,14 +42,6 @@
       "url": "https://www.federalregister.gov/documents/2025/11/20/2025-20439/phasedown-of-hydrofluorocarbons-notice-of-2026-allowance-allocations-for-production-and-consumption",
       "docNumber": "2025-20439",
       "type": "Notice"
-    },
-    {
-      "date": "2025-11-10",
-      "title": "Protection of Stratospheric Ozone: Listing of Substitutes Under the Significant New Alternatives Policy Program in Refrigeration and Air Conditioning and Fire Suppression",
-      "abstract": "Pursuant to the U.S. Environmental Protection Agency's Significant New Alternatives Policy program, this action proposes to list several substitutes as acceptable, subject to use conditions, for residential and light commercial air conditioning and heat pumps, chillers,…",
-      "url": "https://www.federalregister.gov/documents/2025/11/10/2025-19812/protection-of-stratospheric-ozone-listing-of-substitutes-under-the-significant-new-alternatives",
-      "docNumber": "2025-19812",
-      "type": "Proposed Rule"
     }
   ]
 }
